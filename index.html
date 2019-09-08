@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p title="title content">title content test</p>
+            <p>Using mustaches: {{ rawHtml }}</p>
+            <p v-html="rawHtml"></p>
+
+            <p>msg: {{ msg }}</p>
+            <span v-once>this msg will change once: {{ msg }}</span>
+            <button v-on:click="msg = 'baz'">Change it</button>
+            <p v-bind:style='color'>html属性不能使用双大括号形式绑定，只能使用v-bind指令</p>
+            <img v-bind:src="imageSrc">
+            <p v-if="seen">now you seen me.</p>
+        </div>
+
+        <script type="text/javascript">
+            var data = {
+                seen: false,
+                color: 'color:blue',
+                msg: 'Hello Vue!',
+                rawHtml: "<span style='color:red'>it should be red.</span>",
+                imageSrc: 'awesomeface.png'
+            }
+
+            var app = new Vue({
+                el: '#app',
+                data: data,
+                // 挂载开始之前
+                beforeCreate:function(){
+                    console.log('beforeCreate')
+                },
+                // 实例创建完成之后
+                created:function(){
+                    console.log('created')
+                },
+                //
+                beforeMount:function(){
+                    console.log('beforeMount')
+                },
+                //
+                mounted:function(){
+                    console.log('mounted')
+                },
+                //数据更新时调用
+                beforeUpdate:function(){
+                    console.log('beforeUpdate')
+                },
+                //
+                updated:function(){
+                    console.log('updated')
+                }
+            })
+
+            setTimeout(() => {
+                data.seen = true
+            }, 2000);
+
+            app.$watch('msg', function(newVal, oldVal){
+                data.color = 'color:red'
+            })
+        </script>
+    </body>
+</html>
