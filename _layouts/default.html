@@ -1,13 +1,17 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    {% feed_meta %}
-  </head>
-  <body>
-    {% include navigation.html %}
-    {{ content }}
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl }}">
+  <!-- {% feed_meta %} -->
+</head>
+
+<body>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+</body>
+
 </html>
