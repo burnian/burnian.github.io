@@ -1,13 +1,10 @@
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 # Site settings
 title: Burnian's Blog
 description: Burnian Zhou's Personal Blog Site
+url: "https://burnian.github.io/"  # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
-# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+# permalink: /:categories/:title/
+
 
 # User settings
 user_name: Burnian Zhou
@@ -16,11 +13,38 @@ user_title: Indie Game Developer
 email: burnian@163.com
 jekyll: https://jekyllrb.com
 github: https://github.com/burnian
+# Publish posts or collection documents with a future date.
+future: false
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
 
-# md文本格式
+
+# markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+# markdown: kramdown
+# kramdown:
+#   input: GFM                            # use Github Flavored Markdown !important
+#   syntax_highlighter_opts:
+#     span:
+#       line_numbers: false
+#     block:
+#       line_numbers: true
+#       start_line: 1
+
+
+# markdown text formats
 indent: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 
+
 # Build settings
+# comment plugin
+gitalk:
+  enable: true
+  owner: Nick
+  repo: nicktcl.github.io
+
 paginate: 5
 paginate_path: "/pages/blog:num/"
 
@@ -45,3 +69,25 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-paginate
+
+
+# Analytics settings
+# Baidu Analytics
+# ba_track_id: [ba_track_id]
+
+# Google Analytics
+ga_track_id: 'UA-134814157-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto
+
+
+# MathJax rendering for layout:page, used to render math fomula.
+page-mathjax: false
+
+
+# friend's link
+friends: [
+  {
+    title: "一笑清寒",
+    href: "http://www.piqiandong.com/"
+  }
+]
