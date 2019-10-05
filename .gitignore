@@ -1,5 +1,4 @@
-.sass-cache
-.jekyll-metadata
-node_modules
+.jekyll-cache
 .vscode
 _site
+.sass-cache

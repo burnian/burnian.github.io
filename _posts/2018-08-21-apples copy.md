@@ -1,8 +1,8 @@
 ---
-title: "Apple!"
+title: "Apple! copy"
 author: burnian
 categories: Java
-tags: life fruit
+tags: life
 published: true
 ---
 An apple is a sweet, edible fruit produced by an apple tree.

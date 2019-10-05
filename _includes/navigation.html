@@ -1,5 +1,33 @@
-<nav>
-    {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}class="current" {% endif %}>{{ item.name }}</a>
-    {% endfor %}
+<nav id="bnavbar" class="navbar navbar-expand-md navbar-dark sticky-top">
+  <div class="navbar-brand bbrand">{{ site.user_name }}</div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+
+      {% for item in site.data.navigation %}
+      {% if page.title == item.name %}
+      <li class="nav-item active" class="nav-item">
+        <span class="nav-link bnav-font">{{ item.name }}</span>
+      </li>
+      {% else %}
+      <li class="nav-item" class="nav-item">
+        <a class="nav-link bnav-font" href="{{ item.link }}">{{ item.name }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+  </div>
 </nav>

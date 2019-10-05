@@ -1,17 +1,56 @@
-#posts {
-  font-size: 120%;
-  
-  width: 90%;
-  margin: 0 auto;
-  max-width: 960px;
-  @media only screen and (min-width: $cut) {
-    width: 80%;
-  }
-  svg {
-    width: 60px !important;
-    height: auto;
-  }
+.bnav-font{
+  font-size: 1.25rem;
 }
+
+body {
+  font-family: "Microsoft Yahei";
+  background-color: $third;
+}
+
+bcard {
+  margin: 20px 0px;
+  padding: 5px;
+  height: 200px;
+  cursor: pointer;
+}
+
+// div {
+//   border-style: solid;
+//   border-width: 1px;
+// }
+
+#bnavbar {
+  background-color: $main;
+}
+
+.bfontsize-xs {
+  @media only screen and (max-width: $sm) {}
+}
+
+.bbrand {
+  padding: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+
+// #posts {
+//   font-size: 120%;
+
+//   width: 90%;
+//   margin: 0 auto;
+//   max-width: 960px;
+//   @media only screen and (min-width: $cut) {
+//     width: 80%;
+//   }
+//   svg {
+//     width: 60px !important;
+//     height: auto;
+//   }
+// }
 
 // .tech {
 //   margin: 10px;

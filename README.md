@@ -1,2 +1,2 @@
 # burnian.github.io
-my blog powered with jekyll.
+my blog powered by Gem and Jekyll, hosted at Github.

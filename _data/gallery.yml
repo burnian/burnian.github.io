@@ -1,0 +1,6 @@
+- name: Respiting
+  path: /assets/img/respiting.png
+- name: Missing
+  path: /assets/img/missing.png
+- name: World
+  path: /assets/img/world.png

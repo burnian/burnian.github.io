@@ -1,12 +1,13 @@
 // 这是一个id属性
 #particles-js {
-  background: $main;
+  background-color: $main;
   display: flex;
   vertical-align: bottom;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+
   .particles-js-canvas-el {
     height: 100vh !important;
   }
@@ -17,45 +18,36 @@
   font-family: 'Montserrat', sans-serif;
   z-index: 1;
   text-align: center;
-  color:#FFF;
+  color: #FFF;
   position: absolute;
   top: 50%;
   left: 50%;
   margin: 0 auto;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
   .site-title {
     font-size: 50px;
     display: block;
     line-height: 1;
     color: #FFF;
+
     // all针对了所有设备（有些设备不一定是屏幕，也许是打字机，盲人阅读器），only只针对彩色屏幕设备
-    @media only screen and (min-width:$cut){
+    @media only screen and (min-width:$cut) {
       margin: 0;
       font-size: 76px;
     }
   }
+
   .site-description {
     font-size: 20px;
     display: block;
     line-height: 1;
     color: #FFF;
     margin-top: 10px;
-    @media only screen and (min-width:$cut){
-      font-size: 34px;
-    }
-  }
-}
 
-.header-links {
-  margin: 10px;
-  .link {
-    color: #FFF;
-    text-decoration: none;
-    font-size: 15px;
-    margin: 10px;
-    @media only screen and (min-width:$cut){
-      font-size: 20px;
+    @media only screen and (min-width:$cut) {
+      font-size: 34px;
     }
   }
 }
@@ -64,8 +56,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: left;
 
-  text-align: center;
   a {
     // no borders
     outline: 0 !important;
@@ -76,25 +68,31 @@
     padding: none;
     margin: none;
   }
+
   .icon {
     text-align: center;
     color: #FFF;
     width: 20px;
     height: 20px;
     font-size: 20px;
+
+    box-sizing: content-box; // content-box|border-box|inherit; 这里要使用content-box才不会出现图标和border错位的情况
     padding: 10px;
     margin: 5px;
     border-radius: 50%;
     border: 2px solid #FFF;
     transition: all .5s;
+
     &:hover {
       color: $main;
       background: #FFF;
     }
+
     &:active {
       color: $main;
       background: #FFF;
     }
+
     @media only screen and (min-width:$cut) {
       width: 30px;
       height: 30px;
@@ -118,24 +116,27 @@
   border: none !important;
   outline-style: none !important;
   -moz-outline-style: none !important;
+
   .icon {
-      position: absolute;
-      -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      fill: #fff;
-      -webkit-animation: pulse 1.3s infinite;
-      animation: pulse 1.3s infinite;
-      &:hover {
-        color: $sec;
-      }
-      &:active {
-        color: $sec;
-      }
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    fill: #fff;
+    -webkit-animation: pulse 1.3s infinite;
+    animation: pulse 1.3s infinite;
+
+    &:hover {
+      color: $sec;
+    }
+
+    &:active {
+      color: $sec;
+    }
   }
 }

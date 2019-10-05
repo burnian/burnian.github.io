@@ -1,11 +1,16 @@
 <!doctype html>
-<html>
-  {% include head.html %}
-  <body>
-    {% include header.html %}
-    <section id="posts">
-      {{ content }}
-    </section>
-    {% include footer.html %}
-  </body>
+<html lang="zh-CN">
+
+<script>console.log("head.html longding")</script>
+{% include head.html  %}
+
+<body>
+  {% include header.html %}
+  {% include navigation.html %}
+  <section id="bcontent" class="container-fluid">
+    {{ content }}
+  </section>
+  {% include footer.html %}
+</body>
+
 </html>

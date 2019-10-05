@@ -1,11 +1,13 @@
-<div id="particles-js">
+<div id="particles-js" url="{{ page.url }}">
   <div class="header">
     <h1>
-      <span class="site-title">{{ site.username }}</span>
+      <span class="site-title">{{ site.user_name }}</span>
       <span class="site-description">{{ site.user_title }}</span>
     </h1>
+
     <div class="header-icons">
-      <a aria-label="Send email" href="mailto:{{ site.email }}"><i class="icon fa fa-envelope"></i></a>
+      <a aria-label="Send email" href="mailto:{{ site.email }}"><i class="icon fa fa-envelope"
+          aria-hidden="true"></i></a>
       <a aria-label="My QQ" target="_blank" href="https://user.qzone.qq.com/791829698"><i class="icon fa fa-qq"
           aria-hidden="true"></i></a>
       <a aria-label="My Weibo" target="_blank" href="https://weibo.com/p/1005051874766057"><i class="icon fa fa-weibo"
@@ -15,10 +17,8 @@
       <a aria-label="My Github" target="_blank" href="{{ site.github }}"><i class="icon fa fa-github-alt"
           aria-hidden="true"></i></a>
     </div>
-    <div class="header-links">
-      <a class="link" href="#posts" data-scroll>My Posts</a>
-    </div>
+
   </div>
-  <a class="down" href="#posts" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+  <a class="down" href="#bnavbar" name="hidedown" data-scroll><i class="icon fa fa-chevron-down"
+      aria-hidden="true"></i></a>
 </div>
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
