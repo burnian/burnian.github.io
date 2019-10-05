@@ -17,10 +17,12 @@ email: burnian@163.com
 jekyll: https://jekyllrb.com
 github: https://github.com/burnian
 
+# md文本格式
+indent: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+
 # Build settings
 paginate: 5
 paginate_path: "/pages/blog:num/"
-
 
 collections:
   authors:

@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     sweetScroll.toTop(0)
   })
 
-  $("bcard").click(function (e) {
-    window.location.href = "/posts/2018-08-21-apples.html";
+  $("bcard").click(function () {
+    window.location.href = $(this).attr("href") + "/#bnavbar";
   });
 
 }, false)

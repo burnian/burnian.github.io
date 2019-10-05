@@ -7,6 +7,13 @@ title: Blog
   <div class="col-lg-10 col-xl-7 col-xxl-6 col-xxxl-5">
 
     {% for post in paginator.posts %}
+    {% if post.language == "Chinese" %}
+    {% assign titleTrunc = 9 %}
+    {% assign contentTrunc = 89 %}
+    {% else %}
+    {% assign titleTrunc = 20 %}
+    {% assign contentTrunc = 194 %}
+    {% endif %}
     <bcard class="card shadow" href="{{ post.url }}">
 
       <div class="row align-items-center justify-content-between" style="margin: 0px; height: 100%;">
@@ -15,23 +22,27 @@ title: Blog
         <div class="col-md-8" style="height: 100%">
 
           <div class="row" style="height: 100%">
-            <h3 class="col-12 text-center">{{ post.title }}</h3>
+            {% if post.title.size > titleTrunc %}
+            <h3 class="col-12 intimate bfontsize-xs">{{ post.title }}</h3>
+            {% else %}
+            <h3 class="col-12 intimate">{{ post.title }}</h3>
+            {% endif %}
 
-            <h6 class="col-12 text-justify" style="margin: 0px;">
-              {% assign trunc = 95 %}
-              {% if post.excerpt.size < trunc %}
-              {{ post.content | strip_html | strip_newlines | truncate: trunc }}
+            <h6 class="col-12 text-justify intimate" style="margin: 0px;">
+              {% if post.excerpt.size < contentTrunc %}
+              {{ post.content | strip_html | strip_newlines | truncate: contentTrunc }}
               {% else %}
-              {{ post.excerpt | truncate: trunc }}
+              {{ post.excerpt | truncate: contentTrunc }}
               {% endif %}</h6>
 
-            <h6 class="col align-self-end text-left date" style="margin: 0px;"><i class="fa fa-calendar"
+            <h6 class="col-5 align-self-end text-left date intimate" style="margin: 0px;"><i class="fa fa-calendar"
                 aria-hidden="true"></i> {{ post.date | date_to_string }}
             </h6>
 
-            <div class="col align-self-end text-right" style="padding-left: 0px;">
+            <div class="col-7 align-self-end text-right intimate" style="padding-left: 0px;">
               {% for tag in post.tags %}
-              <a class="badge badge-primary" href="{{ post.url }}">{{ tag }}</a>
+              <a class="badge badge-primary" href="{{ post.url }}"><i class="fa fa-tag" aria-hidden="true"></i>
+                {{ tag }}</a>
               {% endfor %}
             </div>
           </div>
