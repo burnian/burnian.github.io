@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('callback - particles.js config loaded')
     if (header.attr("url") != "/") {
       header.hide()
+      console.log("hide header----------------")
     }
   })
 
