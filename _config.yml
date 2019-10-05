@@ -1,7 +1,7 @@
 # Site settings
 title: Burnian's Blog
 description: Burnian Zhou's Personal Blog Site
-url: "https://burnian.github.io/"  # the base hostname & protocol for your site
+url: "https://burnian.github.io"  # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 # permalink: /:categories/:title/
 
