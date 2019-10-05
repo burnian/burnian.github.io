@@ -10,17 +10,22 @@ document.addEventListener("DOMContentLoaded", function () {
     after: function (offset, elem, scroller) {
       console.log("After sweet scroll")
       if (elem && elem.name == "hidedown")
-        header.hide();
+        header.hide()
     },
   })
 
-  var path = "/../assets/particles.json"
-  if (header.attr("url") == "/") {
-    path = "/assets/particles.json"
+  console.log(header.attr("url"))
+  var path = "/assets/particles.json"
+  if (header.attr("url") != "/") {
+    path = "/../assets/particles.json"
   }
+
   /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
   particlesJS.load('particles-js', path, function () {
     console.log('callback - particles.js config loaded')
+    if (header.attr("url") != "/") {
+      header.hide()
+    }
   })
 
   // 左上角个人铭牌点击事件，上卷到关于个人信息
@@ -33,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
   $("bcard").click(function () {
-    window.location.href = $(this).attr("href") + "/#bnavbar";
+    window.location.href = $(this).attr("href");
   })
 
 }, false)
