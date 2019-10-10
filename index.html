@@ -14,7 +14,7 @@ title: Blog
     {% assign titleTrunc = 20 %}
     {% assign contentTrunc = 194 %}
     {% endif %}
-    <bcard class="card shadow" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
+    <bcard class="card shadow" href="{{ post.url | append: '#bnavbar' | prepend: site.baseurl | prepend: site.url }}">
 
       <div class="row align-items-center justify-content-between" style="margin: 0px; height: 100%;">
         <img class="d-none d-md-block" src="/assets/img/avatar.png" style="border-radius: .25em; max-height: 100%;">

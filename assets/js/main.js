@@ -23,10 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
   /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
   particlesJS.load('particles-js', path, function () {
     console.log('callback - particles.js config loaded')
-    if (header.attr("url") != "/") {
-      header.hide()
-      console.log("hide header----------------")
-    }
   })
 
   // 左上角个人铭牌点击事件，上卷到关于个人信息
