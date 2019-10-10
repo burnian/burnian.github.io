@@ -1,5 +1,6 @@
 ---
-tags: life fruit
+categories: fiction
+tags: fruit
 ---
 An apple is a sweet, edible fruit produced by an apple tree.
 

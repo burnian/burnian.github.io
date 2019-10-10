@@ -42,24 +42,17 @@ indent: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 # comment plugin
 gitalk:
   enable: true
-  owner: Nick
-  repo: nicktcl.github.io
+  owner: Burnian
+  repo: burnian.github.io
 
 paginate: 5
 paginate_path: "/pages/blog:num/"
 
 collections:
-  authors:
-    output: true
   posts:
-    output: true
+    output: true # 只有posts的output默认是true的，其他collection文件夹不是
 
 defaults:
-  - scope:
-      path: ""
-      type: "authors"
-    values:
-      layout: "author"
   - scope:
       path: ""
       type: "posts"
