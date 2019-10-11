@@ -8,16 +8,11 @@ layout: default
       <header>
         <h2>{{ page.title }}</h2>
         <p class="post-meta">
-          <span class="fa fa-calendar"></span> {{ page.date | date_to_long_string: "ordinal" }}{% if page.author %} •
-          {{ page.author }}{% endif %}
+          <span class="fa fa-calendar"></span> {{ page.date | date_to_long_string: "ordinal" }}{% if page.author %}
+          &nbsp;posted by {{ page.author }}{% endif %}
         </p>
         <p class="post-tag">
-          <!-- <span>{% for cat in page.categories %}<a
-              href="{{ '/category' | prepend: site.baseurl | prepend: site.url }}/#{{ cat }}"><span
-                class="octicon octicon-list-unordered"></span>&nbsp;{{ cat }}</a>{% endfor %}</span> -->
           {% for tag in page.tags %}
-          <!-- <a class="word-keep" href="{{ '/tags' | prepend: site.baseurl | prepend: site.url }}/#{{ tag }}"><span
-                class="octicon octicon-tag"></span>&nbsp;{{ tag }}</a> -->
           <span class="fa fa-tag"></span>&nbsp;{{ tag }}&nbsp;&nbsp;&nbsp;
           {% endfor %}
         </p>
@@ -28,5 +23,38 @@ layout: default
       </article>
       <hr class="boundary">
     </div>
+
+    <div class="row switch-card">
+
+      <div class="col" style="padding-left: 0;">
+        {% if page.previous %}
+        <a class="card shadow" href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}">
+          <h4 class="text-muted">上一篇</h4>
+          <p></p>
+          <h4>{{ page.previous.title }}</h4>
+        </a>
+        {% else %}
+        <span class="card shadow">
+          <h4 class="text-muted">上一篇</h4>
+        </span>
+        {% endif %}
+      </div>
+
+      <div class="col" style="padding-right: 0;">
+        {% if page.next %}
+        <a class="card shadow" href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}">
+          <h4 class="text-muted">下一篇</h4>
+          <p></p>
+          <h4>{{ page.next.title }}</h4>
+        </a>
+        {% else %}
+        <span class="card shadow">
+          <h4 class="text-muted text-center">下一篇</h4>
+        </span>
+        {% endif %}
+      </div>
+
+    </div>
+
   </div>
 </div>
