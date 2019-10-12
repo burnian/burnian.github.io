@@ -42,8 +42,11 @@ indent: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 # comment plugin
 gitalk:
   enable: true
+  clientID: afe4f8097c6fe10c9d56
+  clientSecret: 40c07771aea5a0e884004decb8a639797fbd86b1
   owner: Burnian
   repo: burnian.github.io
+  admin: Burnian
 
 paginate: 5
 paginate_path: "/pages/blog:num/"
