@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   })
 
-  console.log(header.attr("url"))
   var path = "/assets/particles.json"
   if (header.attr("url") != "/") {
     path = "/../assets/particles.json"
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('callback - particles.js config loaded')
     if (header.attr("url") != "/") {
       header.hide()
-      console.log("hide header----------------")
+      console.log("hide header")
     }
   })
 

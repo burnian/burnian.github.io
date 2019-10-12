@@ -4,6 +4,7 @@ layout: default
 
 <div class="row justify-content-center">
   <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-6 col-xxxl-5 intimate">
+    <!-- 正文 -->
     <div class="sheet post">
       <header>
         <h2>{{ page.title }}</h2>
@@ -23,9 +24,8 @@ layout: default
       </article>
       <hr class="boundary">
     </div>
-
+    <!-- 上下页按钮 -->
     <div class="row switch-card">
-
       <div class="col" style="padding-left: 0;">
         {% if page.previous %}
         <a class="card shadow" href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}">
@@ -53,8 +53,13 @@ layout: default
         </span>
         {% endif %}
       </div>
-
     </div>
-
+    <!-- 评论 -->
+    {% if site.gitalk.enable %}
+    {% include comment.html %}
+    {% endif %}
+    <!-- 点赞 -->
+    <!-- 统计 -->
   </div>
+  <!-- 目录 -->
 </div>
