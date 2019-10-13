@@ -58,6 +58,10 @@
   align-items: center;
   text-align: left;
 
+  span {
+    cursor: pointer;
+  }
+
   a {
     // no borders
     outline: 0 !important;

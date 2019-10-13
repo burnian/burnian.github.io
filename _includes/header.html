@@ -6,15 +6,15 @@
     </h1>
 
     <div class="header-icons">
-      <a aria-label="Send email" href="mailto:{{ site.email }}"><i class="icon fa fa-envelope"
+      <span title="email" aria-label="Email" data-toggle="modal" data-target="#ModalCenter"><i
+          class="icon fa fa-envelope" aria-hidden="true"></i></span>
+      <span title="qq" aria-label="QQ" data-toggle="modal" data-target="#ModalCenter"><i class="icon fa fa-qq"
+          aria-hidden="true"></i></span>
+      <span title="wechat" aria-label="Wechat" data-toggle="modal" data-target="#ModalCenter"><i
+          class="icon fa fa-wechat" aria-hidden="true"></i></span>
+      <a aria-label="LinkedIn" target="_blank" href="https://www.linkedin.com/feed/"><i class="icon fa fa-linkedin"
           aria-hidden="true"></i></a>
-      <a aria-label="My QQ" target="_blank" href="https://user.qzone.qq.com/791829698"><i class="icon fa fa-qq"
-          aria-hidden="true"></i></a>
-      <a aria-label="My Wechat" target="_blank" href="#"><i class="icon fa fa-wechat"
-          aria-hidden="true"></i></a>
-      <a aria-label="My LinkedIn" target="_blank" href="https://www.linkedin.com/feed/"><i class="icon fa fa-linkedin"
-          aria-hidden="true"></i></a>
-      <a aria-label="My Github" target="_blank" href="{{ site.github }}"><i class="icon fa fa-github-alt"
+      <a aria-label="Github" target="_blank" href="{{ site.github }}"><i class="icon fa fa-github-alt"
           aria-hidden="true"></i></a>
     </div>
 
@@ -22,3 +22,56 @@
   <a class="down" href="#bnavbar" name="hidedown" data-scroll><i class="icon fa fa-chevron-down"
       aria-hidden="true"></i></a>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title" id="ModalCenterTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="font-size: 1.5rem;">
+        <input id="ModalCenterContent" style="width:100%; height:100%;">
+      </div>
+      <div class="modal-footer">
+        <button id="btn-copy" type="button" class="btn btn-primary"
+          data-clipboard-target="#ModalCenterContent">保存到剪贴板</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#ModalCenter').on('show.bs.modal', function (e) {
+    console.log(e.relatedTarget.title)
+    var title = ""
+    var content = ""
+    if (e.relatedTarget.title == "email") {
+      title = "E-mail"
+      content = "{{ site.email }}"
+    }
+    else if (e.relatedTarget.title == "qq") {
+      title = "QQ"
+      content = "{{ site.qq }}"
+    }
+    else if (e.relatedTarget.title == "wechat") {
+      title = "Wechat"
+      content = "{{ site.wechat }}"
+    }
+    $("#ModalCenterTitle")[0].textContent = "Burnian's " + title
+    $("#ModalCenterContent").val(content)
+  })
+
+  var clipboard = new ClipboardJS('#btn-copy');
+  clipboard.on('success', function (e) {
+    // console.info('Action:', e.action);
+    // console.info('Text:', e.text);
+    // console.info('Trigger:', e.trigger);
+    e.clearSelection();
+  });
+</script>
+

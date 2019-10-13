@@ -28,27 +28,29 @@ layout: default
     <div class="row switch-card">
       <div class="col" style="padding-left: 0;">
         {% if page.previous %}
-        <a class="card shadow" href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}">
+        <a class="card" href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}">
           <h4 class="text-muted">上一篇</h4>
           <p></p>
           <h4>{{ page.previous.title }}</h4>
         </a>
         {% else %}
-        <span class="card shadow">
-          <h4 class="text-muted">上一篇</h4>
+        <span tabindex="0" class="card" data-toggle="popover" data-content="没有上一篇了" data-placement="bottom"
+          data-trigger="focus">
+          <h4 class="text-muted text-center">上一篇</h4>
         </span>
         {% endif %}
       </div>
 
       <div class="col" style="padding-right: 0;">
         {% if page.next %}
-        <a class="card shadow" href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}">
+        <a class="card" href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}">
           <h4 class="text-muted">下一篇</h4>
           <p></p>
           <h4>{{ page.next.title }}</h4>
         </a>
         {% else %}
-        <span class="card shadow">
+        <span tabindex="1" class="card" data-toggle="popover" data-content="没有下一篇了" data-placement="bottom"
+          data-trigger="focus">
           <h4 class="text-muted text-center">下一篇</h4>
         </span>
         {% endif %}

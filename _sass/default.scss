@@ -2,6 +2,10 @@
   font-size: 1.25rem;
 }
 
+.bg-primary {
+  color: #fff
+}
+
 body {
   font-family: "Microsoft Yahei";
   background-color: $third;
@@ -40,6 +44,12 @@ bcard {
   &:active {
     color: $main !important;
     background: #FFF;
+  }
+
+  .brand-image {
+    height: 25px;
+    padding-bottom: 5px;
+    margin-right: 5px;
   }
 }
 

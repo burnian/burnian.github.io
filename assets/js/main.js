@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOMContentLoaded")
+  console.log("DOMContentLoaded......")
+
+  // 弹出框初始化
+  $('[data-toggle="popover"]').popover()
 
   var header = $("#particles-js")
 

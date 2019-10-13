@@ -10,7 +10,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 user_name: Burnian Zhou
 user_desc: I'm a nomad Indie Game Developer, always searching for the next challenge and beauty.
 user_title: Indie Game Developer
-email: burnian@163.com
+email: burnian@qq.com
+qq: 791829698
+wechat: burnian
 jekyll: https://jekyllrb.com
 github: https://github.com/burnian
 # Publish posts or collection documents with a future date.

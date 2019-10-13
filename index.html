@@ -7,6 +7,11 @@ title: Blog
   <div class="col-lg-10 col-xl-7 col-xxl-6 col-xxxl-5">
 
     {% for post in paginator.posts %}
+    {% if post.image %}
+    {% assign image = post.image %}
+    {% else %}
+    {% assign image = "/assets/img/avatar.png" %}
+    {% endif %}
     {% if post.language == "Chinese" %}
     {% assign titleTrunc = 9 %}
     {% assign contentTrunc = 89 %}
@@ -17,7 +22,7 @@ title: Blog
     <bcard class="card shadow" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
 
       <div class="row align-items-center justify-content-between" style="margin: 0px; height: 100%;">
-        <img class="d-none d-md-block" src="/assets/img/avatar.png" style="border-radius: .25em; max-height: 100%;">
+        <img class="d-none d-md-block" src={{ image }} style="border-radius: .25em; max-height: 100%;">
 
         <div class="col-md-8" style="height: 100%">
 
@@ -29,7 +34,9 @@ title: Blog
             {% endif %}
 
             <h6 class="col-12 text-justify intimate" style="margin: 0px;">
-              {% if post.excerpt.size < contentTrunc %}
+              {% if post.intro %}
+              {{ post.intro | truncate: contentTrunc }}
+              {% elsif post.excerpt.size < contentTrunc %}
               {{ post.content | strip_html | strip_newlines | truncate: contentTrunc }}
               {% else %}
               {{ post.excerpt | truncate: contentTrunc }}
@@ -41,7 +48,8 @@ title: Blog
 
             <div class="col-7 align-self-end text-right intimate" style="padding-left: 0px;">
               {% for tag in post.tags %}
-              <a class="badge badge-primary" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"><i class="fa fa-tag" aria-hidden="true"></i>
+              <a class="badge badge-primary" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"><i
+                  class="fa fa-tag" aria-hidden="true"></i>
                 {{ tag }}</a>
               {% endfor %}
             </div>
