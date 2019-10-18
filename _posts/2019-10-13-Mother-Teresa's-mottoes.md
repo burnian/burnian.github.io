@@ -3,7 +3,7 @@ title: 特蕾莎修女箴言
 categories: life
 tags: [Teresa, Culcutta]
 image: https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=3db62980352ac65c73086e219a9bd974/bba1cd11728b4710be23082cc3cec3fdfd0323c5.jpg
-intro: 这篇写在加尔各答的特蕾莎修女儿童福利院墙上的诗令我感触颇深，其间一种一往无前的精神力量让我想到了很多人，想到了自己，也想到了Romain先生的那句名言，无论如何也想要把自己理解的译文post到这里。
+description: 这篇写在加尔各答的特蕾莎修女儿童福利院墙上的诗令我感触颇深，其间一种一往无前的精神力量让我想到了很多人，想到了自己，也想到了Romain先生的那句名言，无论如何也想要把自己理解的译文post到这里。
 ---
 > *世界上只有一种英雄主义：看清了世界的真相还依然热爱它。*
 >

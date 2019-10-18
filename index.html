@@ -34,8 +34,8 @@ title: Blog
             {% endif %}
 
             <h6 class="col-12 text-justify intimate" style="margin: 0px;">
-              {% if post.intro %}
-              {{ post.intro | truncate: contentTrunc }}
+              {% if post.description %}
+              {{ post.description | truncate: contentTrunc }}
               {% elsif post.excerpt.size < contentTrunc %}
               {{ post.content | strip_html | strip_newlines | truncate: contentTrunc }}
               {% else %}

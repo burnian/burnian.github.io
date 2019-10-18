@@ -3,6 +3,7 @@
     <h1>
       <span class="site-title">{{ site.user_name }}</span>
       <span class="site-description">{{ site.user_title }}</span>
+      <span class="site-subdesc">{{ site.user_desc }}</span>
     </h1>
 
     <div class="header-icons">
@@ -62,7 +63,7 @@
       title = "Wechat"
       content = "{{ site.wechat }}"
     }
-    $("#ModalCenterTitle")[0].textContent = "Burnian's " + title
+    $("#ModalCenterTitle").text("Burnian's " + title)
     $("#ModalCenterContent").val(content)
   })
 
@@ -74,4 +75,3 @@
     e.clearSelection();
   });
 </script>
-
