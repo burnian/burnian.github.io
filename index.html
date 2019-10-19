@@ -78,10 +78,12 @@ title: Blog
         <li class="page-item active"><span class="page-link">{{ num }}</span></li>
         {% elsif num == 1 %}
         <li class="page-item"><a class="page-link"
-            href="{{ '/#bnavbar' | prepend: site.baseurl | prepend: site.url }}">{{ num }}</a></li>
+            href="{{ '#bnavbar' | prepend: paginator.first_page_path | prepend: site.baseurl | prepend: site.url }}">{{ num }}</a>
+        </li>
         {% else %}
         <li class="page-item"><a class="page-link"
-            href="{{ num |  prepend: '/pages/blog' | append: '/#bnavbar' | prepend: site.baseurl | prepend: site.url }}">{{ num }}</a>
+            href="{{ num |  prepend: '/' |  prepend: paginator.page_path | append: '/#bnavbar' | prepend: site.baseurl | prepend: site.url }}">
+            {{ num }}</a>
         </li>
         {% endif %}
         {% endfor %}

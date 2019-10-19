@@ -46,7 +46,7 @@ gitalk:
   enable: true
 
 paginate: 5
-paginate_path: "/pages/blog:num/"
+paginate_paths: ["pages/:num", "pages/life/:num"]
 
 collections:
   posts:
@@ -61,7 +61,6 @@ defaults:
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate
   - jekyll-sitemap
 
 # Baidu Analytics

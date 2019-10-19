@@ -31,8 +31,14 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           {% for category in site.categories %}
-          <a class="dropdown-item" href="/pages/category.html">{{ category[0] }}
-            <span class="badge badge-pill badge-secondary" style="float: right;margin-top: 3px;">{{ category[1].size }}</span></a>
+          {% if page.title == category[0] %}
+          <span class="dropdown-item active">{{ category[0] }} <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">{{ category[1].size }}</i></span>
+          {% else %}
+          <a class="dropdown-item" href="/pages/{{ category[0] }}/">{{ category[0] }}
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">{{ category[1].size }}</i></a>
+          {% endif %}
           {% endfor %}
           <!-- <div class="dropdown-divider"></div> -->
         </div>
