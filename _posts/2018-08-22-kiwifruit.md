@@ -1,5 +1,6 @@
 ---
-categories: fiction
+categories: [life, travel]
+language: English
 tags: ddd
 ---
 Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible

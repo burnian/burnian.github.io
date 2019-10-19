@@ -16,6 +16,34 @@ bcard {
   padding: 5px;
   height: 200px;
   cursor: pointer;
+  transition: all .5s;
+
+  :hover {
+    color: #0062cc;
+  }
+
+  // 文字抖动效果
+  // :hover {
+  //   animation: shake-it .5s reverse infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  // }
+
+  // @keyframes shake-it {
+  //   0% {
+  //     text-shadow: 0 0 rgba(0, 255, 255, .5), 0 0 rgba(255, 0, 0, .5);
+  //   }
+
+  //   25% {
+  //     text-shadow: -2px 0 rgba(0, 255, 255, .5), 2px 0 rgba(255, 0, 0, .5);
+  //   }
+
+  //   50% {
+  //     text-shadow: -5px 0 rgba(0, 255, 255, .5), 3px 0 rgba(255, 0, 0, .5);
+  //   }
+
+  //   100% {
+  //     text-shadow: 3px 0 rgba(0, 255, 255, .5), 5px 0 rgba(255, 0, 0, .5);
+  //   }
+  // }
 }
 
 // div {
@@ -27,6 +55,10 @@ bcard {
   background-color: $main;
 }
 
+.brand-image {
+  height: 46px;
+}
+
 .navbar-brand {
   padding: 5px;
   border-style: solid;
@@ -35,6 +67,7 @@ bcard {
   border-radius: .5rem;
   cursor: pointer;
   transition: all .5s;
+  margin-left: 1rem;
 
   &:hover {
     color: $main !important;
@@ -45,12 +78,11 @@ bcard {
     color: $main !important;
     background: #FFF;
   }
+}
 
-  .brand-image {
-    height: 25px;
-    padding-bottom: 5px;
-    margin-right: 5px;
-  }
+.dropdown-menu{
+  color: #fff;
+  background-color: $third;
 }
 
 .intimate {
@@ -119,27 +151,6 @@ article {
     border-left: 5px solid #2ca6cb;
   }
 
-  .readmore {
-    display: inline-block;
-    line-height: 1em;
-    padding: 6px 15px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-    background: #eee;
-    color: #999;
-    text-shadow: 0 1px #fff;
-    text-decoration: none;
-    margin-top: 10px;
-    margin-bottom: 20px;
-
-    :hover {
-      background: #258fb8;
-      color: #fff;
-      text-decoration: none;
-      text-shadow: 0 1px #1e7293;
-    }
-  }
-
   footer {
     font-size: .85em;
     line-height: 1.6em;
@@ -153,18 +164,3 @@ article {
     }
   }
 }
-
-
-
-
-
-
-
-
-// .user-details {
-//   text-align: center;
-//   margin: 5px auto;
-//   h1 {
-//     font-weight: 400;
-//   }
-// }

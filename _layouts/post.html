@@ -9,8 +9,10 @@ layout: default
       <header>
         <h2>{{ page.title }}</h2>
         <p class="post-meta">
-          <span class="fa fa-calendar"></span> {{ page.date | date_to_long_string: "ordinal" }}{% if page.author %}
-          &nbsp;posted by {{ page.author }}{% endif %}
+          <i class="fa fa-user"></i>
+          {% if page.author %}{{ page.author }}{% else %}{{ site.user_name }}{% endif %}&nbsp;&nbsp;
+          <i class="fa fa-calendar"></i> {{ page.date | date: "%Y年%m月%d日" }}&nbsp;&nbsp;
+          <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
         </p>
         <p class="post-tag">
           {% for tag in page.tags %}
@@ -63,5 +65,4 @@ layout: default
     <!-- 点赞 -->
     <!-- 统计 -->
   </div>
-  <!-- 目录 -->
 </div>

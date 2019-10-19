@@ -9,6 +9,7 @@
   <!-- {% feed_meta %} -->
 
   <!-- baidu 流量统计 -->
+  {% if site.baidu.enable %}
   <script>
     var _hmt = _hmt || [];
     (function () {
@@ -18,7 +19,7 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
-
+  {% endif %}
 </head>
 
 <!-- 复制到剪贴板 -->

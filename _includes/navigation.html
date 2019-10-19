@@ -1,6 +1,6 @@
 <nav id="bnavbar" class="navbar navbar-expand-md navbar-dark sticky-top">
-  <div class="navbar-brand"><img class="brand-image" src="/assets/img/burnian_logo.png"></img>{{ site.user_name }}
-  </div>
+  <img class="brand-image" src="/assets/img/burnian_logo.png"></img>
+  <div class="navbar-brand">{{ site.user_name }}</div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
@@ -13,17 +13,30 @@
 
       {% for item in site.data.navigation %}
       {% if page.title == item.name %}
-      <li class="nav-item active" class="nav-item">
+      <li class="nav-item active">
         <span class="nav-link bnav-font">{{ item.name }}</span>
       </li>
       {% else %}
-      <li class="nav-item" class="nav-item">
+      <li class="nav-item">
         <a class="nav-link bnav-font"
           href="{{ item.link | prepend: site.baseurl | prepend: site.url }}">{{ item.name }}</a>
       </li>
       {% endif %}
       {% endfor %}
 
+      <li class="nav-item dropdown" style="font-size: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {% for category in site.categories %}
+          <a class="dropdown-item" href="/pages/category.html">{{ category[0] }}
+            <span class="badge badge-pill badge-secondary" style="float: right;margin-top: 3px;">{{ category[1].size }}</span></a>
+          {% endfor %}
+          <!-- <div class="dropdown-divider"></div> -->
+        </div>
+      </li>
     </ul>
 
     <form class="form-inline my-2 my-lg-0">

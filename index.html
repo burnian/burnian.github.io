@@ -5,28 +5,27 @@ title: Blog
 
 <div class="row justify-content-center">
   <div class="col-lg-10 col-xl-7 col-xxl-6 col-xxxl-5">
-
     {% for post in paginator.posts %}
     {% if post.image %}
     {% assign image = post.image %}
     {% else %}
     {% assign image = "/assets/img/avatar.png" %}
     {% endif %}
-    {% if post.language == "Chinese" %}
-    {% assign titleTrunc = 9 %}
-    {% assign contentTrunc = 89 %}
-    {% else %}
+    {% if post.language == "English" %}
     {% assign titleTrunc = 20 %}
     {% assign contentTrunc = 194 %}
+    {% else %}
+    {% assign titleTrunc = 9 %}
+    {% assign contentTrunc = 89 %}
     {% endif %}
     <bcard class="card shadow" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
 
       <div class="row align-items-center justify-content-between" style="margin: 0px; height: 100%;">
         <img class="d-none d-md-block" src={{ image }} style="border-radius: .25em; max-height: 100%;">
 
-        <div class="col-md-8" style="height: 100%">
+        <div class="col-md-8" style="height: 100%;">
 
-          <div class="row" style="height: 100%">
+          <div class="row" style="height: 100%;">
             {% if post.title.size > titleTrunc %}
             <h3 class="col-12 intimate bfontsize-xs">{{ post.title }}</h3>
             {% else %}
@@ -43,7 +42,7 @@ title: Blog
               {% endif %}</h6>
 
             <h6 class="col-5 align-self-end text-left date intimate" style="margin: 0px;"><i class="fa fa-calendar"
-                aria-hidden="true"></i> {{ post.date | date_to_string }}
+                aria-hidden="true"></i> {{ post.date | date: "%Y年%m月%d日" }}
             </h6>
 
             <div class="col-7 align-self-end text-right intimate" style="padding-left: 0px;">
@@ -79,7 +78,7 @@ title: Blog
         <li class="page-item active"><span class="page-link">{{ num }}</span></li>
         {% elsif num == 1 %}
         <li class="page-item"><a class="page-link"
-            href="{{ '/#bnavbar' | prepend: site.baseurl | prepend: site.url  }}">{{ num }}</a></li>
+            href="{{ '/#bnavbar' | prepend: site.baseurl | prepend: site.url }}">{{ num }}</a></li>
         {% else %}
         <li class="page-item"><a class="page-link"
             href="{{ num |  prepend: '/pages/blog' | append: '/#bnavbar' | prepend: site.baseurl | prepend: site.url }}">{{ num }}</a>
@@ -89,7 +88,7 @@ title: Blog
 
         {% if paginator.next_page %}
         <li class="page-item">
-          <a class="page-link" href="{{ paginator.next_page_path | append: '#bnavbar'}}" aria-label="Next Page">
+          <a class="page-link" href="{{ paginator.next_page_path | append: '#bnavbar' }}" aria-label="Next Page">
             <span aria-hidden="true">&raquo;</span>
             <span class="sr-only">Next</span>
           </a>

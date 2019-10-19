@@ -1,6 +1,5 @@
 ---
 title: 大文件内容对比多线程版本
-language: Chinese
 categories: technology
 tags: Seattle kkk Spokane
 ---

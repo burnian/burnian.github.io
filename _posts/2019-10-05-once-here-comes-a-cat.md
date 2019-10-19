@@ -1,6 +1,5 @@
 ---
 title: 从前有一只猫
-language: Chinese
 categories: life
 tags: cat emotion
 ---

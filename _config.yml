@@ -62,16 +62,15 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-sitemap
 
-
-# Analytics settings
 # Baidu Analytics
-# ba_track_id: [ba_track_id]
+baidu:
+  enable: true
 
 # Google Analytics
-ga_track_id: 'UA-134814157-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto
-
+# ga_track_id: 'UA-134814157-1'            # Format: UA-xxxxxx-xx
+# ga_domain: auto
 
 # MathJax rendering for layout:page, used to render math fomula.
 page-mathjax: false
@@ -80,7 +79,7 @@ page-mathjax: false
 # friend's link
 friends: [
   {
-    title: "一笑清寒",
-    href: "http://www.piqiandong.com/"
+    title: "白衣渡江",
+    href: "https://blog.whiterobe.top"
   }
 ]

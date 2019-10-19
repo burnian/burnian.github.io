@@ -1,4 +1,5 @@
 ---
+language: English
 categories: technology
 tags: Seattle Tacoma Spokane
 ---
