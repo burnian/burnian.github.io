@@ -1,3 +1,6 @@
+console.log("load main.js------")
+var sweetScroller;
+
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOMContentLoaded......")
 
@@ -7,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var header = $("#particles-js")
 
   /* sweetScroll load */
-  const sweetScroll = new SweetScroll({
+  sweetScroller = new SweetScroll({
     cancellable: false,
     // Scroll animation is complete
     after: function (offset, elem, scroller) {
@@ -27,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('callback - particles.js config loaded')
     if (header.attr("url") != "/") {
       header.hide()
-      console.log("hide header")
     }
   })
 
@@ -37,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $(window).scrollTop(1)
       header.show()
     }
-    sweetScroll.toTop(0)
+    sweetScroller.toTop(0)
   })
 
   $("bcard").click(function () {

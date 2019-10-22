@@ -13,7 +13,7 @@
 
       {% for item in site.data.navigation %}
       {% if page.title == item.name %}
-      <li class="nav-item active">
+      <li id="{{ item.id }}" class="nav-item active">
         <span class="nav-link bnav-font">
           {% if site.language %}
           {{ site.data.language[item.name] }}
@@ -23,7 +23,7 @@
         </span>
       </li>
       {% else %}
-      <li class="nav-item">
+      <li id="{{ item.id }}" class="nav-item">
         <a class="nav-link bnav-font" href="{{ item.link | prepend: site.baseurl | prepend: site.url }}">
           {% if site.language %}
           {{ site.data.language[item.name] }}
@@ -35,7 +35,7 @@
       {% endif %}
       {% endfor %}
 
-      <li class="nav-item dropdown" style="font-size: 20px;">
+      <li id="navbar-categories" class="nav-item dropdown" style="font-size: 20px;">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           {% if site.language %}
