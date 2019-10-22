@@ -1,5 +1,5 @@
 ---
-categories: [life, travel]
+categories: travel
 language: English
 tags: ddd
 ---

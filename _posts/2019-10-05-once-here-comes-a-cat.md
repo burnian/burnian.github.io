@@ -1,11 +1,9 @@
 ---
 title: 从前有一只猫
 categories: life
-tags: cat emotion
+tags: [猫, 情感]
 ---
-# 楔子：猫
-
-<br>
+# 楔子：猫<br>
 
 从前有一只猫，它又可爱又可爱哭了。
 

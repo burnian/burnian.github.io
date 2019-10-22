@@ -4,6 +4,7 @@ description: Burnian Zhou's Personal Blog Site
 url: "https://burnian.github.io"  # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 # permalink: /:categories/:title/
+language: true # true for Chinese, false for English
 
 
 # User settings
@@ -36,17 +37,16 @@ highlighter: rouge
 #       start_line: 1
 
 
+# Build settings
 # markdown text formats
 indent: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 
-
-# Build settings
 # comment plugin
 gitalk:
   enable: true
 
 paginate: 5
-paginate_paths: ["pages/:num", "pages/life/:num"]
+paginate_paths: ["pages/:num", "pages/fiction/:num", "pages/travel/:num", "pages/life/:num", "pages/technology/:num"]
 
 collections:
   posts:

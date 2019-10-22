@@ -41,11 +41,11 @@ title: Blog
               {{ post.excerpt | truncate: contentTrunc }}
               {% endif %}</h6>
 
-            <h6 class="col-5 align-self-end text-left date intimate" style="margin: 0px;"><i class="fa fa-calendar"
+            <h6 class="col-6 align-self-end text-left date intimate" style="margin: 0px;"><i class="fa fa-calendar"
                 aria-hidden="true"></i> {{ post.date | date: "%Y年%m月%d日" }}
             </h6>
 
-            <div class="col-7 align-self-end text-right intimate" style="padding-left: 0px;">
+            <div class="col-6 align-self-end text-right intimate">
               {% for tag in post.tags %}
               <a class="badge badge-primary" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"><i
                   class="fa fa-tag" aria-hidden="true"></i>
