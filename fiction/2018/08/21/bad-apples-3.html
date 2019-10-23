@@ -49,7 +49,7 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 
 <body>
-  <div id="particles-js" url="/pages/gallery/">
+  <div id="particles-js" url="/fiction/2018/08/21/bad-apples-3.html">
   <div class="header">
     <h1>
       <span class="site-title">Burnian Zhou</span>
@@ -151,12 +151,12 @@
       
       
       
-      <li id="navbar-gallery" class="nav-item active">
-        <span class="nav-link bnav-font">
+      <li id="navbar-gallery" class="nav-item">
+        <a class="nav-link bnav-font" href="http://localhost:4000/pages/gallery/#bnavbar">
           
           画廊
           
-        </span>
+        </a>
       </li>
       
       
@@ -223,46 +223,86 @@
   </div>
 </nav>
   <section id="bcontent" class="container-fluid">
+    <div class="row justify-content-center">
+  <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-6 col-xxxl-5 intimate">
+    <!-- 正文 -->
+    <div class="sheet post">
+      <header>
+        <h2>烂苹果</h2>
+        <p class="post-meta">
+          <i class="fa fa-user"></i>
+          Burnian Zhou&nbsp;&nbsp;
+          <i class="fa fa-calendar"></i> 2018年08月21日&nbsp;&nbsp;
+          <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
+        </p>
+        <p class="post-tag">
+          
+          <span class="fa fa-tag"></span>&nbsp;fruit&nbsp;&nbsp;&nbsp;
+          
+        </p>
+      </header>
+      <hr class="boundary">
+      <article>
+        <p>An apple is a sweet, edible fruit produced by an apple tree.</p>
+
+<p>Apple trees are cultivated worldwide, and are the most widely grown species in
+the genus Malus. The tree originated in Central Asia, where its wild ancestor,
+Malus sieversii, is still found today. Apples have been grown for thousands of
+years in Asia and Europe, and were brought to North America by European
+colonists.</p>
+
+      </article>
+      <hr class="boundary">
+    </div>
+    <!-- 上下页按钮 -->
+    <div class="row switch-card">
+      <div class="col" style="padding-left: 0;">
+        
+        <a class="card" href="http://localhost:4000/fiction/2018/08/21/bad-apples-2.html">
+          <h4 class="text-muted">上一篇</h4>
+          <p></p>
+          <h4>烂苹果</h4>
+        </a>
+        
+      </div>
+
+      <div class="col" style="padding-right: 0;">
+        
+        <a class="card" href="http://localhost:4000/fiction/2018/08/22/fic-1.html">
+          <h4 class="text-muted">下一篇</h4>
+          <p></p>
+          <h4>小说（一）</h4>
+        </a>
+        
+      </div>
+    </div>
+    <!-- 评论 -->
     
-<div class="row justify-content-center">
+    <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+  console.log("gitalk.id=", location.pathname)
 
-  <div class="col-10">
-    <div class="card" style="max-width: 100%;">
-      <img class="card-img-top" src="/assets/img/respiting.png">
-      <div class="card-body">
-        <p class="card-text text-muted">Respiting.</p>
-      </div>
-    </div>
+  const gitalk = new Gitalk({
+    clientID: 'afe4f8097c6fe10c9d56',
+    clientSecret: '40c07771aea5a0e884004decb8a639797fbd86b1',
+    repo: 'burnian.github.io',
+    owner: 'burnian',
+    admin: ['burnian'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+  console.log('gitalk over')
+</script>
+    
+    <!-- 点赞 -->
+    <!-- 统计 -->
   </div>
-
 </div>
-
-<div class="row justify-content-center">
-
-  <div class="col-10">
-    <div class="card" style="max-width: 100%;">
-      <img class="card-img-top" src="/assets/img/missing.png">
-      <div class="card-body">
-        <p class="card-text text-muted">Missing.</p>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="row justify-content-center">
-
-  <div class="col-10">
-    <div class="card" style="max-width: 100%;">
-      <img class="card-img-top" src="/assets/img/world.png">
-      <div class="card-body">
-        <p class="card-text text-muted">World.</p>
-      </div>
-    </div>
-  </div>
-
-</div>
-
   </section>
   <footer class="footer">
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

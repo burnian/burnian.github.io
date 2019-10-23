@@ -1,76 +1,4 @@
-<!doctype html>
-<html lang="zh-CN">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Burnian Zhou's Personal Blog Site">
-  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-  <title>Burnian's Blog</title>
-  <!-- <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Burnian's Blog" /> -->
-
-  <!-- baidu 流量统计 -->
-  
-  <script>
-    var _hmt = _hmt || [];
-    (function () {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?c57108b7c22e5eaa9ffdb21d134955b7";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-  
-</head>
-
-<!-- 复制到剪贴板 -->
-<script src="//cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap依赖的弹出框工具类 -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!-- github上找的缓动页面滚动效果 -->
-<script src="//cdn.jsdelivr.net/npm/sweet-scroll@4.0.0/sweet-scroll.min.js"></script>
-<!-- 粒子效果 -->
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<!-- 我的js -->
-<script src="/assets/js/main.js"></script>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="shortcut icon" type="image/png" href="/assets/img/burnian_logo.png">
-<!-- 我的样式 -->
-<link rel="stylesheet" href="/assets/css/main.css">
-
-<body class="container-fluid">
-  <section class="row" style="height: 100vh;">
-
-    <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
-	<title>Hank Quinlan's Blog</title>
-	<link href="http://hankquinlan.github.io/blog/atom.xml" rel="self"/>
-	<link href="http://hankquinlan.github.io/blog"/>
-	<updated>2019-10-24T00:59:20+08:00</updated>
-	<id>http://hankquinlan.github.io/blog</id>
-	<author>
-		<name>Hank Quinlan</name>
-		<email>hankquinlanhub@gmail.com</email>
-	</author>
-
-	
-		<entry>
-			<title>李希贵校长谈教育</title>
-			<link href="http://hankquinlan.github.io/life/2019/10/22/lixigui-talk-about-edu.html"/>
-			<updated>2019-10-22T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/life/2019/10/22/lixigui-talk-about-edu</id>
-			<content type="html">&lt;p&gt;最近看了北京十一总校校长&lt;a href=&quot;https://baike.baidu.com/item/%E6%9D%8E%E5%B8%8C%E8%B4%B5/863618?fr=aladdin&quot;&gt;李希贵&lt;/a&gt;先生关于教育的四点探讨，感触很深，只能说现在的学生真是太幸运了，中国的教育正在朝着正确的方向发展，社会的整体结构将会因为教育的优化而变得更加丰富，稳固。以下就是李希贵先生的观点，记录如下：&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-24T00:59:20+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Burnian’s Blog</title><subtitle>Burnian Zhou's Personal Blog Site</subtitle><entry><title type="html">李希贵校长谈教育</title><link href="http://localhost:4000/life/2019/10/22/lixigui-talk-about-edu.html" rel="alternate" type="text/html" title="李希贵校长谈教育" /><published>2019-10-22T00:00:00+08:00</published><updated>2019-10-22T00:00:00+08:00</updated><id>http://localhost:4000/life/2019/10/22/lixigui-talk-about-edu</id><content type="html" xml:base="http://localhost:4000/life/2019/10/22/lixigui-talk-about-edu.html">&lt;p&gt;最近看了北京十一总校校长&lt;a href=&quot;https://baike.baidu.com/item/%E6%9D%8E%E5%B8%8C%E8%B4%B5/863618?fr=aladdin&quot;&gt;李希贵&lt;/a&gt;先生关于教育的四点探讨，感触很深，只能说现在的学生真是太幸运了，中国的教育正在朝着正确的方向发展，社会的整体结构将会因为教育的优化而变得更加丰富，稳固。以下就是李希贵先生的观点，记录如下：&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -219,17 +147,7 @@
 
 &lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/K68UjMteNDGY2u46tH9GIQ&quot;&gt;罗辑思维：关于教育的真相，这位校长只用四个问题就讲透了&lt;/a&gt;&lt;/p&gt;
-
-</content>
-		</entry>
-	
-		<entry>
-			<title>特蕾莎修女箴言</title>
-			<link href="http://hankquinlan.github.io/life/2019/10/13/Mother-Teresa's-mottoes.html"/>
-			<updated>2019-10-13T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/life/2019/10/13/Mother-Teresa's-mottoes</id>
-			<content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/K68UjMteNDGY2u46tH9GIQ&quot;&gt;罗辑思维：关于教育的真相，这位校长只用四个问题就讲透了&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="李希贵" /><category term="教育" /><summary type="html">最近看了北京十一总校校长李希贵先生关于教育的四点探讨，感触很深，只能说现在的学生真是太幸运了，中国的教育正在朝着正确的方向发展，社会的整体结构将会因为教育的优化而变得更加丰富，稳固。以下就是李希贵先生的观点，记录如下：</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike116%2C5%2C5%2C116%2C38/sign=ff07047848a7d933aba5ec21cc22ba76/8b82b9014a90f6038339a22b3312b31bb151edd5.jpg" /></entry><entry><title type="html">特蕾莎修女箴言</title><link href="http://localhost:4000/life/2019/10/13/Mother-Teresa's-mottoes.html" rel="alternate" type="text/html" title="特蕾莎修女箴言" /><published>2019-10-13T00:00:00+08:00</published><updated>2019-10-13T00:00:00+08:00</updated><id>http://localhost:4000/life/2019/10/13/Mother-Teresa's-mottoes</id><content type="html" xml:base="http://localhost:4000/life/2019/10/13/Mother-Teresa's-mottoes.html">&lt;blockquote&gt;
   &lt;p&gt;&lt;em&gt;世界上只有一种英雄主义：看清了世界的真相还依然热爱它。&lt;/em&gt;&lt;/p&gt;
 
   &lt;p&gt;&lt;em&gt;—— &lt;a href=&quot;https://baike.baidu.com/item/%E7%BD%97%E6%9B%BC%C2%B7%E7%BD%97%E5%85%B0/802941?fromtitle=romain%20rolland&amp;amp;fromid=11156461&amp;amp;fr=aladdin&quot;&gt;罗曼·罗兰&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
@@ -279,33 +197,14 @@
 
 &lt;p&gt;Give the world the best you have, and you’ll get kicked in the teeth.&lt;br /&gt;Give the world the best you have anyway.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=07a58f505782b2b7b392319650c4a08a/d31b0ef41bd5ad6e7b2573be8fcb39dbb7fd3c81.jpg&quot; alt=&quot;Teresa-profile&quot; /&gt;&lt;/p&gt;
-
-</content>
-		</entry>
-	
-		<entry>
-			<title>从前有一只猫</title>
-			<link href="http://hankquinlan.github.io/life/2019/10/05/once-here-comes-a-cat.html"/>
-			<updated>2019-10-05T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/life/2019/10/05/once-here-comes-a-cat</id>
-			<content type="html">&lt;h1 id=&quot;楔子猫&quot;&gt;楔子：猫&lt;br /&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=07a58f505782b2b7b392319650c4a08a/d31b0ef41bd5ad6e7b2573be8fcb39dbb7fd3c81.jpg&quot; alt=&quot;Teresa-profile&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="特蕾莎" /><category term="加尔各答" /><summary type="html">世界上只有一种英雄主义：看清了世界的真相还依然热爱它。 —— 罗曼·罗兰 There is only one heroism in the world：to see the world as it is and to love it. —— Romain Rolland</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=3db62980352ac65c73086e219a9bd974/bba1cd11728b4710be23082cc3cec3fdfd0323c5.jpg" /></entry><entry><title type="html">从前有一只猫</title><link href="http://localhost:4000/life/2019/10/05/once-here-comes-a-cat.html" rel="alternate" type="text/html" title="从前有一只猫" /><published>2019-10-05T00:00:00+08:00</published><updated>2019-10-05T00:00:00+08:00</updated><id>http://localhost:4000/life/2019/10/05/once-here-comes-a-cat</id><content type="html" xml:base="http://localhost:4000/life/2019/10/05/once-here-comes-a-cat.html">&lt;h1 id=&quot;楔子猫&quot;&gt;楔子：猫&lt;br /&gt;&lt;/h1&gt;
 
 &lt;p&gt;从前有一只猫，它又可爱又可爱哭了。&lt;/p&gt;
 
 &lt;p&gt;与它初识是在一个阳光明媚的午后，它毛色如墨，冷冷地盯着我，就好像我偷了它的小鱼干似的，但它毕竟是一只小猫，我难道还不甘示弱地瞪回去？这个想法不错。
 于是我瞬间掐灭了这个好想法，笑嘻嘻地拿起自己的热脸贴上猫家的冷屁股，您别说，还挺带感。&lt;/p&gt;
 
-&lt;p&gt;很多年以后，当小年再次回想起那个遥远的下午，竟恍然不觉这简简单单的邂逅会碰撞出那么多故事……&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>Welcome To Jekyll 2</title>
-			<link href="http://hankquinlan.github.io/technology/2019/09/13/welcome-to-jekyll-2.html"/>
-			<updated>2019-09-13T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/technology/2019/09/13/welcome-to-jekyll 2</id>
-			<content type="html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.
+&lt;p&gt;很多年以后，当小年再次回想起那个遥远的下午，竟恍然不觉这简简单单的邂逅会碰撞出那么多故事……&lt;/p&gt;</content><author><name></name></author><category term="猫" /><category term="情感" /><summary type="html">楔子：猫</summary></entry><entry><title type="html">Welcome To Jekyll 2</title><link href="http://localhost:4000/technology/2019/09/13/welcome-to-jekyll-2.html" rel="alternate" type="text/html" title="Welcome To Jekyll 2" /><published>2019-09-13T00:00:00+08:00</published><updated>2019-09-13T00:00:00+08:00</updated><id>http://localhost:4000/technology/2019/09/13/welcome-to-jekyll%202</id><content type="html" xml:base="http://localhost:4000/technology/2019/09/13/welcome-to-jekyll-2.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.
 Jekyll requires blog post files to be named according to the following format:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;
 Where &lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
@@ -317,65 +216,7 @@ Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-		</entry>
-	
-		<entry>
-			<title>Welcome To Jekyll!</title>
-			<link href="http://hankquinlan.github.io/technology/2019/09/11/welcome-to-jekyll!.html"/>
-			<updated>2019-09-11T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/technology/2019/09/11/welcome-to-jekyll!</id>
-			<content type="html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.
-Jekyll requires blog post files to be named according to the following format:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;
-Where &lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-		</entry>
-	
-		<entry>
-			<title>Welcome To Jekyll 333</title>
-			<link href="http://hankquinlan.github.io/technology/2019/09/11/welcome-to-jekyll-333.html"/>
-			<updated>2019-09-11T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/technology/2019/09/11/welcome-to-jekyll 333</id>
-			<content type="html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Where &lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-		</entry>
-	
-		<entry>
-			<title>大文件内容对比多线程版本</title>
-			<link href="http://hankquinlan.github.io/technology/2019/09/11/big-file-compare-multithread.html"/>
-			<updated>2019-09-11T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/technology/2019/09/11/big-file-compare-multithread</id>
-			<content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Seattle" /><category term="Tacoma" /><category term="Spokane" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated. Jekyll requires blog post files to be named according to the following format: YEAR-MONTH-DAY-title.MARKUP Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and MARKUP is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works. Jekyll also offers powerful support for code snippets:</summary></entry><entry><title type="html">大文件内容对比多线程版本</title><link href="http://localhost:4000/technology/2019/09/11/big-file-compare-multithread.html" rel="alternate" type="text/html" title="大文件内容对比多线程版本" /><published>2019-09-11T00:00:00+08:00</published><updated>2019-09-11T00:00:00+08:00</updated><id>http://localhost:4000/technology/2019/09/11/big-file-compare-multithread</id><content type="html" xml:base="http://localhost:4000/technology/2019/09/11/big-file-compare-multithread.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#线程池&quot; id=&quot;markdown-toc-线程池&quot;&gt;线程池&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#线程池消费拆分任务&quot; id=&quot;markdown-toc-线程池消费拆分任务&quot;&gt;线程池消费拆分任务&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#线程池消费合并任务&quot; id=&quot;markdown-toc-线程池消费合并任务&quot;&gt;线程池消费合并任务&lt;/a&gt;&lt;/li&gt;
@@ -463,16 +304,35 @@ Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 &lt;p&gt;在拆分过程中，每个线程都要在内存中进行排序，
 在拆分和合并过程中，每个线程都要持有自己的读写缓冲区，这无疑会增大内存的使用量。&lt;/p&gt;
 
-&lt;p&gt;究竟消耗了多少内存，我们可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Java Mission Control&lt;/code&gt;来观察，jdk8的bin目录下&lt;code class=&quot;highlighter-rouge&quot;&gt;jmc.exe&lt;/code&gt;即为此工具。&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>基于Jekyll搭建个人博客</title>
-			<link href="http://hankquinlan.github.io/technology/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html"/>
-			<updated>2019-01-18T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/technology/2019/01/18/基于Jekyll搭建个人博客</id>
-			<content type="html">&lt;h2 id=&quot;引言&quot;&gt;引言&lt;/h2&gt;
+&lt;p&gt;究竟消耗了多少内存，我们可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Java Mission Control&lt;/code&gt;来观察，jdk8的bin目录下&lt;code class=&quot;highlighter-rouge&quot;&gt;jmc.exe&lt;/code&gt;即为此工具。&lt;/p&gt;</content><author><name></name></author><category term="Seattle" /><category term="kkk" /><category term="Spokane" /></entry><entry><title type="html">Welcome To Jekyll!</title><link href="http://localhost:4000/technology/2019/09/11/welcome-to-jekyll!.html" rel="alternate" type="text/html" title="Welcome To Jekyll!" /><published>2019-09-11T00:00:00+08:00</published><updated>2019-09-11T00:00:00+08:00</updated><id>http://localhost:4000/technology/2019/09/11/welcome-to-jekyll!</id><content type="html" xml:base="http://localhost:4000/technology/2019/09/11/welcome-to-jekyll!.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.
+Jekyll requires blog post files to be named according to the following format:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;
+Where &lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Seattle" /><category term="Tacoma" /><category term="Spokane" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated. Jekyll requires blog post files to be named according to the following format: YEAR-MONTH-DAY-title.MARKUP Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and MARKUP is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works. Jekyll also offers powerful support for code snippets:</summary></entry><entry><title type="html">Welcome To Jekyll 333</title><link href="http://localhost:4000/technology/2019/09/11/welcome-to-jekyll-333.html" rel="alternate" type="text/html" title="Welcome To Jekyll 333" /><published>2019-09-11T00:00:00+08:00</published><updated>2019-09-11T00:00:00+08:00</updated><id>http://localhost:4000/technology/2019/09/11/welcome-to-jekyll%20333</id><content type="html" xml:base="http://localhost:4000/technology/2019/09/11/welcome-to-jekyll-333.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Seattle" /><category term="kkk" /><category term="Spokane" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">基于Jekyll搭建个人博客</title><link href="http://localhost:4000/technology/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" rel="alternate" type="text/html" title="基于Jekyll搭建个人博客" /><published>2019-01-18T00:00:00+08:00</published><updated>2019-01-18T00:00:00+08:00</updated><id>http://localhost:4000/technology/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2</id><content type="html" xml:base="http://localhost:4000/technology/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">&lt;h2 id=&quot;引言&quot;&gt;引言&lt;/h2&gt;
 
 &lt;p&gt;最开始我是在&lt;a href=&quot;https://blog.csdn.net/w_weilan&quot;&gt;CSDN&lt;/a&gt;上写博客的。博客写了一年多，访问量勉强破万，感觉其中至少有三成是自己贡献的。而且CSDN上的广告是越来越多，网页编辑器也是越来越不好用。&lt;/p&gt;
 
@@ -724,176 +584,12 @@ Jekyll also offers powerful support for code snippets:&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/9f198d5779e6&quot;&gt;Jekyll + Github Pages 博客搭建入门&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/ds19991999/article/details/81516568&quot;&gt;Jekyll博客Next主题超深度配置&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/bb184f61c9ae&quot;&gt;【应用软件】Jekyll 配置&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>烂苹果（一）</title>
-			<link href="http://hankquinlan.github.io/fiction/2018/08/27/bad-apples-1.html"/>
-			<updated>2018-08-27T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/fiction/2018/08/27/bad-apples-1</id>
-			<content type="html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">引言</summary></entry><entry><title type="html">烂苹果（一）</title><link href="http://localhost:4000/fiction/2018/08/27/bad-apples-1.html" rel="alternate" type="text/html" title="烂苹果（一）" /><published>2018-08-27T00:00:00+08:00</published><updated>2018-08-27T00:00:00+08:00</updated><id>http://localhost:4000/fiction/2018/08/27/bad-apples-1</id><content type="html" xml:base="http://localhost:4000/fiction/2018/08/27/bad-apples-1.html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
 
 &lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
 the genus Malus. The tree originated in Central Asia, where its wild ancestor,
 Malus sieversii, is still found today. Apples have been grown for thousands of
 years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>Kiwifruit</title>
-			<link href="http://hankquinlan.github.io/life/2018/08/22/kiwifruit.html"/>
-			<updated>2018-08-22T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/life/2018/08/22/kiwifruit</id>
-			<content type="html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
+colonists.&lt;/p&gt;</content><author><name></name></author><category term="fruit" /><summary type="html">An apple is a sweet, edible fruit produced by an apple tree.</summary></entry><entry><title type="html">小说（一）</title><link href="http://localhost:4000/fiction/2018/08/22/fic-1.html" rel="alternate" type="text/html" title="小说（一）" /><published>2018-08-22T00:00:00+08:00</published><updated>2018-08-22T00:00:00+08:00</updated><id>http://localhost:4000/fiction/2018/08/22/fic-1</id><content type="html" xml:base="http://localhost:4000/fiction/2018/08/22/fic-1.html">&lt;p&gt;小说测试&lt;/p&gt;
 
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>Kiwifruit copy 4</title>
-			<link href="http://hankquinlan.github.io/life/2018/08/22/kiwifruit-copy-4.html"/>
-			<updated>2018-08-22T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/life/2018/08/22/kiwifruit copy 4</id>
-			<content type="html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
-
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>Kiwifruit copy 3</title>
-			<link href="http://hankquinlan.github.io/travel/2018/08/22/kiwifruit-copy-3.html"/>
-			<updated>2018-08-22T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/travel/2018/08/22/kiwifruit copy 3</id>
-			<content type="html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
-
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>Kiwifruit copy 2</title>
-			<link href="http://hankquinlan.github.io/travel/2018/08/22/kiwifruit-copy-2.html"/>
-			<updated>2018-08-22T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/travel/2018/08/22/kiwifruit copy 2</id>
-			<content type="html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
-
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>小说（二）</title>
-			<link href="http://hankquinlan.github.io/fiction/2018/08/22/fic-2.html"/>
-			<updated>2018-08-22T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/fiction/2018/08/22/fic-2</id>
-			<content type="html">&lt;p&gt;小说测试&lt;/p&gt;
-
-&lt;p&gt;一这是十个字的测试鸭二这是十个字的测试鸭三这是十个字的测试鸭四这是十个字的测试鸭五这是十个字的测试鸭六这是十个字的测试鸭七这是十个字的测试鸭八这是十个字的测试鸭九这是十个字的测试鸭十这是十个字的测试鸭11这是十个字的测试鸭12这是十个字的测试鸭13这是十个字的测试鸭14这是十个字的测试鸭15这是十个字的测试鸭16这是十个字的测试鸭17这是十个字的测试鸭&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>小说（一）</title>
-			<link href="http://hankquinlan.github.io/fiction/2018/08/22/fic-1.html"/>
-			<updated>2018-08-22T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/fiction/2018/08/22/fic-1</id>
-			<content type="html">&lt;p&gt;小说测试&lt;/p&gt;
-
-&lt;p&gt;一这是十个字的测试鸭二这是十个字的测试鸭三这是十个字的测试鸭四这是十个字的测试鸭五这是十个字的测试鸭六这是十个字的测试鸭七这是十个字的测试鸭八这是十个字的测试鸭九这是十个字的测试鸭十这是十个字的测试鸭11这是十个字的测试鸭12这是十个字的测试鸭13这是十个字的测试鸭14这是十个字的测试鸭15这是十个字的测试鸭16这是十个字的测试鸭17这是十个字的测试鸭&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>烂苹果</title>
-			<link href="http://hankquinlan.github.io/fiction/2018/08/21/bad-apples-3.html"/>
-			<updated>2018-08-21T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/fiction/2018/08/21/bad-apples-3</id>
-			<content type="html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
-
-&lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
-the genus Malus. The tree originated in Central Asia, where its wild ancestor,
-Malus sieversii, is still found today. Apples have been grown for thousands of
-years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>烂苹果</title>
-			<link href="http://hankquinlan.github.io/fiction/2018/08/21/bad-apples-2.html"/>
-			<updated>2018-08-21T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/fiction/2018/08/21/bad-apples-2</id>
-			<content type="html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
-
-&lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
-the genus Malus. The tree originated in Central Asia, where its wild ancestor,
-Malus sieversii, is still found today. Apples have been grown for thousands of
-years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;
-</content>
-		</entry>
-	
-
-</feed>
-
-    <div class="col-12 align-self-end" style="padding: 0;">
-      <footer class="footer">
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  <p>
-    Build with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> and <span class="love">❤</span>. Hosted at
-    Github.
-  </p>
-
-  <p>
-    <a href="https://github.com/burnian" target="_blank">&copy; Burnian Zhou</a>
-    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px"
-      src="https://ghbtns.com/github-btn.html?user=burnian&repo=burnian.github.io&type=star&count=true">
-    </iframe>
-  </p>
-
-  <div class="text-muted">
-    <span class="site-uv">
-      总人数：<i class="fa fa-user" aria-hidden="true"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-    &nbsp;|&nbsp;
-    <span class="site-pv">
-      总点击：<i class="fa fa-eye" aria-hidden="true"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  </div>
-
-</footer>
-
-    </div>
-  </section>
-</body>
-
-</html>
+&lt;p&gt;一这是十个字的测试鸭二这是十个字的测试鸭三这是十个字的测试鸭四这是十个字的测试鸭五这是十个字的测试鸭六这是十个字的测试鸭七这是十个字的测试鸭八这是十个字的测试鸭九这是十个字的测试鸭十这是十个字的测试鸭11这是十个字的测试鸭12这是十个字的测试鸭13这是十个字的测试鸭14这是十个字的测试鸭15这是十个字的测试鸭16这是十个字的测试鸭17这是十个字的测试鸭&lt;/p&gt;</content><author><name></name></author><category term="ficx" /><summary type="html">小说测试</summary></entry></feed>

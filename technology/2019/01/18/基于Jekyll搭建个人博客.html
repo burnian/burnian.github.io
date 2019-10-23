@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Burnian Zhou's Personal Blog Site">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Burnian's Blog</title>
+  <!-- <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Burnian's Blog" /> -->
+
+  <!-- baidu 流量统计 -->
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c57108b7c22e5eaa9ffdb21d134955b7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+</head>
+
+<!-- 复制到剪贴板 -->
+<script src="//cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap依赖的弹出框工具类 -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- github上找的缓动页面滚动效果 -->
+<script src="//cdn.jsdelivr.net/npm/sweet-scroll@4.0.0/sweet-scroll.min.js"></script>
+<!-- 粒子效果 -->
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- 我的js -->
+<script src="/assets/js/main.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="shortcut icon" type="image/png" href="/assets/img/burnian_logo.png">
+<!-- 我的样式 -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<body>
+  <div id="particles-js" url="/technology/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">
+  <div class="header">
+    <h1>
+      <span class="site-title">Burnian Zhou</span>
+      <span class="site-description">Indie Game Developer</span>
+      <span class="site-subdesc">I'm a nomad Indie Game Developer, always searching for the next challenge and beauty of idea.</span>
+    </h1>
+
+    <div class="header-icons">
+      <span id="email" aria-label="Email" data-toggle="modal" data-target="#ModalCenter"><i
+          class="icon fa fa-envelope" aria-hidden="true"></i></span>
+      <span id="qq" aria-label="QQ" data-toggle="modal" data-target="#ModalCenter"><i class="icon fa fa-qq"
+          aria-hidden="true"></i></span>
+      <span id="wechat" aria-label="Wechat" data-toggle="modal" data-target="#ModalCenter"><i
+          class="icon fa fa-wechat" aria-hidden="true"></i></span>
+      <a id="linkedin" aria-label="LinkedIn" target="_blank" href="https://www.linkedin.com/feed/"><i class="icon fa fa-linkedin"
+          aria-hidden="true"></i></a>
+      <a id="github" aria-label="Github" target="_blank" href="https://github.com/burnian"><i class="icon fa fa-github-alt"
+          aria-hidden="true"></i></a>
+    </div>
+
+  </div>
+  <a class="down" href="#bnavbar" name="hidedown" data-scroll><i class="icon fa fa-chevron-down"
+      aria-hidden="true"></i></a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title" id="ModalCenterTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="font-size: 1.5rem;">
+        <input id="ModalCenterContent" style="width:100%; height:100%;">
+      </div>
+      <div class="modal-footer">
+        <button id="btn-copy" type="button" class="btn btn-primary"
+          data-clipboard-target="#ModalCenterContent">保存到剪贴板</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#ModalCenter').on('show.bs.modal', function (e) {
+    console.log(e.relatedTarget.title)
+    var title = ""
+    var content = ""
+    if (e.relatedTarget.id == "email") {
+      title = "电子邮件"
+      content = "burnian@qq.com"
+    }
+    else if (e.relatedTarget.id == "qq") {
+      title = "QQ"
+      content = "791829698"
+    }
+    else if (e.relatedTarget.id == "wechat") {
+      title = "微信"
+      content = "burnian"
+    }
+    $("#ModalCenterTitle").text("Burnian的" + title)
+    $("#ModalCenterContent").val(content)
+  })
+
+  var clipboard = new ClipboardJS('#btn-copy');
+  clipboard.on('success', function (e) {
+    // console.info('Action:', e.action);
+    // console.info('Text:', e.text);
+    // console.info('Trigger:', e.trigger);
+    e.clearSelection();
+  });
+</script>
+  <nav id="bnavbar" class="navbar navbar-expand-md navbar-dark sticky-top">
+  <img class="brand-image" src="/assets/img/burnian_logo.png"></img>
+  <div class="navbar-brand">Burnian Zhou</div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+
+      
+      
+      <li id="navbar-blog" class="nav-item">
+        <a class="nav-link bnav-font" href="http://localhost:4000/#bnavbar">
+          
+          博客
+          
+        </a>
+      </li>
+      
+      
+      
+      <li id="navbar-gallery" class="nav-item">
+        <a class="nav-link bnav-font" href="http://localhost:4000/pages/gallery/#bnavbar">
+          
+          画廊
+          
+        </a>
+      </li>
+      
+      
+
+      <li id="navbar-categories" class="nav-item dropdown" style="font-size: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          
+          文章类目
+          
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          
+          
+          
+          <a class="dropdown-item" href="/pages/fiction/">
+            
+            小说
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">5</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/travel/">
+            
+            旅行
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">2</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/life/">
+            
+            生活
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">5</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/technology/">
+            
+            技术
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">5</i></a>
+          
+          
+          <!-- <div class="dropdown-divider"></div> -->
+        </div>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+  </div>
+</nav>
+  <section id="bcontent" class="container-fluid">
+    <div class="row justify-content-center">
+  <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-6 col-xxxl-5 intimate">
+    <!-- 正文 -->
+    <div class="sheet post">
+      <header>
+        <h2>基于Jekyll搭建个人博客</h2>
+        <p class="post-meta">
+          <i class="fa fa-user"></i>
+          Burnian Zhou&nbsp;&nbsp;
+          <i class="fa fa-calendar"></i> 2019年01月18日&nbsp;&nbsp;
+          <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
+        </p>
+        <p class="post-tag">
+          
+        </p>
+      </header>
+      <hr class="boundary">
+      <article>
+        <h2 id="引言">引言</h2>
+
+<p>最开始我是在<a href="https://blog.csdn.net/w_weilan">CSDN</a>上写博客的。博客写了一年多，访问量勉强破万，感觉其中至少有三成是自己贡献的。而且CSDN上的广告是越来越多，网页编辑器也是越来越不好用。</p>
+
+<p>十一月份，在青岛的ICPC区域赛失利之后，想要重新开始，和过去告别。也从此转移自己写博客的阵地。考虑过转投暂时还比较干净而且可以部分定义页面的<a href="https://www.cnblogs.com/wu-kan/">博客园</a>，但是最终还是决定在<a href="https://pages.github.com/">Github Pages</a>上搭建属于自己的博客。</p>
+
+<p>然后，翻了一些网上的教程，用<a href="https://hexo.io/zh-cn/">Hexo</a>框架和<a href="https://github.com/theme-next/hexo-theme-next">NexT</a>主题搭了一个比较素雅的符合个人审美的博客。然而，Hexo搭建的博客需要先在本地生成博客页面然后再上传到服务器上，每次发博客都需要在电脑重新生成页面并上传，感觉没有那么方便。在不同电脑上想要发博客更是十分困难，感觉如果胡乱操作后本地部署的文件发生了一定的错乱，恢复起来会十分麻烦。</p>
+
+<p>后来发现，Github Pages原生支持<a href="https://www.jekyll.com.cn/">Jekyll</a>，因此如果只需要推送文章可以直接在github的仓库里做。于是决定在期末考试后用Jekyll重新搭建个人博客。原来的博客不再维护。</p>
+
+<h2 id="构思">构思</h2>
+
+<p>目前博客的demo如下：</p>
+
+<p><img src="/public/image/2019-01-18-1.jpg" alt="demo1" /></p>
+
+<p><img src="/public/image/2019-01-18-2.jpg" alt="demo2" /></p>
+
+<p>想搭建一个足够干净、页面几乎不要有多余元素的博客，同时博客的功能还要足够丰富，满足我以下的需求：</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />用Markdown写博客</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />支持Latex公式</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />支持mermaid等插件</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />个性化Live2D</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />分享一些我在其他网站的个人账号</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />移动端适配</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />足够快的加载速度</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />访问量统计，评论互动</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />……（需求是会逐渐增长的，参见<a href="https://wu-kan.github.io/about">关于</a>）</li>
+</ul>
+
+<p>其中，Live2D是我某次访问别人的博客初次见到的，感觉非常吸引人。最终的目标是去掉网页上所有多余的元素，只剩下博文和Live2D看板娘，看板娘本身还可以作为博客访问的导航，感觉会十分有新意。</p>
+
+<h2 id="搭建过程不定期更新">搭建过程（不定期更新）</h2>
+
+<p>我目前读的专业是计科超算方向，所以软件工程专业相关方面的基础几乎为0😌，大部分的内容都是参考网上教程慢慢摸索的，假如对某些过程有意见和建议欢迎向我提出！</p>
+
+<h3 id="开发环境">开发环境</h3>
+
+<p>这个学期选了一门Linux相关的公选课，感觉还不错，因此直接把开发环境是搭建在Windows Subsystem for Linux（简称WSL）上了，Windows下也可以直接访问其中的环境，详见<a href="https://wu-kan.github.io/posts/linux/Windows-Subsystem-for-Linux">这篇博客</a>。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>jekyll
+</code></pre></div></div>
+
+<p>Jekyll是基于Ruby和Node.js环境的，很多依赖的包也会同时安装进来。现在，找在目录下打开终端，运行如下代码，加入新建了一个名为<code class="highlighter-rouge">blog</code>的文件夹，则说明安装成功了。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new blog
+</code></pre></div></div>
+
+<h3 id="结构解析">结构解析</h3>
+
+<p>观察刚刚生成的博客目录，有如下的结构：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├──_config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _site
+├── .jekyll-metadata
+└── index.html
+</code></pre></div></div>
+
+<p>它的结构还算是比较简单清晰，详细功能如下表。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>文件/目录</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_config.yml</td>
+      <td>保存配置数据。很多配置选项都可以直接在命令行中进行设置，但是如果把那些配置写在这儿，就不用非要去记住那些命令了。</td>
+    </tr>
+    <tr>
+      <td>_drafts</td>
+      <td>drafts（草稿）是未发布的文章。这些文件的格式中都没有 title.MARKUP 数据。学习如何使用草稿。</td>
+    </tr>
+    <tr>
+      <td>_includes</td>
+      <td>可以加载这些包含部分到的布局或者文章中以方便重用。</td>
+    </tr>
+    <tr>
+      <td>_layouts</td>
+      <td>layouts（布局）是包裹在文章外部的模板。布局可以在 YAML 头信息中根据不同文章进行选择</td>
+    </tr>
+    <tr>
+      <td>_posts</td>
+      <td>这里放的就是的文章了。文件格式很重要，必须要符合:YEAR-MONTH-DAY-title.MARKUP。 永久链接 可以在文章中自己定制，但是数据和标记语言都是根据文件名来确定的。</td>
+    </tr>
+    <tr>
+      <td>_data</td>
+      <td>格式化好的网站数据应放在这里。jekyll 的引擎会自动加载在该目录下所有的 yaml 文件（后缀是 .yml, .yaml, .json 或者 .csv ）。这些文件可以经由 ｀site.data｀ 访问。如果有一个 members.yml 文件在该目录下，就可以通过 site.data.members 获取该文件的内容。</td>
+    </tr>
+    <tr>
+      <td>_site</td>
+      <td>一旦 Jekyll 完成转换，就会将生成的页面放在这里（默认）。最好将这个目录放进 .gitignore 文件中。</td>
+    </tr>
+    <tr>
+      <td>.jekyll-metadata</td>
+      <td>该文件帮助 Jekyll 跟踪哪些文件从上次建立站点开始到现在没有被修改，哪些文件需要在下一次站点建立时重新生成。该文件不会被包含在生成的站点中。将它加入到 .gitignore 文件可能是一个好注意。</td>
+    </tr>
+    <tr>
+      <td>index.html and other HTML, Markdown, Textile files</td>
+      <td>如果这些文件中包含 YAML 头信息 部分，Jekyll 就会自动将它们进行转换。当然，其他的如 .html, .markdown, .md, 或者 .textile 等在的站点根目录下或者不是以上提到的目录中的文件也会被转换。</td>
+    </tr>
+    <tr>
+      <td>Other Files/Folders</td>
+      <td>其他一些未被提及的目录和文件如 css 还有 images 文件夹， favicon.ico 等文件都将被完全拷贝到生成的 site 中。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="选取模板">选取模板</h3>
+
+<p>和丰富精美的Hexo比起来，好的Jekyll模板真的是太少了…经过漫长时间的挑选，最终选择在<a href="https://github.com/poole/lanyon">lanyon</a>主题的基础上修改啦。</p>
+
+<p>这里选我自己的博客为模板，也可以在GitHub上慢慢翻一些别人的博客或模板。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/wu-kan/wu-kan.github.io YourBlog
+</code></pre></div></div>
+
+<h3 id="发送到github托管">发送到Github托管</h3>
+
+<p>把本地文件修改后，上传到博客仓库的<code class="highlighter-rouge">master</code>或者<code class="highlighter-rouge">gh-pages</code>分支即可。</p>
+
+<h3 id="定制">定制</h3>
+
+<blockquote>
+  <p>Update: 注意！以下移植插件的办法即将/已经过时。目前的计划（v2.3.0）是，将所有插件做成jsloader的形式，这样引用的时候只要<code class="highlighter-rouge">&lt;script src='/public/js/x.js'&gt;&lt;/script&gt;</code>即可，可以加快页面访问速度。目前的计划是<strong>完全</strong>去掉<code class="highlighter-rouge">_include/</code>目录下的所有文件。</p>
+</blockquote>
+
+<p>我把博客实现的的插件基本上都封装起来了，拿走的流程都差不多：</p>
+
+<ul>
+  <li>将我博客代码仓库下<code class="highlighter-rouge">_includes\</code>相关文件加入你自己的<code class="highlighter-rouge">_includes</code></li>
+  <li>在你的<code class="highlighter-rouge">_config.yml</code>内加入相关配置项（如果有的话，可以参看我的）</li>
+  <li>最后在需要这个插件的地方加入<code class="highlighter-rouge">include语句</code>即可</li>
+</ul>
+
+<h4 id="加入live2d看板娘">加入Live2D看板娘</h4>
+
+<p>参考<a href="https://www.fghrsh.net/post/123.html">网页添加 Live2D 看板娘</a>。</p>
+
+<p>已经将相关代码封装，将我博客代码仓库下<code class="highlighter-rouge">_includes\live2d.html</code>加入你自己的<code class="highlighter-rouge">_includes</code>，在<code class="highlighter-rouge">&lt;/body&gt;</code>标签前加入如下代码。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include live2d.html %}
+</code></pre></div></div>
+
+<p>随后在你的<code class="highlighter-rouge">_config.yml</code>内加入如下配置项：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">live2d</span><span class="pi">:</span>
+  <span class="na">enable</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">live2d_settings</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">'waifuEdgeSide'"</span>
+      <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">'right:0'"</span>
+    <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">'modelId'"</span>
+      <span class="na">value</span><span class="pi">:</span> <span class="m">5</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Live2D的前端基于<a href="https://github.com/fghrsh/live2d_demo">fghrsh/live2d_demo</a>修改，感谢。</li>
+  <li>Live2D的后端暂时使用了<a href="https://www.fghrsh.net/post/170.html">fghrsh</a>提供的api，感谢。</li>
+</ul>
+
+<h4 id="数学公式渲染">数学公式渲染</h4>
+
+<p>这里选择速度更快的KaTeX来渲染，参考<a href="https://www.jianshu.com/p/f2b28954d902">使用KaTeX代替MathJax渲染公式</a>。</p>
+
+<p>已经将相关代码封装，将我博客代码仓库下<code class="highlighter-rouge">_includes\katex.html</code>加入你自己的<code class="highlighter-rouge">_includes</code>，在<code class="highlighter-rouge">&lt;/body&gt;</code>标签前加入如下代码。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include katex.html %}
+</code></pre></div></div>
+
+<p>随后在你的<code class="highlighter-rouge">_config.yml</code>内加入如下配置项：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">katex</span><span class="pi">:</span> <span class="c1"># KaTeX</span>
+  <span class="na">enable</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">stylesheet</span><span class="pi">:</span> <span class="s">//unpkg.com/katex/dist/katex.min.css</span>
+  <span class="na">src</span><span class="pi">:</span> <span class="s">//unpkg.com/katex/dist/katex.min.js</span>
+  <span class="na">auto-render</span><span class="pi">:</span> <span class="s">//unpkg.com/katex/dist/contrib/auto-render.min.js</span>
+  <span class="na">delimiters</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># 开启行内公式$\KaTeX$支持</span>
+</code></pre></div></div>
+
+<h4 id="mermaid流程图">mermaid流程图</h4>
+
+<p>已经将相关代码封装，将我博客代码仓库下<code class="highlighter-rouge">_includes\mermaid.html</code>加入你自己的<code class="highlighter-rouge">_includes</code>，在<code class="highlighter-rouge">&lt;/body&gt;</code>标签前加入如下代码。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include mermaid.html %}
+</code></pre></div></div>
+
+<p>随后在你的<code class="highlighter-rouge">_config.yml</code>内加入如下配置项：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mermaid</span><span class="pi">:</span> <span class="c1"># https://github.com/knsv/mermaid</span>
+  <span class="na">enable</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">src</span><span class="pi">:</span> <span class="s">//unpkg.com/mermaid/dist/mermaid.min.js</span>
+  <span class="na">stylesheet</span><span class="pi">:</span> <span class="s">//unpkg.com/mermaid/dist/mermaid.min.css</span>
+  <span class="na">markdown-expand</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<h4 id="valine评论系统">valine评论系统</h4>
+
+<p>配置详见<a href="https://valine.js.org/">官方手册</a>，说得很清楚了。</p>
+
+<p>已经将相关代码封装，将我博客代码仓库下<code class="highlighter-rouge">_includes\valine.html</code>加入你自己的<code class="highlighter-rouge">_includes</code>，在你需要评论模块的地方加入如下代码。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include valine.html %}
+</code></pre></div></div>
+
+<p>随后在你的<code class="highlighter-rouge">_config.yml</code>内加入如下配置项（这是我的，请根据官方手册上的说明获取自己的参数）：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">valine</span><span class="pi">:</span>
+  <span class="na">enable</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">src</span><span class="pi">:</span> <span class="s">//unpkg.com/valine/dist/Valine.min.js</span>
+  <span class="na">appId</span><span class="pi">:</span> <span class="err">******</span>
+  <span class="na">appKey</span><span class="pi">:</span> <span class="err">******</span>
+  <span class="na">notify</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># 评论回复邮件提醒</span>
+  <span class="na">verify</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># 验证码服务</span>
+  <span class="na">avatar</span><span class="pi">:</span> <span class="s">identicon</span>
+  <span class="na">placeholder</span><span class="pi">:</span> <span class="s">在这里评论吧！</span>
+  <span class="na">visitor</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># 文章访问量统计</span>
+  <span class="na">highlight</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># 代码高亮</span>
+  <span class="na">avatarForce</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># 每次访问强制拉取最新的评论列表头像</span>
+  <span class="na">recordIP</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># 记录评论者IP</span>
+</code></pre></div></div>
+
+<h2 id="下一步计划">下一步计划</h2>
+
+<p>详细的开发计划及建站内容详见<a href="https://wu-kan.github.io/about">博客详情页</a>。</p>
+
+<p>从<a href="https://magical-girl.site/">这个页面</a>得到的灵感，目标是博客上除了文章和作为导航的Live2D之外不出现其他的模块，尽量的干净、快速。</p>
+
+<h2 id="参考资料">参考资料</h2>
+
+<p>大部分的参考链接已在原文给出，同时搭建本博客的过程中还参考了以下内容，感谢作者们：</p>
+
+<ul>
+  <li><a href="https://www.jianshu.com/p/9f198d5779e6">Jekyll + Github Pages 博客搭建入门</a></li>
+  <li><a href="https://blog.csdn.net/ds19991999/article/details/81516568">Jekyll博客Next主题超深度配置</a></li>
+  <li><a href="https://www.jianshu.com/p/bb184f61c9ae">【应用软件】Jekyll 配置</a></li>
+</ul>
+
+      </article>
+      <hr class="boundary">
+    </div>
+    <!-- 上下页按钮 -->
+    <div class="row switch-card">
+      <div class="col" style="padding-left: 0;">
+        
+        <a class="card" href="http://localhost:4000/fiction/2018/08/27/bad-apples-1.html">
+          <h4 class="text-muted">上一篇</h4>
+          <p></p>
+          <h4>烂苹果（一）</h4>
+        </a>
+        
+      </div>
+
+      <div class="col" style="padding-right: 0;">
+        
+        <a class="card" href="http://localhost:4000/technology/2019/09/11/big-file-compare-multithread.html">
+          <h4 class="text-muted">下一篇</h4>
+          <p></p>
+          <h4>大文件内容对比多线程版本</h4>
+        </a>
+        
+      </div>
+    </div>
+    <!-- 评论 -->
+    
+    <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+  console.log("gitalk.id=", location.pathname)
+
+  const gitalk = new Gitalk({
+    clientID: 'afe4f8097c6fe10c9d56',
+    clientSecret: '40c07771aea5a0e884004decb8a639797fbd86b1',
+    repo: 'burnian.github.io',
+    owner: 'burnian',
+    admin: ['burnian'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+  console.log('gitalk over')
+</script>
+    
+    <!-- 点赞 -->
+    <!-- 统计 -->
+  </div>
+</div>
+  </section>
+  <footer class="footer">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p>
+    Build with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> and <span class="love">❤</span>. Hosted at
+    Github.
+  </p>
+
+  <p>
+    <a href="https://github.com/burnian" target="_blank">&copy; Burnian Zhou</a>
+    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px"
+      src="https://ghbtns.com/github-btn.html?user=burnian&repo=burnian.github.io&type=star&count=true">
+    </iframe>
+  </p>
+
+  <div class="text-muted">
+    <span class="site-uv">
+      总人数：<i class="fa fa-user" aria-hidden="true"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    &nbsp;|&nbsp;
+    <span class="site-pv">
+      总点击：<i class="fa fa-eye" aria-hidden="true"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+
+</footer>
+
+  <!-- live2d -->
+  <script src="/assets/js/autoload.js"></script>
+</body>
+
+</html>

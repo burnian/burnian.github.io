@@ -1,20 +1,172 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for post in site.posts %}
+    
     <url>
-        <loc>http://jmcglone.com{{ post.url | remove: 'index.html' }}</loc>
+        <loc>http://jmcglone.com/life/2019/10/22/lixigui-talk-about-edu.html</loc>
     </url>
-    {% endfor %}
+    
+    <url>
+        <loc>http://jmcglone.com/life/2019/10/13/Mother-Teresa's-mottoes.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/life/2019/10/05/once-here-comes-a-cat.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/technology/2019/09/13/welcome-to-jekyll-2.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/technology/2019/09/11/welcome-to-jekyll!.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/technology/2019/09/11/welcome-to-jekyll-333.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/technology/2019/09/11/big-file-compare-multithread.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/technology/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/fiction/2018/08/27/bad-apples-1.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/life/2018/08/22/kiwifruit.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/life/2018/08/22/kiwifruit-copy-4.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/travel/2018/08/22/kiwifruit-copy-3.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/travel/2018/08/22/kiwifruit-copy-2.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/fiction/2018/08/22/fic-2.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/fiction/2018/08/22/fic-1.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/fiction/2018/08/21/bad-apples-3.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/fiction/2018/08/21/bad-apples-2.html</loc>
+    </url>
+    
 
-    {% for page in site.pages %}
-    {% if page.layout != nil %}
-    {% if page.layout != 'feed' %}
+    
+    
+    
     <url>
-        <loc>http://jmcglone.com{{ page.url | remove: 'index.html' }}</loc>
+        <loc>http://jmcglone.com/404.html</loc>
     </url>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/atom.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/pages/gallery/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/</loc>
+    </url>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/pages/2/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/pages/3/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/pages/4/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/pages/fiction/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/pages/travel/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/pages/life/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/pages/technology/</loc>
+    </url>
+    
+    
+    
+    
+    
+    
+    
 </urlset>
