@@ -9,7 +9,7 @@
     content="Burnian Zhou's Personal Blog Site">
   <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
   <title>Burnian's Blog</title>
-  <!-- <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Burnian's Blog" /> -->
+  <link type="application/atom+xml" rel="alternate" href="https://burnian.github.io/feed.xml" title="Burnian's Blog" />
 
   <!-- baidu 流量统计 -->
   
@@ -57,7 +57,7 @@
 	<title>Hank Quinlan's Blog</title>
 	<link href="http://hankquinlan.github.io/blog/atom.xml" rel="self"/>
 	<link href="http://hankquinlan.github.io/blog"/>
-	<updated>2019-10-24T00:59:20+08:00</updated>
+	<updated>2019-10-24T01:37:02+08:00</updated>
 	<id>http://hankquinlan.github.io/blog</id>
 	<author>
 		<name>Hank Quinlan</name>
