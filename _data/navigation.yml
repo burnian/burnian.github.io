@@ -1,6 +1,6 @@
-- name: Blog
+- id: navbar-blog
+  name: Blog
   link: /#bnavbar
-  id: navbar-blog
-- name: Gallery
-  link: /pages/gallery.html
-  id: navbar-gallery
+- id: navbar-gallery
+  name: Gallery
+  link: /pages/gallery/#bnavbar

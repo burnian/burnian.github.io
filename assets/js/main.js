@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var path = "/assets/particles.json"
   if (header.attr("url") != "/") {
-    path = "/../assets/particles.json"
+    path = "/../../assets/particles.json"
   }
 
   /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
