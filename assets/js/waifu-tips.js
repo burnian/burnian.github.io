@@ -103,7 +103,7 @@ function loadWidget(waifuPath, apiPath) {
 		hitokotoTimer = null,
 		messageTimer = null,
 		messageArray = ["好久不见啦~", "坏蛋，不陪我玩儿的大坏蛋！哼~", "嗨～一起来玩儿吧！", "小拳拳锤你胸口！"];
-	if ($(".fa-share-alt").is(":hidden")) messageArray.push("记得把小家加入Adblock白名单哦！");
+	if ($(".fa-share-alt").is(":hidden")) messageArray.push("记得把人家加入Adblock白名单哦！");
 	$(document).mousemove(() => {
 		userAction = true;
 	}).keydown(() => {
@@ -120,10 +120,9 @@ function loadWidget(waifuPath, apiPath) {
 	}, 1000);
 
 	function showHitokoto() {
-		if (Math.random() < 0.6 && messageArray.length > 0) showMessage(messageArray[Math.floor(Math.random() * messageArray.length)], 6000, 9);
-		else $.getJSON("/assets/motto.json", function(result) {
+		$.getJSON("/assets/motto.json", function(result) {
 			showMessage(result.text[Math.floor(Math.random() * result.text.length)], 6000, 9);
-		});
+		})
 	}
 
 	function showMessage(text, timeout, priority) {
