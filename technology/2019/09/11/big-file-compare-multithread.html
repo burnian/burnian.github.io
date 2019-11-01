@@ -141,7 +141,7 @@
     e.clearSelection();
   });
 </script>
-  <nav id="bnavbar" class="navbar navbar-expand-md navbar-dark sticky-top">
+  <nav id="bnavbar" class="navbar navbar-expand-md navbar-dark">
   <img class="brand-image" src="/assets/img/burnian_logo.png"></img>
   <div class="navbar-brand">Burnian Zhou</div>
 
@@ -197,16 +197,6 @@
           
           
           
-          <a class="dropdown-item" href="/pages/life/">
-            
-            生活
-            
-            <i class="badge badge-pill badge-secondary"
-              style="float: right;margin-top: 3px;">5</i></a>
-          
-          
-          
-          
           <a class="dropdown-item" href="/pages/travel/">
             
             旅行
@@ -222,7 +212,27 @@
             技术
             
             <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">2</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/life/">
+            
+            生活
+            
+            <i class="badge badge-pill badge-secondary"
               style="float: right;margin-top: 3px;">3</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/tutorial/">
+            
+            教程
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">2</i></a>
           
           
           <!-- <div class="dropdown-divider"></div> -->
@@ -232,7 +242,6 @@
 
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 
   </div>
@@ -246,8 +255,8 @@
         <h2>大文件内容对比多线程版本</h2>
         <p class="post-meta">
           <i class="fa fa-user"></i>
-          Burnian Zhou&nbsp;&nbsp;
-          <i class="fa fa-calendar"></i> 2019年09月11日&nbsp;&nbsp;
+          Burnian Zhou&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-calendar"></i> 2019年09月11日&nbsp;&nbsp;&nbsp;
           <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
         </p>
         <p class="post-tag">
@@ -279,15 +288,43 @@
 
 <h1 id="线程池">线程池</h1>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="o">.</span><span class="na">threadPoolExecutor</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadPoolExecutor</span><span class="o">(</span><span class="mi">8</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">10L</span><span class="o">,</span> <span class="nc">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">,</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="k">this</span><span class="o">.</span><span class="na">threadPoolExecutor</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadPoolExecutor</span><span class="o">(</span><span class="mi">8</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">10L</span><span class="o">,</span> <span class="nc">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">,</span>
     <span class="k">new</span> <span class="nc">LinkedBlockingQueue</span><span class="o">&lt;&gt;(</span><span class="mi">8</span><span class="o">),</span>
     <span class="k">new</span> <span class="nf">CustomizableThreadFactory</span><span class="o">(</span><span class="s">"fileSorterTPE-"</span><span class="o">),</span>
     <span class="k">new</span> <span class="nc">ThreadPoolExecutor</span><span class="o">.</span><span class="na">CallerRunsPolicy</span><span class="o">());</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h1 id="线程池消费拆分任务">线程池消费拆分任务</h1>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Future</span><span class="o">&lt;</span><span class="nc">Chunk</span><span class="o">&gt;&gt;</span> <span class="n">splitFutureList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span><span class="c1">// this is just a block of testing code.</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="code"><pre><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Future</span><span class="o">&lt;</span><span class="nc">Chunk</span><span class="o">&gt;&gt;</span> <span class="n">splitFutureList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span><span class="c1">// this is just a block of testing code.</span>
 <span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">){</span>
     <span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
     <span class="k">if</span><span class="o">(</span><span class="n">line</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
@@ -311,11 +348,31 @@
     <span class="o">}</span>
 <span class="o">}</span>
 <span class="n">chunkList</span> <span class="o">=</span> <span class="n">splitFutureList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="k">this</span><span class="o">::</span><span class="n">get</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h1 id="线程池消费合并任务">线程池消费合并任务</h1>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">currentLevel</span> <span class="o">=</span> <span class="no">INITIAL_CHUNK_LEVEL</span><span class="o">;</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre><span class="kt">int</span> <span class="n">currentLevel</span> <span class="o">=</span> <span class="no">INITIAL_CHUNK_LEVEL</span><span class="o">;</span>
 <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Future</span><span class="o">&lt;</span><span class="nc">Chunk</span><span class="o">&gt;&gt;</span> <span class="n">mergeFutureList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
 <span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">//从队列中获取一组chunk</span>
@@ -335,7 +392,7 @@
     <span class="nc">Future</span><span class="o">&lt;</span><span class="nc">Chunk</span><span class="o">&gt;</span> <span class="n">chunk</span> <span class="o">=</span> <span class="n">threadPoolExecutor</span><span class="o">.</span><span class="na">submit</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">merge</span><span class="o">(</span><span class="n">pollChunks</span><span class="o">,</span> <span class="n">original</span><span class="o">));</span>
     <span class="n">mergeFutureList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">chunk</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>可以看到合并任务与拆分任务有些不同，拆分任务是在循环退出后才执行<code class="highlighter-rouge">Future.get</code>，因为拆分不用考虑先后；
 而合并任务在每次获取当前阶段的chunk结束时执行<code class="highlighter-rouge">Future.get</code>，这样才能避免不同的阶段之间产生混乱。</p>
@@ -369,10 +426,10 @@
 
       <div class="col" style="padding-right: 0;">
         
-        <a class="card" href="https://burnian.github.io/technology/2019/09/11/welcome-to-jekyll!.html">
+        <a class="card" href="https://burnian.github.io/life/2019/10/05/once-here-comes-a-cat.html">
           <h4 class="text-muted">下一篇</h4>
           <p></p>
-          <h4>Welcome To Jekyll!</h4>
+          <h4>从前有一只猫</h4>
         </a>
         
       </div>

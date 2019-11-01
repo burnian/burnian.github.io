@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="这一章我们将要学习的是如何把本地代码部署到网站托管平台GitHub上去。">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Burnian's Blog</title>
+  <link type="application/atom+xml" rel="alternate" href="https://burnian.github.io/feed.xml" title="Burnian's Blog" />
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>（二）从零开始搭建个人静态博客网站 | Burnian’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="（二）从零开始搭建个人静态博客网站" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="这一章我们将要学习的是如何把本地代码部署到网站托管平台GitHub上去。" />
+<meta property="og:description" content="这一章我们将要学习的是如何把本地代码部署到网站托管平台GitHub上去。" />
+<link rel="canonical" href="https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html" />
+<meta property="og:url" content="https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html" />
+<meta property="og:site_name" content="Burnian’s Blog" />
+<meta property="og:image" content="http://pzn1a9240.bkt.clouddn.com/cover.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-10-31T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html","headline":"（二）从零开始搭建个人静态博客网站","dateModified":"2019-10-31T00:00:00+08:00","datePublished":"2019-10-31T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html"},"image":"http://pzn1a9240.bkt.clouddn.com/cover.jpg","description":"这一章我们将要学习的是如何把本地代码部署到网站托管平台GitHub上去。","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!-- baidu 流量统计 -->
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c57108b7c22e5eaa9ffdb21d134955b7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+</head>
+
+<!-- 复制到剪贴板 -->
+<script src="//cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap依赖的弹出框工具类 -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- github上找的缓动页面滚动效果 -->
+<script src="//cdn.jsdelivr.net/npm/sweet-scroll@4.0.0/sweet-scroll.min.js"></script>
+<!-- 粒子效果 -->
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- 我的js -->
+<script src="/assets/js/main.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="shortcut icon" type="image/png" href="/assets/img/burnian_logo.png">
+<!-- 我的样式 -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<body>
+  <div id="particles-js" url="/tutorial/2019/10/31/build-personal-website-2.html">
+  <div class="header">
+    <h1>
+      <span class="site-title">Burnian Zhou</span>
+      <span class="site-description">Indie Game Developer</span>
+      <span class="site-subdesc">I'm a nomad Indie Game Developer, always searching for the next challenge and beauty of idea.</span>
+    </h1>
+
+    <div class="header-icons">
+      <span id="email" aria-label="Email" data-toggle="modal" data-target="#ModalCenter"><i
+          class="icon fa fa-envelope" aria-hidden="true"></i></span>
+      <span id="qq" aria-label="QQ" data-toggle="modal" data-target="#ModalCenter"><i class="icon fa fa-qq"
+          aria-hidden="true"></i></span>
+      <span id="wechat" aria-label="Wechat" data-toggle="modal" data-target="#ModalCenter"><i
+          class="icon fa fa-wechat" aria-hidden="true"></i></span>
+      <a id="linkedin" aria-label="LinkedIn" target="_blank" href="https://www.linkedin.com/feed/"><i class="icon fa fa-linkedin"
+          aria-hidden="true"></i></a>
+      <a id="github" aria-label="Github" target="_blank" href="https://github.com/burnian"><i class="icon fa fa-github-alt"
+          aria-hidden="true"></i></a>
+    </div>
+
+  </div>
+  <a class="down" href="#bnavbar" name="hidedown" data-scroll><i class="icon fa fa-chevron-down"
+      aria-hidden="true"></i></a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title" id="ModalCenterTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="font-size: 1.5rem;">
+        <input id="ModalCenterContent" style="width:100%; height:100%;">
+      </div>
+      <div class="modal-footer">
+        <button id="btn-copy" type="button" class="btn btn-primary"
+          data-clipboard-target="#ModalCenterContent">保存到剪贴板</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#ModalCenter').on('show.bs.modal', function (e) {
+    console.log(e.relatedTarget.title)
+    var title = ""
+    var content = ""
+    if (e.relatedTarget.id == "email") {
+      title = "电子邮件"
+      content = "burnian@qq.com"
+    }
+    else if (e.relatedTarget.id == "qq") {
+      title = "QQ"
+      content = "791829698"
+    }
+    else if (e.relatedTarget.id == "wechat") {
+      title = "微信"
+      content = "burnian"
+    }
+    $("#ModalCenterTitle").text("Burnian的" + title)
+    $("#ModalCenterContent").val(content)
+  })
+
+  var clipboard = new ClipboardJS('#btn-copy');
+  clipboard.on('success', function (e) {
+    // console.info('Action:', e.action);
+    // console.info('Text:', e.text);
+    // console.info('Trigger:', e.trigger);
+    e.clearSelection();
+  });
+</script>
+  <nav id="bnavbar" class="navbar navbar-expand-md navbar-dark">
+  <img class="brand-image" src="/assets/img/burnian_logo.png"></img>
+  <div class="navbar-brand">Burnian Zhou</div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+
+      
+      
+      <li id="navbar-blog" class="nav-item">
+        <a class="nav-link bnav-font" href="https://burnian.github.io/#bnavbar">
+          
+          博客
+          
+        </a>
+      </li>
+      
+      
+      
+      <li id="navbar-gallery" class="nav-item">
+        <a class="nav-link bnav-font" href="https://burnian.github.io/pages/gallery/#bnavbar">
+          
+          画廊
+          
+        </a>
+      </li>
+      
+      
+
+      <li id="navbar-categories" class="nav-item dropdown" style="font-size: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          
+          文章类目
+          
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          
+          
+          
+          <a class="dropdown-item" href="/pages/fiction/">
+            
+            小说
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">5</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/travel/">
+            
+            旅行
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">2</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/technology/">
+            
+            技术
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">2</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/life/">
+            
+            生活
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">3</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/tutorial/">
+            
+            教程
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">2</i></a>
+          
+          
+          <!-- <div class="dropdown-divider"></div> -->
+        </div>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+
+  </div>
+</nav>
+  <section id="bcontent" class="container-fluid">
+    <div class="row justify-content-center">
+  <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-6 col-xxxl-5 intimate">
+    <!-- 正文 -->
+    <div class="sheet post">
+      <header>
+        <h2>（二）从零开始搭建个人静态博客网站</h2>
+        <p class="post-meta">
+          <i class="fa fa-user"></i>
+          Burnian Zhou&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-calendar"></i> 2019年10月31日&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
+        </p>
+        <p class="post-tag">
+          
+          <span class="fa fa-tag"></span>&nbsp;个人网站&nbsp;&nbsp;&nbsp;
+          
+          <span class="fa fa-tag"></span>&nbsp;Jekyll&nbsp;&nbsp;&nbsp;
+          
+        </p>
+      </header>
+      <hr class="boundary">
+      <article>
+        <ul id="markdown-toc">
+  <li><a href="#楔子" id="markdown-toc-楔子">楔子</a>    <ul>
+      <li><a href="#github-是什么" id="markdown-toc-github-是什么">GitHub 是什么</a></li>
+      <li><a href="#github-pages-是什么" id="markdown-toc-github-pages-是什么">GitHub Pages 是什么</a></li>
+    </ul>
+  </li>
+  <li><a href="#部署网站" id="markdown-toc-部署网站">部署网站</a>    <ul>
+      <li><a href="#1在-github-账号下创建新库" id="markdown-toc-1在-github-账号下创建新库">1.在 GitHub 账号下创建新库</a></li>
+      <li><a href="#2下载并安装-git" id="markdown-toc-2下载并安装-git">2.下载并安装 git</a></li>
+      <li><a href="#3把项目推送到-github-的对应库" id="markdown-toc-3把项目推送到-github-的对应库">3.把项目推送到 GitHub 的对应库</a></li>
+    </ul>
+  </li>
+  <li><a href="#后记" id="markdown-toc-后记">后记</a></li>
+  <li><a href="#附录" id="markdown-toc-附录">附录</a></li>
+</ul>
+
+<h2 id="楔子">楔子</h2>
+
+<p>这一章我们将要学习的是如何把本地代码部署到网站托管平台上去，在开始讲解部署步骤之前我们需要弄明白两个概念。</p>
+
+<h3 id="github-是什么">GitHub 是什么</h3>
+
+<p><a href="https://github.com/">GitHub</a>是一个开源的托管服务，有点像代码的云。它以各种不同的编程语言托管您的源代码项目，并跟踪每次迭代所做的各种更改。该服务可以通过使用<code class="highlighter-rouge">git</code><sup id="fnref:git"><a href="#fn:git" class="footnote">1</a></sup>来完成此操作，本章内容的学习要求读者有一定的<code class="highlighter-rouge">git</code>基础，理解何为<a href="https://baike.baidu.com/item/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/3311252?fr=aladdin">版本控制</a>、<a href="https://baike.baidu.com/item/%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81/2886980">代码托管</a>等等。</p>
+
+<h3 id="github-pages-是什么">GitHub Pages 是什么</h3>
+
+<p><a href="https://pages.github.com/">GitHub Pages</a>是一个静态网站托管服务，该服务会直接从GitHub上的一个库中取出HTML，CSS和JavaScript文件，并由用户选择是否要通过一个创建过程来运行这些文件，并最终发布一个网站。点击这个<a href="https://github.com/collections/github-pages-examples">链接</a>可以查看通过GitHub Pages发布的网站实例。你的网站可以托管在GitHub的<code class="highlighter-rouge">github.io</code>域名或你的自定义域名下。</p>
+
+<h2 id="部署网站">部署网站</h2>
+
+<h3 id="1在-github-账号下创建新库">1.在 GitHub 账号下创建新库</h3>
+
+<p>点击前文的GitHub链接，注册并登陆自己的GitHub账号，点击右上角<code class="highlighter-rouge">+ 下拉</code>按钮并选择<code class="highlighter-rouge">New repository</code>.</p>
+
+<p><img src="https://help.github.com/assets/images/help/repository/repo-create.png" alt="repo-create" /></p>
+
+<p>接下来配置待新建的库。下图中的<code class="highlighter-rouge">Owner</code>下拉菜单可以用来选择该库的所属账号，默认自己的账号就行。在后面的<code class="highlighter-rouge">Repository name</code>中填上<code class="highlighter-rouge">username.github.io</code>其中<code class="highlighter-rouge">username</code>为你的账号名，也是Owner名。<strong>注意：<code class="highlighter-rouge">username</code>必须与你的账号名保持完全一致，否则网站将不可访问！</strong></p>
+
+<p><img src="https://help.github.com/assets/images/help/repository/create-repository-owner.png" alt="create-repository-owner" /></p>
+
+<p>然后勾选下图所示的选项，给你的库初始化一个README文档，用来解释说明你的库内容。</p>
+
+<p><img src="https://help.github.com/assets/images/help/repository/initialize-with-readme.png" alt="initialize-with-readme" /></p>
+
+<p>最后点击<code class="highlighter-rouge">Create repository</code>按钮，网站库就创建完毕。其他配置暂时不用管，感兴趣的同学可以自行了解或者在评论区给我留言。</p>
+
+<p>如图所示，点击<code class="highlighter-rouge">Settings</code>按钮，跳转库设置页面。下翻该页面，如果看到下图所示的内容，则证明你提交到该库中的网站项目已经可以成功通过<code class="highlighter-rouge">http://username.github.io/</code>访问了。</p>
+
+<p><img src="https://help.github.com/assets/images/help/repository/repo-actions-settings.png" alt="repo-actions-settings" /></p>
+
+<h3 id="2下载并安装-git">2.下载并安装 git</h3>
+
+<p>这里以Windows操作系统为例：</p>
+
+<ul>
+  <li>从<a href="https://git-scm.com/download/win">git官网</a>下载，国内用户可能需要翻墙。</li>
+  <li>从<a href="https://github.com/waylau/git-for-win">git国内镜像</a>下载，不过这里只支持64位Windows操作系统，选择最新版的<code class="highlighter-rouge">64-bit Git for Windows Setup</code>下载即可。</li>
+</ul>
+
+<p>安装全程下一步，装完后在任意文件夹下点击右键，菜单会多出两个按钮：</p>
+
+<ul>
+  <li>Git GUI Here</li>
+  <li>Git Bash Here</li>
+</ul>
+
+<h3 id="3把项目推送到-github-的对应库">3.把项目推送到 GitHub 的对应库</h3>
+
+<p>选择一个你认为合适的文件夹，右键点击菜单中的<code class="highlighter-rouge">Git Bash Here</code>按钮打开git命令行界面，输入<code class="highlighter-rouge">git clone https://github.com/username/username.github.io</code>其中<code class="highlighter-rouge">username</code>为你刚才设置的账号名，回车后等待git把远端的库文件<code class="highlighter-rouge">clone</code>到本地来。</p>
+
+<p><img src="http://pzn1a9240.bkt.clouddn.com/8git-bash.PNG" alt="git-bash" /></p>
+
+<p>当你看到上图所示内容时，说明远端库已经<code class="highlighter-rouge">clone</code>完毕，此时<code class="highlighter-rouge">username.github.io</code>文件夹内应该只有一个<code class="highlighter-rouge">.git</code>文件夹和一个<code class="highlighter-rouge">README.md</code>文件。接下来打开我们上一章创建的网站项目文件夹，可以去<code class="highlighter-rouge">C:\Users\UserName\myblog</code>这里找。把<code class="highlighter-rouge">myblog</code>里面的文件全部拷贝到<code class="highlighter-rouge">username.github.io</code>文件夹内，然后分别输入下面的指令：</p>
+
+<figure class="highlight"><pre><code class="language-factor" data-lang="factor"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="n">git</span> <span class="n">add</span> <span class="n">--all</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s">"Initial commit"</span>
+<span class="n">git</span> <span class="nb">push</span> <span class="n">-u</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>这样，本地项目中的所有文件就都被推送到了你的GitHub账号下对应的<code class="highlighter-rouge">username.github.io</code>库中去了。打开你的<code class="highlighter-rouge">username.github.io</code>库页面，看看你刚推送的内容是否更新到此，若没有，则库中依然只有<code class="highlighter-rouge">README.md</code>这一个文件。耐心等待10分钟，成功后你就可以在浏览器或手机上打开网站<code class="highlighter-rouge">http://username.github.io/</code>了。</p>
+
+<h2 id="后记">后记</h2>
+
+<p>Congratulations! 到这一步，我们就已经学会了发布网站的整个流程，至于git的相关内容则不在本教程的讨论范围之内，同学们需自行学习。从下一章开始，我们将从基础知识入手，一步步学习如何润色我们的网站，并最终做出炫酷的效果。</p>
+
+<h2 id="附录">附录</h2>
+
+<p>git常用命令：</p>
+
+<figure class="highlight"><pre><code class="language-factor" data-lang="factor"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="n">git</span> <span class="nb">clone</span> <span class="n">你的SSH地址</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">（联系服务器，更新本地文件夹）</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">--all</span> <span class="n">（写入本地的所有新文件）</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s">"修改日志"</span> <span class="n">（在本地进行一次有记录地更新，包括本地所有文件的修改）</span>
+<span class="n">git</span> <span class="nb">push</span> <span class="n">-u</span> <span class="n">origin</span> <span class="n">master</span> <span class="n">（把本地的所有修改都推送到服务器）</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:git">
+      <p><a href="https://git-scm.com/">git</a>是一个免费且开源的分布式版本控制系统，其设计理念是高效地处理从小型到巨型项目的任何事务。 <a href="#fnref:git" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+      </article>
+      <hr class="boundary">
+    </div>
+    <!-- 上下篇按钮 -->
+    <div class="row switch-card">
+      <div class="col" style="padding-left: 0;">
+        
+        <a class="card" href="https://burnian.github.io/tutorial/2019/10/30/build-personal-website-1.html">
+          <h4 class="text-muted">上一篇</h4>
+          <p></p>
+          <h4>（一）从零开始搭建个人静态博客网站</h4>
+        </a>
+        
+      </div>
+
+      <div class="col" style="padding-right: 0;">
+        
+        <span tabindex="1" class="card" data-toggle="popover" data-content="没有下一篇了" data-placement="bottom"
+          data-trigger="focus">
+          <h4 class="text-muted text-center">下一篇</h4>
+        </span>
+        
+      </div>
+    </div>
+    <!-- 评论 -->
+    
+    <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+  console.log("gitalk.id=", location.pathname)
+
+  const gitalk = new Gitalk({
+    clientID: 'afe4f8097c6fe10c9d56',
+    clientSecret: '40c07771aea5a0e884004decb8a639797fbd86b1',
+    repo: 'burnian.github.io',
+    owner: 'burnian',
+    admin: ['burnian'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+  console.log('gitalk over')
+</script>
+    
+    <!-- 点赞 -->
+    <!-- 统计 -->
+  </div>
+</div>
+  </section>
+  <footer class="footer">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p>
+    Build with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> and <span class="love">❤</span>. Hosted at
+    Github.
+  </p>
+
+  <p>
+    <a href="https://github.com/burnian" target="_blank">&copy; Burnian Zhou</a>
+    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px"
+      src="https://ghbtns.com/github-btn.html?user=burnian&repo=burnian.github.io&type=star&count=true">
+    </iframe>
+  </p>
+
+  <div class="text-muted">
+    <span class="site-uv">
+      总人数：<i class="fa fa-user" aria-hidden="true"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    &nbsp;|&nbsp;
+    <span class="site-pv">
+      总点击：<i class="fa fa-eye" aria-hidden="true"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+
+</footer>
+
+  <!-- live2d -->
+  <script src="/assets/js/autoload.js"></script>
+</body>
+
+</html>
