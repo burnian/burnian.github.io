@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://burnian.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://burnian.github.io/" rel="alternate" type="text/html" /><updated>2019-11-01T23:45:00+08:00</updated><id>https://burnian.github.io/feed.xml</id><title type="html">Burnian’s Blog</title><subtitle>Burnian Zhou's Personal Blog Site</subtitle><entry><title type="html">（二）从零开始搭建个人静态博客网站</title><link href="https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html" rel="alternate" type="text/html" title="（二）从零开始搭建个人静态博客网站" /><published>2019-10-31T00:00:00+08:00</published><updated>2019-10-31T00:00:00+08:00</updated><id>https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2</id><content type="html" xml:base="https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://burnian.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://burnian.github.io/" rel="alternate" type="text/html" /><updated>2019-11-03T15:28:17+08:00</updated><id>https://burnian.github.io/feed.xml</id><title type="html">Burnian’s Blog</title><subtitle>Burnian Zhou's Personal Blog Site</subtitle><entry><title type="html">（三）从零开始搭建个人静态博客网站</title><link href="https://burnian.github.io/tutorial/2019/11/01/build-personal-website-3.html" rel="alternate" type="text/html" title="（三）从零开始搭建个人静态博客网站" /><published>2019-11-01T00:00:00+08:00</published><updated>2019-11-01T00:00:00+08:00</updated><id>https://burnian.github.io/tutorial/2019/11/01/build-personal-website-3</id><content type="html" xml:base="https://burnian.github.io/tutorial/2019/11/01/build-personal-website-3.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#楔子&quot; id=&quot;markdown-toc-楔子&quot;&gt;楔子&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ruby-是什么&quot; id=&quot;markdown-toc-ruby-是什么&quot;&gt;Ruby 是什么&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#gem-是什么&quot; id=&quot;markdown-toc-gem-是什么&quot;&gt;gem 是什么&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#rubygems-是什么&quot; id=&quot;markdown-toc-rubygems-是什么&quot;&gt;RubyGems 是什么&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#jekyll-是什么&quot; id=&quot;markdown-toc-jekyll-是什么&quot;&gt;Jekyll 是什么&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#markdown-是什么&quot; id=&quot;markdown-toc-markdown-是什么&quot;&gt;Markdown 是什么&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#后记&quot; id=&quot;markdown-toc-后记&quot;&gt;后记&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;楔子&quot;&gt;楔子&lt;/h2&gt;
+
+&lt;p&gt;这一章我们将展开学习利用 Jekyll + GitHub Pages 搭建个人网站时会频繁用到的相关知识。&lt;/p&gt;
+
+&lt;h2 id=&quot;ruby-是什么&quot;&gt;Ruby 是什么&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ruby-lang.org/en/&quot;&gt;Ruby&lt;/a&gt;是一门开源的面向对象动态编程语言。它由日本人&lt;a href=&quot;https://baike.baidu.com/item/%E6%9D%BE%E6%9C%AC%E8%A1%8C%E5%BC%98/539636?fr=aladdin&quot;&gt;松本行弘&lt;/a&gt;（まつもとゆきひろ/Yukihiro Matsumoto）创建于1993年。类似于 Perl 语言，Ruby 擅长文本处理。同 Smalltalk 语言一样，Ruby 中的任何符号都是 object（对象），并且 Ruby 有 blocks（代码块），iterators（迭代器），meta-classes（元类）等很好的概念。你可以用 Ruby 来写服务器，带原型的实验以及每日的编程任务。作为一种完全集成的面向对象语言，Ruby具有良好的伸缩性。以下是 Ruby 的特点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;简单的语法&lt;/li&gt;
+  &lt;li&gt;基础的面向对象特征（支持类，方法，对象等等）&lt;/li&gt;
+  &lt;li&gt;特殊的面向对象特征（支持 mixins&lt;sup id=&quot;fnref:mixins&quot;&gt;&lt;a href=&quot;#fn:mixins&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;，singleton methods&lt;sup id=&quot;fnref:singleton-methods&quot;&gt;&lt;a href=&quot;#fn:singleton-methods&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;，renaming&lt;sup id=&quot;fnref:renaming&quot;&gt;&lt;a href=&quot;#fn:renaming&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; 等等）&lt;/li&gt;
+  &lt;li&gt;操作符重载&lt;/li&gt;
+  &lt;li&gt;异常处理&lt;/li&gt;
+  &lt;li&gt;迭代器和闭包&lt;/li&gt;
+  &lt;li&gt;垃圾自动回收&lt;/li&gt;
+  &lt;li&gt;动态加载（依赖架构）&lt;/li&gt;
+  &lt;li&gt;高可移植性（可在各种操作系统下运行，如：Unices、Windows、DOS、macOS、OS/2、Amiga 等）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;只有当学习深入到自定义插件时我们才会涉及 Ruby 语言编程，所以这里只要求对 Ruby 有个大概的了解即可，不再展开，感兴趣的同学可以去&lt;a href=&quot;http://rubylearning.com/satishtalim/tutorial.html&quot;&gt;rubylearning.com&lt;/a&gt;自学。&lt;/p&gt;
+
+&lt;h2 id=&quot;gem-是什么&quot;&gt;gem 是什么&lt;/h2&gt;
+
+&lt;p&gt;广义地说，一个 gem 就是一个 Ruby 语言写的组件程序包。具体来说，每个 gem 都有一个包名，版本和平台，某些 gem 还会提供命令行工具来帮助你加速任务和任务自动化。例如：&lt;code class=&quot;highlighter-rouge&quot;&gt;rake&lt;/code&gt;版本为0.8.7（2009年5月），平台是 Ruby，这意味着任何一个可以运行 Ruby 语言的平台都可以运行&lt;code class=&quot;highlighter-rouge&quot;&gt;rake&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;一个 gem 由以下部分构成：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;代码（通常包括可执行文件，测试代码和支持工具）&lt;/li&gt;
+  &lt;li&gt;文档（通常包括嵌入在代码中的注释和 README 文件，当你安装了该 gem 之后就会自动为你生成文档）&lt;/li&gt;
+  &lt;li&gt;gemspec（即 gem 的相关信息。通常包括 gem 所含的文件，测试信息，平台，版本号以及作者的邮箱和名字)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rubygems-是什么&quot;&gt;RubyGems 是什么&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://guides.rubygems.org&quot;&gt;RubyGems&lt;/a&gt;是一个 gem 的管理器，它允许你在你的系统上简单地下载、安装和使用 Ruby 软件包，用户可以在控制台通过&lt;code class=&quot;highlighter-rouge&quot;&gt;gem&lt;/code&gt;后跟一系列指令符来对远端的 gem 进行下载安装等操作，其作用类似于 JavaScript 的&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt;和 python 的&lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-是什么&quot;&gt;Jekyll 是什么&lt;/h2&gt;
+
+&lt;p&gt;Jekyll 是一种用 Ruby 语言开发的静态网页生成系统，我们的网站就是由它生成的。Jekyll 可以识别的文件中既能有语句又能有HTML（称为超文本标记语言，是一种标识性的语言。文件后缀通常为.html）语句。&lt;/p&gt;
+
+&lt;h2 id=&quot;markdown-是什么&quot;&gt;Markdown 是什么&lt;/h2&gt;
+
+&lt;p&gt;Markdown 是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式，文件后缀通常为.md或.markdown。其使用方法参见&lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.zybuluo.com/mdeditor&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://help.github.com/assets/images/help/repository/repo-create.png&quot; alt=&quot;repo-create&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
+
+&lt;p&gt;Congratulations! 到这一步，我们就已经学会了发布网站的整个流程，至于 git 的相关内容则不在本教程的讨论范围之内，同学们需自行学习，之后如果有空，我也可能专门出一个 git 的系列教程。&lt;/p&gt;
+
+&lt;p&gt;从下一章开始，我们将从基础知识入手，一步步学习如何润色我们的网站，并最终做出炫酷的效果。&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:mixins&quot;&gt;
+      &lt;p&gt;混入，就是定义一部分公共的方法或者计算属性，然后混入到各个组件中使用，方便管理与统一修改。 &lt;a href=&quot;#fnref:mixins&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:singleton-methods&quot;&gt;
+      &lt;p&gt;单例方法，即同一个方法多处引用，只保存了单个该方法的实例，而不是每引用一次便新建一个实例。 &lt;a href=&quot;#fnref:singleton-methods&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:renaming&quot;&gt;
+      &lt;p&gt;重命名。 &lt;a href=&quot;#fnref:renaming&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="个人网站" /><category term="Jekyll" /><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wx4.sinaimg.cn/mw690/6fbea8e9ly1g8kv72h9caj20fk0fk41s.jpg" /></entry><entry><title type="html">（二）从零开始搭建个人静态博客网站</title><link href="https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html" rel="alternate" type="text/html" title="（二）从零开始搭建个人静态博客网站" /><published>2019-10-31T00:00:00+08:00</published><updated>2019-10-31T00:00:00+08:00</updated><id>https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2</id><content type="html" xml:base="https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#楔子&quot; id=&quot;markdown-toc-楔子&quot;&gt;楔子&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#github-是什么&quot; id=&quot;markdown-toc-github-是什么&quot;&gt;GitHub 是什么&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#github-pages-是什么&quot; id=&quot;markdown-toc-github-pages-是什么&quot;&gt;GitHub Pages 是什么&lt;/a&gt;&lt;/li&gt;
@@ -20,41 +96,41 @@
 
 &lt;h3 id=&quot;github-是什么&quot;&gt;GitHub 是什么&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt;是一个开源的托管服务，有点像代码的云。它以各种不同的编程语言托管您的源代码项目，并跟踪每次迭代所做的各种更改。该服务可以通过使用&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;&lt;sup id=&quot;fnref:git&quot;&gt;&lt;a href=&quot;#fn:git&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;来完成此操作，本章内容的学习要求读者有一定的&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;基础，理解何为&lt;a href=&quot;https://baike.baidu.com/item/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/3311252?fr=aladdin&quot;&gt;版本控制&lt;/a&gt;、&lt;a href=&quot;https://baike.baidu.com/item/%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81/2886980&quot;&gt;代码托管&lt;/a&gt;等等。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt;是一个开源的托管服务，有点像代码的云。它以各种不同的编程语言托管您的源代码项目，并跟踪每次迭代所做的各种更改。该服务可以通过使用 git&lt;sup id=&quot;fnref:git&quot;&gt;&lt;a href=&quot;#fn:git&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 来完成此操作，本章内容的学习要求读者有一定的 git 基础，理解何为&lt;a href=&quot;https://baike.baidu.com/item/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/3311252?fr=aladdin&quot;&gt;版本控制&lt;/a&gt;、&lt;a href=&quot;https://baike.baidu.com/item/%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81/2886980&quot;&gt;代码托管&lt;/a&gt;等等。&lt;/p&gt;
 
 &lt;h3 id=&quot;github-pages-是什么&quot;&gt;GitHub Pages 是什么&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;是一个静态网站托管服务，该服务会直接从GitHub上的一个库中取出HTML，CSS和JavaScript文件，并由用户选择是否要通过一个创建过程来运行这些文件，并最终发布一个网站。点击这个&lt;a href=&quot;https://github.com/collections/github-pages-examples&quot;&gt;链接&lt;/a&gt;可以查看通过GitHub Pages发布的网站实例。你的网站可以托管在GitHub的&lt;code class=&quot;highlighter-rouge&quot;&gt;github.io&lt;/code&gt;域名或你的自定义域名下。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;是一个静态网站托管服务，该服务会直接从 GitHub 上的一个库中取出 HTML、CSS 和 JavaScript 等文件，并由用户选择是否要通过一个创建过程来运行这些文件，并最终发布一个网站。点击这个&lt;a href=&quot;https://github.com/collections/github-pages-examples&quot;&gt;链接&lt;/a&gt;可以查看通过 GitHub Pages 发布的网站实例。我们的网站可以托管在 GitHub 的&lt;code class=&quot;highlighter-rouge&quot;&gt;github.io&lt;/code&gt;域名或自定义域名下。&lt;/p&gt;
 
 &lt;h2 id=&quot;部署网站&quot;&gt;部署网站&lt;/h2&gt;
 
 &lt;h3 id=&quot;1在-github-账号下创建新库&quot;&gt;1.在 GitHub 账号下创建新库&lt;/h3&gt;
 
-&lt;p&gt;点击前文的GitHub链接，注册并登陆自己的GitHub账号，点击右上角&lt;code class=&quot;highlighter-rouge&quot;&gt;+ 下拉&lt;/code&gt;按钮并选择&lt;code class=&quot;highlighter-rouge&quot;&gt;New repository&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;点击&lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt;链接，注册并登陆自己的 GitHub 账号，点击右上角&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;按钮并选择&lt;code class=&quot;highlighter-rouge&quot;&gt;New repository&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://help.github.com/assets/images/help/repository/repo-create.png&quot; alt=&quot;repo-create&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;接下来配置待新建的库。下图中的&lt;code class=&quot;highlighter-rouge&quot;&gt;Owner&lt;/code&gt;下拉菜单可以用来选择该库的所属账号，默认自己的账号就行。在后面的&lt;code class=&quot;highlighter-rouge&quot;&gt;Repository name&lt;/code&gt;中填上&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;其中&lt;code class=&quot;highlighter-rouge&quot;&gt;username&lt;/code&gt;为你的账号名，也是Owner名。&lt;strong&gt;注意：&lt;code class=&quot;highlighter-rouge&quot;&gt;username&lt;/code&gt;必须与你的账号名保持完全一致，否则网站将不可访问！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;接下来配置待新建的库。下图中的&lt;code class=&quot;highlighter-rouge&quot;&gt;Owner&lt;/code&gt;下拉菜单可以用来选择该库的所属账号，默认自己的账号就行。在后面的 Repository name 中填上 username.github.io 其中 username 为你的账号名。&lt;strong&gt;注意： username 必须与你的账号名保持完全一致，否则网站将不可访问！&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://help.github.com/assets/images/help/repository/create-repository-owner.png&quot; alt=&quot;create-repository-owner&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;然后勾选下图所示的选项，给你的库初始化一个README文档，用来解释说明你的库内容。&lt;/p&gt;
+&lt;p&gt;然后勾选下图所示的选项，给你的库初始化一个&lt;code class=&quot;highlighter-rouge&quot;&gt;README.md&lt;/code&gt;文档，用来解释说明你的库内容。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://help.github.com/assets/images/help/repository/initialize-with-readme.png&quot; alt=&quot;initialize-with-readme&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;最后点击&lt;code class=&quot;highlighter-rouge&quot;&gt;Create repository&lt;/code&gt;按钮，网站库就创建完毕。其他配置暂时不用管，感兴趣的同学可以自行了解或者在评论区给我留言。&lt;/p&gt;
+&lt;p&gt;最后点击&lt;code class=&quot;highlighter-rouge&quot;&gt;Create repository&lt;/code&gt;，网站库就创建完毕。其他配置暂时不用管，感兴趣的同学可以自行了解或者在评论区给我留言。&lt;/p&gt;
 
-&lt;p&gt;如图所示，点击&lt;code class=&quot;highlighter-rouge&quot;&gt;Settings&lt;/code&gt;按钮，跳转库设置页面。下翻该页面，如果看到下图所示的内容，则证明你提交到该库中的网站项目已经可以成功通过&lt;code class=&quot;highlighter-rouge&quot;&gt;http://username.github.io/&lt;/code&gt;访问了。&lt;/p&gt;
+&lt;p&gt;如图所示，点击&lt;code class=&quot;highlighter-rouge&quot;&gt;Settings&lt;/code&gt;，跳转库设置页面。下翻该页面，如果看到下图所示的内容，则证明你提交到该库中的网站项目已经可以成功通过&lt;code class=&quot;highlighter-rouge&quot;&gt;http://username.github.io/&lt;/code&gt;访问了。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://help.github.com/assets/images/help/repository/repo-actions-settings.png&quot; alt=&quot;repo-actions-settings&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2下载并安装-git&quot;&gt;2.下载并安装 git&lt;/h3&gt;
 
-&lt;p&gt;这里以Windows操作系统为例：&lt;/p&gt;
+&lt;p&gt;这里以 Windows 操作系统为例：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;从&lt;a href=&quot;https://git-scm.com/download/win&quot;&gt;git官网&lt;/a&gt;下载，国内用户可能需要翻墙。&lt;/li&gt;
-  &lt;li&gt;从&lt;a href=&quot;https://github.com/waylau/git-for-win&quot;&gt;git国内镜像&lt;/a&gt;下载，不过这里只支持64位Windows操作系统，选择最新版的&lt;code class=&quot;highlighter-rouge&quot;&gt;64-bit Git for Windows Setup&lt;/code&gt;下载即可。&lt;/li&gt;
+  &lt;li&gt;从&lt;a href=&quot;https://git-scm.com/download/win&quot;&gt;git 官网&lt;/a&gt;下载，国内用户可能需要翻墙。&lt;/li&gt;
+  &lt;li&gt;从&lt;a href=&quot;https://github.com/waylau/git-for-win&quot;&gt;git 国内镜像&lt;/a&gt;下载，不过这里只支持64位 Windows 操作系统，选择最新版的&lt;code class=&quot;highlighter-rouge&quot;&gt;64-bit Git for Windows Setup&lt;/code&gt;下载即可。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;安装全程下一步，装完后在任意文件夹下点击右键，菜单会多出两个按钮：&lt;/p&gt;
@@ -66,11 +142,11 @@
 
 &lt;h3 id=&quot;3把项目推送到-github-的对应库&quot;&gt;3.把项目推送到 GitHub 的对应库&lt;/h3&gt;
 
-&lt;p&gt;选择一个你认为合适的文件夹，右键点击菜单中的&lt;code class=&quot;highlighter-rouge&quot;&gt;Git Bash Here&lt;/code&gt;按钮打开git命令行界面，输入&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/username/username.github.io&lt;/code&gt;其中&lt;code class=&quot;highlighter-rouge&quot;&gt;username&lt;/code&gt;为你刚才设置的账号名，回车后等待git把远端的库文件&lt;code class=&quot;highlighter-rouge&quot;&gt;clone&lt;/code&gt;到本地来。&lt;/p&gt;
+&lt;p&gt;选择一个你认为合适的文件夹，右键点击菜单中的&lt;code class=&quot;highlighter-rouge&quot;&gt;Git Bash Here&lt;/code&gt;按钮打开 git 命令行界面，输入&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/username/username.github.io&lt;/code&gt;其中 username 为你的 GitHub 账号名，回车后等待 git 把远端的库文件&lt;code class=&quot;highlighter-rouge&quot;&gt;clone&lt;/code&gt;到本地来。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://pzn1a9240.bkt.clouddn.com/8git-bash.PNG&quot; alt=&quot;git-bash&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;当你看到上图所示内容时，说明远端库已经&lt;code class=&quot;highlighter-rouge&quot;&gt;clone&lt;/code&gt;完毕，此时&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;文件夹内应该只有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;.git&lt;/code&gt;文件夹和一个&lt;code class=&quot;highlighter-rouge&quot;&gt;README.md&lt;/code&gt;文件。接下来打开我们上一章创建的网站项目文件夹，可以去&lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\UserName\myblog&lt;/code&gt;这里找。把&lt;code class=&quot;highlighter-rouge&quot;&gt;myblog&lt;/code&gt;里面的文件全部拷贝到&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;文件夹内，然后分别输入下面的指令：&lt;/p&gt;
+&lt;p&gt;当你看到上图所示内容时，说明远端库已经&lt;code class=&quot;highlighter-rouge&quot;&gt;clone&lt;/code&gt;完毕，此时 username.github.io 文件夹内应该只有一个 .git 文件夹和一个 README.md 文件。接下来打开我们上一章创建的网站项目文件夹，忘记路径的同学可以去&lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\UserName\myblog&lt;/code&gt;找。把 myblog 文件夹里面的文件全部拷贝到 username.github.io 文件夹内，然后分别输入下面的指令：&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-factor&quot; data-lang=&quot;factor&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
@@ -80,15 +156,17 @@
 &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;这样，本地项目中的所有文件就都被推送到了你的GitHub账号下对应的&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;库中去了。打开你的&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;库页面，看看你刚推送的内容是否更新到此，若没有，则库中依然只有&lt;code class=&quot;highlighter-rouge&quot;&gt;README.md&lt;/code&gt;这一个文件。耐心等待10分钟，成功后你就可以在浏览器或手机上打开网站&lt;code class=&quot;highlighter-rouge&quot;&gt;http://username.github.io/&lt;/code&gt;了。&lt;/p&gt;
+&lt;p&gt;这样，本地项目中的所有文件就都被推送到了你的 GitHub 对应的 username.github.io 库中去了。打开你的 username.github.io 库页面，看看你刚推送的内容是否更新到此，若库中依然只有&lt;code class=&quot;highlighter-rouge&quot;&gt;README.md&lt;/code&gt;这一个文件，那就再等几分钟，等待时长看网速快慢，成功后你就可以在浏览器或手机上打开网站&lt;code class=&quot;highlighter-rouge&quot;&gt;http://username.github.io/&lt;/code&gt;了。&lt;/p&gt;
 
 &lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
 
-&lt;p&gt;Congratulations! 到这一步，我们就已经学会了发布网站的整个流程，至于git的相关内容则不在本教程的讨论范围之内，同学们需自行学习。从下一章开始，我们将从基础知识入手，一步步学习如何润色我们的网站，并最终做出炫酷的效果。&lt;/p&gt;
+&lt;p&gt;Congratulations! 到这一步，我们就已经学会了发布网站的整个流程，至于 git 的相关内容则不在本教程的讨论范围之内，同学们需自行学习，之后如果有空，我也可能专门出一个 git 的系列教程。&lt;/p&gt;
+
+&lt;p&gt;从下一章开始，我们将从基础知识入手，一步步学习如何润色我们的网站，并最终做出炫酷的效果。&lt;/p&gt;
 
 &lt;h2 id=&quot;附录&quot;&gt;附录&lt;/h2&gt;
 
-&lt;p&gt;git常用命令：&lt;/p&gt;
+&lt;p&gt;git 常用命令：&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-factor&quot; data-lang=&quot;factor&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
@@ -96,10 +174,10 @@
 4
 5
 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;你的SSH地址&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;（联系服务器，更新本地文件夹）&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;（联系服务器，用远端库记录更新本地库记录）&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;--all&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;（写入本地的所有新文件）&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;修改日志&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;（在本地进行一次有记录地更新，包括本地所有文件的修改）&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;（把本地的所有修改都推送到服务器）&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;修改日志&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;（把本地所有文件的修改提交到本地库记录中去，并填写相关的修改日志）&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;（把本地库记录推送到远端库记录中去）&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div class=&quot;footnotes&quot;&gt;
@@ -108,12 +186,12 @@
       &lt;p&gt;&lt;a href=&quot;https://git-scm.com/&quot;&gt;git&lt;/a&gt;是一个免费且开源的分布式版本控制系统，其设计理念是高效地处理从小型到巨型项目的任何事务。 &lt;a href=&quot;#fnref:git&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="个人网站" /><category term="Jekyll" /><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://pzn1a9240.bkt.clouddn.com/cover.jpg" /></entry><entry><title type="html">（一）从零开始搭建个人静态博客网站</title><link href="https://burnian.github.io/tutorial/2019/10/30/build-personal-website-1.html" rel="alternate" type="text/html" title="（一）从零开始搭建个人静态博客网站" /><published>2019-10-30T00:00:00+08:00</published><updated>2019-10-30T00:00:00+08:00</updated><id>https://burnian.github.io/tutorial/2019/10/30/build-personal-website-1</id><content type="html" xml:base="https://burnian.github.io/tutorial/2019/10/30/build-personal-website-1.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="个人网站" /><category term="Jekyll" /><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wx4.sinaimg.cn/mw690/6fbea8e9ly1g8kv72h9caj20fk0fk41s.jpg" /></entry><entry><title type="html">（一）从零开始搭建个人静态博客网站</title><link href="https://burnian.github.io/tutorial/2019/10/30/build-personal-website-1.html" rel="alternate" type="text/html" title="（一）从零开始搭建个人静态博客网站" /><published>2019-10-30T00:00:00+08:00</published><updated>2019-10-30T00:00:00+08:00</updated><id>https://burnian.github.io/tutorial/2019/10/30/build-personal-website-1</id><content type="html" xml:base="https://burnian.github.io/tutorial/2019/10/30/build-personal-website-1.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#简单的开始&quot; id=&quot;markdown-toc-简单的开始&quot;&gt;简单的开始&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#1下载带devkit的ruby安装包&quot; id=&quot;markdown-toc-1下载带devkit的ruby安装包&quot;&gt;1.下载带Devkit的Ruby安装包&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#1下载带-devkit-的-ruby-安装包&quot; id=&quot;markdown-toc-1下载带-devkit-的-ruby-安装包&quot;&gt;1.下载带 Devkit 的 Ruby 安装包&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#2安装&quot; id=&quot;markdown-toc-2安装&quot;&gt;2.安装&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3安装jekyll和bundler&quot; id=&quot;markdown-toc-3安装jekyll和bundler&quot;&gt;3.安装Jekyll和bundler&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#4创建你的第一个jekyll默认网站项目并运行&quot; id=&quot;markdown-toc-4创建你的第一个jekyll默认网站项目并运行&quot;&gt;4.创建你的第一个jekyll默认网站项目并运行&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3安装-jekyll-和-bundler&quot; id=&quot;markdown-toc-3安装-jekyll-和-bundler&quot;&gt;3.安装 Jekyll 和 bundler&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4创建你的第一个-jekyll-默认网站项目并运行&quot; id=&quot;markdown-toc-4创建你的第一个-jekyll-默认网站项目并运行&quot;&gt;4.创建你的第一个 jekyll 默认网站项目并运行&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#后记&quot; id=&quot;markdown-toc-后记&quot;&gt;后记&lt;/a&gt;&lt;/li&gt;
@@ -121,13 +199,13 @@
 
 &lt;h2 id=&quot;简单的开始&quot;&gt;简单的开始&lt;/h2&gt;
 
-&lt;h3 id=&quot;1下载带devkit的ruby安装包&quot;&gt;1.下载带Devkit的Ruby&lt;sup id=&quot;fnref:Ruby&quot;&gt;&lt;a href=&quot;#fn:Ruby&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;安装包&lt;/h3&gt;
+&lt;h3 id=&quot;1下载带-devkit-的-ruby-安装包&quot;&gt;1.下载带 Devkit 的 Ruby&lt;sup id=&quot;fnref:Ruby&quot;&gt;&lt;a href=&quot;#fn:Ruby&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 安装包&lt;/h3&gt;
 
-&lt;p&gt;网上搜一下就能找到下载链接，这里以&lt;code class=&quot;highlighter-rouge&quot;&gt;Windows&lt;/code&gt;操作系统为例，可以去&lt;a href=&quot;https://rubyinstaller.org/downloads/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;官网下载对应安装包。&lt;/p&gt;
+&lt;p&gt;网上搜一下就能找到下载链接，这里以 Windows 操作系统为例，可以去&lt;a href=&quot;https://rubyinstaller.org/downloads/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;官网下载对应安装包。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://pzn1a9240.bkt.clouddn.com/2rubyInstaller.png&quot; alt=&quot;RubyInstaller&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx4.sinaimg.cn/mw690/6fbea8e9ly1g8kv8ts9k6j20cf07adfz.jpg&quot; alt=&quot;RubyInstaller&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;根据自己的操作系统情况选择对应的最新安装包下载即可，包名中的&lt;code class=&quot;highlighter-rouge&quot;&gt;Devkit&lt;/code&gt;表示该安装包会自带许多&lt;code class=&quot;highlighter-rouge&quot;&gt;gem&lt;/code&gt;&lt;sup id=&quot;fnref:gem&quot;&gt;&lt;a href=&quot;#fn:gem&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;，其中就包括了&lt;code class=&quot;highlighter-rouge&quot;&gt;RubyGems&lt;/code&gt;&lt;sup id=&quot;fnref:RubyGems&quot;&gt;&lt;a href=&quot;#fn:RubyGems&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;以及很多&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;&lt;sup id=&quot;fnref:Jekyll&quot;&gt;&lt;a href=&quot;#fn:Jekyll&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;相关的组件，方便我们接下来的网站开发。&lt;/p&gt;
+&lt;p&gt;根据自己的操作系统情况选择对应的最新安装包下载即可，包名中的 Devkit 表示该安装包会自带许多 gem&lt;sup id=&quot;fnref:gem&quot;&gt;&lt;a href=&quot;#fn:gem&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;，其中就包括了 RubyGems&lt;sup id=&quot;fnref:RubyGems&quot;&gt;&lt;a href=&quot;#fn:RubyGems&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; 以及很多 Jekyll&lt;sup id=&quot;fnref:Jekyll&quot;&gt;&lt;a href=&quot;#fn:Jekyll&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; 相关的组件，方便我们接下来的网站开发。&lt;/p&gt;
 
 &lt;p&gt;由于官网的下载链接对于国内的小伙伴而言速度很迷，所以下载不了的小伙伴可以尝试下面的链接（都是64位安装包）：&lt;/p&gt;
 
@@ -138,23 +216,25 @@
 
 &lt;h3 id=&quot;2安装&quot;&gt;2.安装&lt;/h3&gt;
 
-&lt;p&gt;各种下一步，安装好后打开windows控制台&lt;sup id=&quot;fnref:console&quot;&gt;&lt;a href=&quot;#fn:console&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;，输入&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt;，若出现下图所示内容（版本号不同没关系）则证明安装成功。&lt;/p&gt;
+&lt;p&gt;各种下一步，安装好后打开 Windows 控制台&lt;sup id=&quot;fnref:console&quot;&gt;&lt;a href=&quot;#fn:console&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;，输入&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt;，若出现下图所示内容（版本号不同没关系）则证明安装成功。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://pzn1a9240.bkt.clouddn.com/3ruby-install-success.PNG&quot; alt=&quot;setup-success&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/mw690/6fbea8e9ly1g8kvgub7enj20cp014myv.jpg&quot; alt=&quot;setup-success&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;3安装jekyll和bundler&quot;&gt;3.安装Jekyll和bundler&lt;/h3&gt;
+&lt;h3 id=&quot;3安装-jekyll-和-bundler&quot;&gt;3.安装 Jekyll 和 bundler&lt;/h3&gt;
 
-&lt;p&gt;在控制台界面输入&lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll bundler&lt;/code&gt;，其中&lt;code class=&quot;highlighter-rouge&quot;&gt;bundler&lt;/code&gt;是一个辅助工具，它会根据你项目根目录下的&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;文件来安装&lt;code class=&quot;highlighter-rouge&quot;&gt;gems&lt;/code&gt;，并能确保用户在不同的环境下运行的都是同一个版本的&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll plugin&lt;/code&gt;（Jekyll插件）。&lt;/p&gt;
+&lt;p&gt;在控制台界面输入&lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll bundler&lt;/code&gt;，其中 bundler 是一个辅助工具，它会根据你项目根目录下的 Gemfile 文件中的指定记录来安装 gem，并能确保用户在不同的环境下运行的都是同一个版本的 Jekyll 和 Jekyll plugin （Jekyll插件）。&lt;/p&gt;
 
-&lt;h3 id=&quot;4创建你的第一个jekyll默认网站项目并运行&quot;&gt;4.创建你的第一个jekyll默认网站项目并运行&lt;/h3&gt;
+&lt;h3 id=&quot;4创建你的第一个-jekyll-默认网站项目并运行&quot;&gt;4.创建你的第一个 jekyll 默认网站项目并运行&lt;/h3&gt;
 
-&lt;p&gt;在控制台界面输入&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new myblog&lt;/code&gt;，其中&lt;code class=&quot;highlighter-rouge&quot;&gt;myblog&lt;/code&gt;指代你的项目名称。然后输入&lt;code class=&quot;highlighter-rouge&quot;&gt;cd myblog&lt;/code&gt;切换到&lt;code class=&quot;highlighter-rouge&quot;&gt;myblog&lt;/code&gt;文件夹，最后输入&lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;，Jekyll就会在&lt;code class=&quot;highlighter-rouge&quot;&gt;myblog&lt;/code&gt;文件夹下生成一个目标网站文件夹&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;，并在本地开启一个jekyll服务器，于是用户就可以通过地址 &lt;a href=&quot;http://localhost:4000&quot;&gt;http://localhost:4000&lt;/a&gt; 来访问自己的网站了。&lt;/p&gt;
+&lt;p&gt;在控制台界面输入&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new myblog&lt;/code&gt;，其中 myblog 指代你的项目名称。然后输入&lt;code class=&quot;highlighter-rouge&quot;&gt;cd myblog&lt;/code&gt;切换到 myblog 文件夹，最后输入&lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;，Jekyll就会在 myblog 文件夹下生成一个目标网站文件夹 _site ，并在本地开启一个 Jekyll 服务器，于是用户就可以通过地址 &lt;a href=&quot;http://localhost:4000&quot;&gt;http://localhost:4000&lt;/a&gt; 来访问自己的网站了。&lt;/p&gt;
 
 &lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
 
-&lt;p&gt;Congratulations! 到这一步，我们就已经正式开启了基于&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;引擎的个人静态网站搭建之旅，在经过后面的认真学习之后我们将能够制作出让自己惊叹的个人网站，肆意体验在互联网的汪洋大海中表达自己、吸引他人的乐趣。&lt;/p&gt;
+&lt;p&gt;Congratulations! 到这一步，我们就已经正式开启了基于 Jekyll 引擎的个人静态网站搭建之旅，在经过后面的认真学习之后我们将能够制作出让自己惊叹的个人网站，肆意体验在互联网的汪洋大海中表达自己、吸引他人的乐趣。&lt;/p&gt;
 
-&lt;p&gt;下一章，我们将学习如何把本地代码部署到网站托管平台上去，让他人也能访问我们的网站，So what are we waiting for? Let’s go for it!&lt;/p&gt;
+&lt;p&gt;下一章，我们将学习如何把本地代码部署到网站托管平台上去，让他人也能访问我们的网站。&lt;/p&gt;
+
+&lt;p&gt;So what are we waiting for? Let’s go for it!&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
@@ -162,19 +242,19 @@
       &lt;p&gt;&lt;a href=&quot;https://www.ruby-lang.org/zh_cn/&quot;&gt;Ruby&lt;/a&gt;是一门开源的面向对象动态脚本语言。它由日本人&lt;a href=&quot;https://baike.baidu.com/item/%E6%9D%BE%E6%9C%AC%E8%A1%8C%E5%BC%98/539636?fr=aladdin&quot;&gt;松本行弘&lt;/a&gt;（まつもとゆきひろ/Yukihiro Matsumoto）创建于1993年。 &lt;a href=&quot;#fnref:Ruby&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:gem&quot;&gt;
-      &lt;p&gt;一个gem就是一个Ruby语言的组件包。 &lt;a href=&quot;#fnref:gem&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;一个 gem 就是一个 Ruby 语言的组件包。 &lt;a href=&quot;#fnref:gem&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:RubyGems&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://rubygems.org/&quot;&gt;RubyGems&lt;/a&gt;是一个Ruby组件包的管理器，用户可以在控制台通过&lt;code class=&quot;highlighter-rouge&quot;&gt;gem install&lt;/code&gt;命令来安装所需的组件。 &lt;a href=&quot;#fnref:RubyGems&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;https://rubygems.org/&quot;&gt;RubyGems&lt;/a&gt;是一个 Ruby 组件包的管理器，用户可以在控制台通过&lt;code class=&quot;highlighter-rouge&quot;&gt;gem install&lt;/code&gt;命令来安装所需的组件。 &lt;a href=&quot;#fnref:RubyGems&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:Jekyll&quot;&gt;
-      &lt;p&gt;Jekyll简单来说就是支撑我们网站的引擎，后面会详细讲，这里不展开。 &lt;a href=&quot;#fnref:Jekyll&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Jekyll 简单来说就是支撑我们网站的引擎，后面会详细讲，这里不展开。 &lt;a href=&quot;#fnref:Jekyll&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:console&quot;&gt;
-      &lt;p&gt;按下&lt;code class=&quot;highlighter-rouge&quot;&gt;win+R&lt;/code&gt;，然后输入cmd回车。 &lt;a href=&quot;#fnref:console&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;按下&lt;code class=&quot;highlighter-rouge&quot;&gt;win+R&lt;/code&gt;，然后输入&lt;code class=&quot;highlighter-rouge&quot;&gt;cmd&lt;/code&gt;回车。 &lt;a href=&quot;#fnref:console&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="个人网站" /><category term="Jekyll" /><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://pzn1a9240.bkt.clouddn.com/cover.jpg" /></entry><entry><title type="html">李希贵校长谈教育</title><link href="https://burnian.github.io/life/2019/10/22/lixigui-talk-about-edu.html" rel="alternate" type="text/html" title="李希贵校长谈教育" /><published>2019-10-22T00:00:00+08:00</published><updated>2019-10-22T00:00:00+08:00</updated><id>https://burnian.github.io/life/2019/10/22/lixigui-talk-about-edu</id><content type="html" xml:base="https://burnian.github.io/life/2019/10/22/lixigui-talk-about-edu.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="个人网站" /><category term="Jekyll" /><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wx4.sinaimg.cn/mw690/6fbea8e9ly1g8kv72h9caj20fk0fk41s.jpg" /></entry><entry><title type="html">李希贵校长谈教育</title><link href="https://burnian.github.io/life/2019/10/22/lixigui-talk-about-edu.html" rel="alternate" type="text/html" title="李希贵校长谈教育" /><published>2019-10-22T00:00:00+08:00</published><updated>2019-10-22T00:00:00+08:00</updated><id>https://burnian.github.io/life/2019/10/22/lixigui-talk-about-edu</id><content type="html" xml:base="https://burnian.github.io/life/2019/10/22/lixigui-talk-about-edu.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#什么是学校&quot; id=&quot;markdown-toc-什么是学校&quot;&gt;什么是学校&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#什么是课程&quot; id=&quot;markdown-toc-什么是课程&quot;&gt;什么是课程&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#什么叫上学&quot; id=&quot;markdown-toc-什么叫上学&quot;&gt;什么叫上学&lt;/a&gt;&lt;/li&gt;
@@ -327,7 +407,7 @@
 
 &lt;p&gt;&lt;strong&gt;“终生成长，从未长大。”&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://pzn1a9240.bkt.clouddn.com/640.webp&quot; alt=&quot;Teresa-profile&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/mw690/6fbea8e9ly1g8kvh41gtij20sp0guq3e.jpg&quot; alt=&quot;lixigui-profile&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;引用&quot;&gt;引用&lt;/h3&gt;
 
@@ -388,395 +468,7 @@
 &lt;p&gt;与它初识是在一个阳光明媚的午后，它毛色如墨，冷冷地盯着我，就好像我偷了它的小鱼干似的，但它毕竟是一只小猫，我难道还不甘示弱地瞪回去？这个想法不错。
 于是我瞬间掐灭了这个好想法，笑嘻嘻地拿起自己的热脸贴上猫家的冷屁股，您别说，还挺带感。&lt;/p&gt;
 
-&lt;p&gt;很多年以后，当小年再次回想起那个遥远的下午，竟恍然不觉这简简单单的邂逅会碰撞出那么多故事……&lt;/p&gt;</content><author><name></name></author><category term="猫" /><category term="情感" /><summary type="html">楔子：猫</summary></entry><entry><title type="html">大文件内容对比多线程版本</title><link href="https://burnian.github.io/technology/2019/09/11/big-file-compare-multithread.html" rel="alternate" type="text/html" title="大文件内容对比多线程版本" /><published>2019-09-11T00:00:00+08:00</published><updated>2019-09-11T00:00:00+08:00</updated><id>https://burnian.github.io/technology/2019/09/11/big-file-compare-multithread</id><content type="html" xml:base="https://burnian.github.io/technology/2019/09/11/big-file-compare-multithread.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#线程池&quot; id=&quot;markdown-toc-线程池&quot;&gt;线程池&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#线程池消费拆分任务&quot; id=&quot;markdown-toc-线程池消费拆分任务&quot;&gt;线程池消费拆分任务&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#线程池消费合并任务&quot; id=&quot;markdown-toc-线程池消费合并任务&quot;&gt;线程池消费合并任务&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#测试&quot; id=&quot;markdown-toc-测试&quot;&gt;测试&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这是&lt;a href=&quot;http://bit-ranger.github.io/blog/2018-03-26/large-file-diff&quot;&gt;上一篇&lt;/a&gt;的续作，对于这个算法，其中可以同时进行的部分有&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;拆分后对每一个块的排序可以同时进行&lt;/li&gt;
-  &lt;li&gt;合并时的不同范围之间可以同时进行，例如拆分为10个小块，那么1-5小块的合并跟6-10小块的合并过程可以同时进行&lt;/li&gt;
-  &lt;li&gt;合并的不同阶段之间不可以同时进行，因为不同阶段之间有先后顺序&lt;/li&gt;
-  &lt;li&gt;不存在对同一条数据的修改，所以无需进行并发控制&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;线程池&quot;&gt;线程池&lt;/h1&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;threadPoolExecutor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ThreadPoolExecutor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TimeUnit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SECONDS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinkedBlockingQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CustomizableThreadFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fileSorterTPE-&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ThreadPoolExecutor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CallerRunsPolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;线程池消费拆分任务&quot;&gt;线程池消费拆分任务&lt;/h1&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Chunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;splitFutureList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// this is just a block of testing code.&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;br&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;readLine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;chunkRows&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chunkRows&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialChunkSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chunkRows&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowNum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chunkRows&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;rowNum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chunkRows&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;chunkRows&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
-            &lt;span class=&quot;nc&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Chunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threadPoolExecutor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comparator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialChunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;splitFutureList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chunkList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;splitFutureList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Collectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;线程池消费合并任务&quot;&gt;线程池消费合并任务&lt;/h1&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentLevel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INITIAL_CHUNK_LEVEL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Chunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mergeFutureList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//从队列中获取一组chunk&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Chunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pollChunks&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pollChunks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chunkQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentLevel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//未取到同级chunk, 表示此级别应合并完成&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;CollectionUtils&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pollChunks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mergeFutureList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;chunkQueue:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mergeFutureList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//chunkQueue 中只有一个元素，表示此次合并是最终合并&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chunkQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;currentLevel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Chunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threadPoolExecutor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pollChunks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mergeFutureList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;可以看到合并任务与拆分任务有些不同，拆分任务是在循环退出后才执行&lt;code class=&quot;highlighter-rouge&quot;&gt;Future.get&lt;/code&gt;，因为拆分不用考虑先后；
-而合并任务在每次获取当前阶段的chunk结束时执行&lt;code class=&quot;highlighter-rouge&quot;&gt;Future.get&lt;/code&gt;，这样才能避免不同的阶段之间产生混乱。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/bit-ranger/architecture/blob/d9083d2fb71763557e6d4eb6875f9c001fd41596/core/src/main/java/com/rainyalley/architecture/core/arithmetic/sort/FileSorter.java&quot;&gt;完整代码&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;测试&quot;&gt;测试&lt;/h1&gt;
-
-&lt;p&gt;在上一篇中，使用单线程，1千万条数据排序耗时13秒；
-在同一台电脑上，使用多线程后，耗时6秒，时间减少了一半。&lt;/p&gt;
-
-&lt;p&gt;在拆分过程中，每个线程都要在内存中进行排序，
-在拆分和合并过程中，每个线程都要持有自己的读写缓冲区，这无疑会增大内存的使用量。&lt;/p&gt;
-
-&lt;p&gt;究竟消耗了多少内存，我们可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Java Mission Control&lt;/code&gt;来观察，jdk8的bin目录下&lt;code class=&quot;highlighter-rouge&quot;&gt;jmc.exe&lt;/code&gt;即为此工具。&lt;/p&gt;</content><author><name></name></author><category term="Seattle" /><category term="kkk" /><category term="Spokane" /></entry><entry><title type="html">基于Jekyll搭建个人博客</title><link href="https://burnian.github.io/technology/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" rel="alternate" type="text/html" title="基于Jekyll搭建个人博客" /><published>2019-01-18T00:00:00+08:00</published><updated>2019-01-18T00:00:00+08:00</updated><id>https://burnian.github.io/technology/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2</id><content type="html" xml:base="https://burnian.github.io/technology/2019/01/18/%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">&lt;h2 id=&quot;引言&quot;&gt;引言&lt;/h2&gt;
-
-&lt;p&gt;最开始我是在&lt;a href=&quot;https://blog.csdn.net/w_weilan&quot;&gt;CSDN&lt;/a&gt;上写博客的。博客写了一年多，访问量勉强破万，感觉其中至少有三成是自己贡献的。而且CSDN上的广告是越来越多，网页编辑器也是越来越不好用。&lt;/p&gt;
-
-&lt;p&gt;十一月份，在青岛的ICPC区域赛失利之后，想要重新开始，和过去告别。也从此转移自己写博客的阵地。考虑过转投暂时还比较干净而且可以部分定义页面的&lt;a href=&quot;https://www.cnblogs.com/wu-kan/&quot;&gt;博客园&lt;/a&gt;，但是最终还是决定在&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;上搭建属于自己的博客。&lt;/p&gt;
-
-&lt;p&gt;然后，翻了一些网上的教程，用&lt;a href=&quot;https://hexo.io/zh-cn/&quot;&gt;Hexo&lt;/a&gt;框架和&lt;a href=&quot;https://github.com/theme-next/hexo-theme-next&quot;&gt;NexT&lt;/a&gt;主题搭了一个比较素雅的符合个人审美的博客。然而，Hexo搭建的博客需要先在本地生成博客页面然后再上传到服务器上，每次发博客都需要在电脑重新生成页面并上传，感觉没有那么方便。在不同电脑上想要发博客更是十分困难，感觉如果胡乱操作后本地部署的文件发生了一定的错乱，恢复起来会十分麻烦。&lt;/p&gt;
-
-&lt;p&gt;后来发现，Github Pages原生支持&lt;a href=&quot;https://www.jekyll.com.cn/&quot;&gt;Jekyll&lt;/a&gt;，因此如果只需要推送文章可以直接在github的仓库里做。于是决定在期末考试后用Jekyll重新搭建个人博客。原来的博客不再维护。&lt;/p&gt;
-
-&lt;h2 id=&quot;构思&quot;&gt;构思&lt;/h2&gt;
-
-&lt;p&gt;目前博客的demo如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/image/2019-01-18-1.jpg&quot; alt=&quot;demo1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/image/2019-01-18-2.jpg&quot; alt=&quot;demo2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;想搭建一个足够干净、页面几乎不要有多余元素的博客，同时博客的功能还要足够丰富，满足我以下的需求：&lt;/p&gt;
-
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;用Markdown写博客&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持Latex公式&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持mermaid等插件&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;个性化Live2D&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;分享一些我在其他网站的个人账号&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;移动端适配&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;足够快的加载速度&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;访问量统计，评论互动&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;……（需求是会逐渐增长的，参见&lt;a href=&quot;https://wu-kan.github.io/about&quot;&gt;关于&lt;/a&gt;）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;其中，Live2D是我某次访问别人的博客初次见到的，感觉非常吸引人。最终的目标是去掉网页上所有多余的元素，只剩下博文和Live2D看板娘，看板娘本身还可以作为博客访问的导航，感觉会十分有新意。&lt;/p&gt;
-
-&lt;h2 id=&quot;搭建过程不定期更新&quot;&gt;搭建过程（不定期更新）&lt;/h2&gt;
-
-&lt;p&gt;我目前读的专业是计科超算方向，所以软件工程专业相关方面的基础几乎为0😌，大部分的内容都是参考网上教程慢慢摸索的，假如对某些过程有意见和建议欢迎向我提出！&lt;/p&gt;
-
-&lt;h3 id=&quot;开发环境&quot;&gt;开发环境&lt;/h3&gt;
-
-&lt;p&gt;这个学期选了一门Linux相关的公选课，感觉还不错，因此直接把开发环境是搭建在Windows Subsystem for Linux（简称WSL）上了，Windows下也可以直接访问其中的环境，详见&lt;a href=&quot;https://wu-kan.github.io/posts/linux/Windows-Subsystem-for-Linux&quot;&gt;这篇博客&lt;/a&gt;。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Jekyll是基于Ruby和Node.js环境的，很多依赖的包也会同时安装进来。现在，找在目录下打开终端，运行如下代码，加入新建了一个名为&lt;code class=&quot;highlighter-rouge&quot;&gt;blog&lt;/code&gt;的文件夹，则说明安装成功了。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new blog
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;结构解析&quot;&gt;结构解析&lt;/h3&gt;
-
-&lt;p&gt;观察刚刚生成的博客目录，有如下的结构：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├──_config.yml
-├── _drafts
-|   ├── begin-with-the-crazy-ideas.textile
-|   └── on-simplicity-in-technology.markdown
-├── _includes
-|   ├── footer.html
-|   └── header.html
-├── _layouts
-|   ├── default.html
-|   └── post.html
-├── _posts
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
-|   └── 2009-04-26-barcamp-boston-4-roundup.textile
-├── _site
-├── .jekyll-metadata
-└── index.html
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;它的结构还算是比较简单清晰，详细功能如下表。&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;文件/目录&lt;/th&gt;
-      &lt;th&gt;描述&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;_config.yml&lt;/td&gt;
-      &lt;td&gt;保存配置数据。很多配置选项都可以直接在命令行中进行设置，但是如果把那些配置写在这儿，就不用非要去记住那些命令了。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;_drafts&lt;/td&gt;
-      &lt;td&gt;drafts（草稿）是未发布的文章。这些文件的格式中都没有 title.MARKUP 数据。学习如何使用草稿。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;_includes&lt;/td&gt;
-      &lt;td&gt;可以加载这些包含部分到的布局或者文章中以方便重用。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;_layouts&lt;/td&gt;
-      &lt;td&gt;layouts（布局）是包裹在文章外部的模板。布局可以在 YAML 头信息中根据不同文章进行选择&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;_posts&lt;/td&gt;
-      &lt;td&gt;这里放的就是的文章了。文件格式很重要，必须要符合:YEAR-MONTH-DAY-title.MARKUP。 永久链接 可以在文章中自己定制，但是数据和标记语言都是根据文件名来确定的。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;_data&lt;/td&gt;
-      &lt;td&gt;格式化好的网站数据应放在这里。jekyll 的引擎会自动加载在该目录下所有的 yaml 文件（后缀是 .yml, .yaml, .json 或者 .csv ）。这些文件可以经由 ｀site.data｀ 访问。如果有一个 members.yml 文件在该目录下，就可以通过 site.data.members 获取该文件的内容。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;_site&lt;/td&gt;
-      &lt;td&gt;一旦 Jekyll 完成转换，就会将生成的页面放在这里（默认）。最好将这个目录放进 .gitignore 文件中。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;.jekyll-metadata&lt;/td&gt;
-      &lt;td&gt;该文件帮助 Jekyll 跟踪哪些文件从上次建立站点开始到现在没有被修改，哪些文件需要在下一次站点建立时重新生成。该文件不会被包含在生成的站点中。将它加入到 .gitignore 文件可能是一个好注意。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;index.html and other HTML, Markdown, Textile files&lt;/td&gt;
-      &lt;td&gt;如果这些文件中包含 YAML 头信息 部分，Jekyll 就会自动将它们进行转换。当然，其他的如 .html, .markdown, .md, 或者 .textile 等在的站点根目录下或者不是以上提到的目录中的文件也会被转换。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Other Files/Folders&lt;/td&gt;
-      &lt;td&gt;其他一些未被提及的目录和文件如 css 还有 images 文件夹， favicon.ico 等文件都将被完全拷贝到生成的 site 中。&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;选取模板&quot;&gt;选取模板&lt;/h3&gt;
-
-&lt;p&gt;和丰富精美的Hexo比起来，好的Jekyll模板真的是太少了…经过漫长时间的挑选，最终选择在&lt;a href=&quot;https://github.com/poole/lanyon&quot;&gt;lanyon&lt;/a&gt;主题的基础上修改啦。&lt;/p&gt;
-
-&lt;p&gt;这里选我自己的博客为模板，也可以在GitHub上慢慢翻一些别人的博客或模板。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/wu-kan/wu-kan.github.io YourBlog
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;发送到github托管&quot;&gt;发送到Github托管&lt;/h3&gt;
-
-&lt;p&gt;把本地文件修改后，上传到博客仓库的&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;分支即可。&lt;/p&gt;
-
-&lt;h3 id=&quot;定制&quot;&gt;定制&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Update: 注意！以下移植插件的办法即将/已经过时。目前的计划（v2.3.0）是，将所有插件做成jsloader的形式，这样引用的时候只要&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script src='/public/js/x.js'&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;即可，可以加快页面访问速度。目前的计划是&lt;strong&gt;完全&lt;/strong&gt;去掉&lt;code class=&quot;highlighter-rouge&quot;&gt;_include/&lt;/code&gt;目录下的所有文件。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;我把博客实现的的插件基本上都封装起来了，拿走的流程都差不多：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;将我博客代码仓库下&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes\&lt;/code&gt;相关文件加入你自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;在你的&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;内加入相关配置项（如果有的话，可以参看我的）&lt;/li&gt;
-  &lt;li&gt;最后在需要这个插件的地方加入&lt;code class=&quot;highlighter-rouge&quot;&gt;include语句&lt;/code&gt;即可&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;加入live2d看板娘&quot;&gt;加入Live2D看板娘&lt;/h4&gt;
-
-&lt;p&gt;参考&lt;a href=&quot;https://www.fghrsh.net/post/123.html&quot;&gt;网页添加 Live2D 看板娘&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;已经将相关代码封装，将我博客代码仓库下&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes\live2d.html&lt;/code&gt;加入你自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;，在&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;/body&amp;gt;&lt;/code&gt;标签前加入如下代码。&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include live2d.html %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;随后在你的&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;内加入如下配置项：&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;live2d&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enable&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;live2d_settings&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'waifuEdgeSide'&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'right:0'&quot;&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'modelId'&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Live2D的前端基于&lt;a href=&quot;https://github.com/fghrsh/live2d_demo&quot;&gt;fghrsh/live2d_demo&lt;/a&gt;修改，感谢。&lt;/li&gt;
-  &lt;li&gt;Live2D的后端暂时使用了&lt;a href=&quot;https://www.fghrsh.net/post/170.html&quot;&gt;fghrsh&lt;/a&gt;提供的api，感谢。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;数学公式渲染&quot;&gt;数学公式渲染&lt;/h4&gt;
-
-&lt;p&gt;这里选择速度更快的KaTeX来渲染，参考&lt;a href=&quot;https://www.jianshu.com/p/f2b28954d902&quot;&gt;使用KaTeX代替MathJax渲染公式&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;已经将相关代码封装，将我博客代码仓库下&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes\katex.html&lt;/code&gt;加入你自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;，在&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;/body&amp;gt;&lt;/code&gt;标签前加入如下代码。&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include katex.html %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;随后在你的&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;内加入如下配置项：&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;katex&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# KaTeX&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enable&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;stylesheet&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;//unpkg.com/katex/dist/katex.min.css&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;//unpkg.com/katex/dist/katex.min.js&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;auto-render&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;//unpkg.com/katex/dist/contrib/auto-render.min.js&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;delimiters&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 开启行内公式$\KaTeX$支持&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;mermaid流程图&quot;&gt;mermaid流程图&lt;/h4&gt;
-
-&lt;p&gt;已经将相关代码封装，将我博客代码仓库下&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes\mermaid.html&lt;/code&gt;加入你自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;，在&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;/body&amp;gt;&lt;/code&gt;标签前加入如下代码。&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include mermaid.html %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;随后在你的&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;内加入如下配置项：&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;mermaid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://github.com/knsv/mermaid&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enable&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;//unpkg.com/mermaid/dist/mermaid.min.js&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;stylesheet&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;//unpkg.com/mermaid/dist/mermaid.min.css&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;markdown-expand&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;valine评论系统&quot;&gt;valine评论系统&lt;/h4&gt;
-
-&lt;p&gt;配置详见&lt;a href=&quot;https://valine.js.org/&quot;&gt;官方手册&lt;/a&gt;，说得很清楚了。&lt;/p&gt;
-
-&lt;p&gt;已经将相关代码封装，将我博客代码仓库下&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes\valine.html&lt;/code&gt;加入你自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;，在你需要评论模块的地方加入如下代码。&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include valine.html %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;随后在你的&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;内加入如下配置项（这是我的，请根据官方手册上的说明获取自己的参数）：&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;valine&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enable&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;//unpkg.com/valine/dist/Valine.min.js&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;appId&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;******&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;appKey&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;******&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;notify&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 评论回复邮件提醒&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;verify&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 验证码服务&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;avatar&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;identicon&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;在这里评论吧！&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;visitor&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 文章访问量统计&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;highlight&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 代码高亮&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;avatarForce&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 每次访问强制拉取最新的评论列表头像&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;recordIP&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 记录评论者IP&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;下一步计划&quot;&gt;下一步计划&lt;/h2&gt;
-
-&lt;p&gt;详细的开发计划及建站内容详见&lt;a href=&quot;https://wu-kan.github.io/about&quot;&gt;博客详情页&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;从&lt;a href=&quot;https://magical-girl.site/&quot;&gt;这个页面&lt;/a&gt;得到的灵感，目标是博客上除了文章和作为导航的Live2D之外不出现其他的模块，尽量的干净、快速。&lt;/p&gt;
-
-&lt;h2 id=&quot;参考资料&quot;&gt;参考资料&lt;/h2&gt;
-
-&lt;p&gt;大部分的参考链接已在原文给出，同时搭建本博客的过程中还参考了以下内容，感谢作者们：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/9f198d5779e6&quot;&gt;Jekyll + Github Pages 博客搭建入门&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/ds19991999/article/details/81516568&quot;&gt;Jekyll博客Next主题超深度配置&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/bb184f61c9ae&quot;&gt;【应用软件】Jekyll 配置&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">引言</summary></entry><entry><title type="html">烂苹果（一）</title><link href="https://burnian.github.io/fiction/2018/08/27/bad-apples-1.html" rel="alternate" type="text/html" title="烂苹果（一）" /><published>2018-08-27T00:00:00+08:00</published><updated>2018-08-27T00:00:00+08:00</updated><id>https://burnian.github.io/fiction/2018/08/27/bad-apples-1</id><content type="html" xml:base="https://burnian.github.io/fiction/2018/08/27/bad-apples-1.html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
+&lt;p&gt;很多年以后，当小年再次回想起那个遥远的下午，竟恍然不觉这简简单单的邂逅会碰撞出那么多故事……&lt;/p&gt;</content><author><name></name></author><category term="猫" /><category term="情感" /><summary type="html">楔子：猫</summary></entry><entry><title type="html">烂苹果（一）</title><link href="https://burnian.github.io/fiction/2018/08/27/bad-apples-1.html" rel="alternate" type="text/html" title="烂苹果（一）" /><published>2018-08-27T00:00:00+08:00</published><updated>2018-08-27T00:00:00+08:00</updated><id>https://burnian.github.io/fiction/2018/08/27/bad-apples-1</id><content type="html" xml:base="https://burnian.github.io/fiction/2018/08/27/bad-apples-1.html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
 
 &lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
 the genus Malus. The tree originated in Central Asia, where its wild ancestor,
@@ -785,6 +477,13 @@ years in Asia and Europe, and were brought to North America by European
 colonists.&lt;/p&gt;</content><author><name></name></author><category term="fruit" /><summary type="html">An apple is a sweet, edible fruit produced by an apple tree.</summary></entry><entry><title type="html">小说（一）</title><link href="https://burnian.github.io/fiction/2018/08/22/fic-1.html" rel="alternate" type="text/html" title="小说（一）" /><published>2018-08-22T00:00:00+08:00</published><updated>2018-08-22T00:00:00+08:00</updated><id>https://burnian.github.io/fiction/2018/08/22/fic-1</id><content type="html" xml:base="https://burnian.github.io/fiction/2018/08/22/fic-1.html">&lt;p&gt;小说测试&lt;/p&gt;
 
 &lt;p&gt;一这是十个字的测试鸭二这是十个字的测试鸭三这是十个字的测试鸭四这是十个字的测试鸭五这是十个字的测试鸭六这是十个字的测试鸭七这是十个字的测试鸭八这是十个字的测试鸭九这是十个字的测试鸭十这是十个字的测试鸭11这是十个字的测试鸭12这是十个字的测试鸭13这是十个字的测试鸭14这是十个字的测试鸭15这是十个字的测试鸭16这是十个字的测试鸭17这是十个字的测试鸭&lt;/p&gt;</content><author><name></name></author><category term="ficx" /><summary type="html">小说测试</summary></entry><entry><title type="html">Kiwifruit copy 3</title><link href="https://burnian.github.io/travel/2018/08/22/kiwifruit-copy-3.html" rel="alternate" type="text/html" title="Kiwifruit copy 3" /><published>2018-08-22T00:00:00+08:00</published><updated>2018-08-22T00:00:00+08:00</updated><id>https://burnian.github.io/travel/2018/08/22/kiwifruit%20copy%203</id><content type="html" xml:base="https://burnian.github.io/travel/2018/08/22/kiwifruit-copy-3.html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
+berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
+
+&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
+hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
+diameter). It has a fibrous, dull greenish-brown skin and bright green or
+golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
+texture, with a sweet and unique flavor.&lt;/p&gt;</content><author><name></name></author><category term="ddd" /><summary type="html">Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible berry of several species of woody vines in the genus Actinidia.</summary></entry><entry><title type="html">Kiwifruit copy 2</title><link href="https://burnian.github.io/travel/2018/08/22/kiwifruit-copy-2.html" rel="alternate" type="text/html" title="Kiwifruit copy 2" /><published>2018-08-22T00:00:00+08:00</published><updated>2018-08-22T00:00:00+08:00</updated><id>https://burnian.github.io/travel/2018/08/22/kiwifruit%20copy%202</id><content type="html" xml:base="https://burnian.github.io/travel/2018/08/22/kiwifruit-copy-2.html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
 berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
 
 &lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large

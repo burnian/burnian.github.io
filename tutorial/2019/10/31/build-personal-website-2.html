@@ -20,11 +20,11 @@
 <link rel="canonical" href="https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html" />
 <meta property="og:url" content="https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html" />
 <meta property="og:site_name" content="Burnian’s Blog" />
-<meta property="og:image" content="http://pzn1a9240.bkt.clouddn.com/cover.jpg" />
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/6fbea8e9ly1g8kv72h9caj20fk0fk41s.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-10-31T00:00:00+08:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html","headline":"（二）从零开始搭建个人静态博客网站","dateModified":"2019-10-31T00:00:00+08:00","datePublished":"2019-10-31T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html"},"image":"http://pzn1a9240.bkt.clouddn.com/cover.jpg","description":"这一章我们将要学习的是如何把本地代码部署到网站托管平台GitHub上去。","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html","headline":"（二）从零开始搭建个人静态博客网站","dateModified":"2019-10-31T00:00:00+08:00","datePublished":"2019-10-31T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://burnian.github.io/tutorial/2019/10/31/build-personal-website-2.html"},"image":"https://wx4.sinaimg.cn/mw690/6fbea8e9ly1g8kv72h9caj20fk0fk41s.jpg","description":"这一章我们将要学习的是如何把本地代码部署到网站托管平台GitHub上去。","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <!-- baidu 流量统计 -->
@@ -208,16 +208,6 @@
           
           
           
-          <a class="dropdown-item" href="/pages/technology/">
-            
-            技术
-            
-            <i class="badge badge-pill badge-secondary"
-              style="float: right;margin-top: 3px;">2</i></a>
-          
-          
-          
-          
           <a class="dropdown-item" href="/pages/life/">
             
             生活
@@ -233,7 +223,7 @@
             教程
             
             <i class="badge badge-pill badge-secondary"
-              style="float: right;margin-top: 3px;">2</i></a>
+              style="float: right;margin-top: 3px;">3</i></a>
           
           
           <!-- <div class="dropdown-divider"></div> -->
@@ -292,41 +282,41 @@
 
 <h3 id="github-是什么">GitHub 是什么</h3>
 
-<p><a href="https://github.com/">GitHub</a>是一个开源的托管服务，有点像代码的云。它以各种不同的编程语言托管您的源代码项目，并跟踪每次迭代所做的各种更改。该服务可以通过使用<code class="highlighter-rouge">git</code><sup id="fnref:git"><a href="#fn:git" class="footnote">1</a></sup>来完成此操作，本章内容的学习要求读者有一定的<code class="highlighter-rouge">git</code>基础，理解何为<a href="https://baike.baidu.com/item/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/3311252?fr=aladdin">版本控制</a>、<a href="https://baike.baidu.com/item/%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81/2886980">代码托管</a>等等。</p>
+<p><a href="https://github.com/">GitHub</a>是一个开源的托管服务，有点像代码的云。它以各种不同的编程语言托管您的源代码项目，并跟踪每次迭代所做的各种更改。该服务可以通过使用 git<sup id="fnref:git"><a href="#fn:git" class="footnote">1</a></sup> 来完成此操作，本章内容的学习要求读者有一定的 git 基础，理解何为<a href="https://baike.baidu.com/item/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/3311252?fr=aladdin">版本控制</a>、<a href="https://baike.baidu.com/item/%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81/2886980">代码托管</a>等等。</p>
 
 <h3 id="github-pages-是什么">GitHub Pages 是什么</h3>
 
-<p><a href="https://pages.github.com/">GitHub Pages</a>是一个静态网站托管服务，该服务会直接从GitHub上的一个库中取出HTML，CSS和JavaScript文件，并由用户选择是否要通过一个创建过程来运行这些文件，并最终发布一个网站。点击这个<a href="https://github.com/collections/github-pages-examples">链接</a>可以查看通过GitHub Pages发布的网站实例。你的网站可以托管在GitHub的<code class="highlighter-rouge">github.io</code>域名或你的自定义域名下。</p>
+<p><a href="https://pages.github.com/">GitHub Pages</a>是一个静态网站托管服务，该服务会直接从 GitHub 上的一个库中取出 HTML、CSS 和 JavaScript 等文件，并由用户选择是否要通过一个创建过程来运行这些文件，并最终发布一个网站。点击这个<a href="https://github.com/collections/github-pages-examples">链接</a>可以查看通过 GitHub Pages 发布的网站实例。我们的网站可以托管在 GitHub 的<code class="highlighter-rouge">github.io</code>域名或自定义域名下。</p>
 
 <h2 id="部署网站">部署网站</h2>
 
 <h3 id="1在-github-账号下创建新库">1.在 GitHub 账号下创建新库</h3>
 
-<p>点击前文的GitHub链接，注册并登陆自己的GitHub账号，点击右上角<code class="highlighter-rouge">+ 下拉</code>按钮并选择<code class="highlighter-rouge">New repository</code>.</p>
+<p>点击<a href="https://github.com/">GitHub</a>链接，注册并登陆自己的 GitHub 账号，点击右上角<code class="highlighter-rouge">+</code>按钮并选择<code class="highlighter-rouge">New repository</code>.</p>
 
 <p><img src="https://help.github.com/assets/images/help/repository/repo-create.png" alt="repo-create" /></p>
 
-<p>接下来配置待新建的库。下图中的<code class="highlighter-rouge">Owner</code>下拉菜单可以用来选择该库的所属账号，默认自己的账号就行。在后面的<code class="highlighter-rouge">Repository name</code>中填上<code class="highlighter-rouge">username.github.io</code>其中<code class="highlighter-rouge">username</code>为你的账号名，也是Owner名。<strong>注意：<code class="highlighter-rouge">username</code>必须与你的账号名保持完全一致，否则网站将不可访问！</strong></p>
+<p>接下来配置待新建的库。下图中的<code class="highlighter-rouge">Owner</code>下拉菜单可以用来选择该库的所属账号，默认自己的账号就行。在后面的 Repository name 中填上 username.github.io 其中 username 为你的账号名。<strong>注意： username 必须与你的账号名保持完全一致，否则网站将不可访问！</strong></p>
 
 <p><img src="https://help.github.com/assets/images/help/repository/create-repository-owner.png" alt="create-repository-owner" /></p>
 
-<p>然后勾选下图所示的选项，给你的库初始化一个README文档，用来解释说明你的库内容。</p>
+<p>然后勾选下图所示的选项，给你的库初始化一个<code class="highlighter-rouge">README.md</code>文档，用来解释说明你的库内容。</p>
 
 <p><img src="https://help.github.com/assets/images/help/repository/initialize-with-readme.png" alt="initialize-with-readme" /></p>
 
-<p>最后点击<code class="highlighter-rouge">Create repository</code>按钮，网站库就创建完毕。其他配置暂时不用管，感兴趣的同学可以自行了解或者在评论区给我留言。</p>
+<p>最后点击<code class="highlighter-rouge">Create repository</code>，网站库就创建完毕。其他配置暂时不用管，感兴趣的同学可以自行了解或者在评论区给我留言。</p>
 
-<p>如图所示，点击<code class="highlighter-rouge">Settings</code>按钮，跳转库设置页面。下翻该页面，如果看到下图所示的内容，则证明你提交到该库中的网站项目已经可以成功通过<code class="highlighter-rouge">http://username.github.io/</code>访问了。</p>
+<p>如图所示，点击<code class="highlighter-rouge">Settings</code>，跳转库设置页面。下翻该页面，如果看到下图所示的内容，则证明你提交到该库中的网站项目已经可以成功通过<code class="highlighter-rouge">http://username.github.io/</code>访问了。</p>
 
 <p><img src="https://help.github.com/assets/images/help/repository/repo-actions-settings.png" alt="repo-actions-settings" /></p>
 
 <h3 id="2下载并安装-git">2.下载并安装 git</h3>
 
-<p>这里以Windows操作系统为例：</p>
+<p>这里以 Windows 操作系统为例：</p>
 
 <ul>
-  <li>从<a href="https://git-scm.com/download/win">git官网</a>下载，国内用户可能需要翻墙。</li>
-  <li>从<a href="https://github.com/waylau/git-for-win">git国内镜像</a>下载，不过这里只支持64位Windows操作系统，选择最新版的<code class="highlighter-rouge">64-bit Git for Windows Setup</code>下载即可。</li>
+  <li>从<a href="https://git-scm.com/download/win">git 官网</a>下载，国内用户可能需要翻墙。</li>
+  <li>从<a href="https://github.com/waylau/git-for-win">git 国内镜像</a>下载，不过这里只支持64位 Windows 操作系统，选择最新版的<code class="highlighter-rouge">64-bit Git for Windows Setup</code>下载即可。</li>
 </ul>
 
 <p>安装全程下一步，装完后在任意文件夹下点击右键，菜单会多出两个按钮：</p>
@@ -338,11 +328,11 @@
 
 <h3 id="3把项目推送到-github-的对应库">3.把项目推送到 GitHub 的对应库</h3>
 
-<p>选择一个你认为合适的文件夹，右键点击菜单中的<code class="highlighter-rouge">Git Bash Here</code>按钮打开git命令行界面，输入<code class="highlighter-rouge">git clone https://github.com/username/username.github.io</code>其中<code class="highlighter-rouge">username</code>为你刚才设置的账号名，回车后等待git把远端的库文件<code class="highlighter-rouge">clone</code>到本地来。</p>
+<p>选择一个你认为合适的文件夹，右键点击菜单中的<code class="highlighter-rouge">Git Bash Here</code>按钮打开 git 命令行界面，输入<code class="highlighter-rouge">git clone https://github.com/username/username.github.io</code>其中 username 为你的 GitHub 账号名，回车后等待 git 把远端的库文件<code class="highlighter-rouge">clone</code>到本地来。</p>
 
 <p><img src="http://pzn1a9240.bkt.clouddn.com/8git-bash.PNG" alt="git-bash" /></p>
 
-<p>当你看到上图所示内容时，说明远端库已经<code class="highlighter-rouge">clone</code>完毕，此时<code class="highlighter-rouge">username.github.io</code>文件夹内应该只有一个<code class="highlighter-rouge">.git</code>文件夹和一个<code class="highlighter-rouge">README.md</code>文件。接下来打开我们上一章创建的网站项目文件夹，可以去<code class="highlighter-rouge">C:\Users\UserName\myblog</code>这里找。把<code class="highlighter-rouge">myblog</code>里面的文件全部拷贝到<code class="highlighter-rouge">username.github.io</code>文件夹内，然后分别输入下面的指令：</p>
+<p>当你看到上图所示内容时，说明远端库已经<code class="highlighter-rouge">clone</code>完毕，此时 username.github.io 文件夹内应该只有一个 .git 文件夹和一个 README.md 文件。接下来打开我们上一章创建的网站项目文件夹，忘记路径的同学可以去<code class="highlighter-rouge">C:\Users\UserName\myblog</code>找。把 myblog 文件夹里面的文件全部拷贝到 username.github.io 文件夹内，然后分别输入下面的指令：</p>
 
 <figure class="highlight"><pre><code class="language-factor" data-lang="factor"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -352,15 +342,17 @@
 <span class="n">git</span> <span class="nb">push</span> <span class="n">-u</span> <span class="n">origin</span> <span class="n">master</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>这样，本地项目中的所有文件就都被推送到了你的GitHub账号下对应的<code class="highlighter-rouge">username.github.io</code>库中去了。打开你的<code class="highlighter-rouge">username.github.io</code>库页面，看看你刚推送的内容是否更新到此，若没有，则库中依然只有<code class="highlighter-rouge">README.md</code>这一个文件。耐心等待10分钟，成功后你就可以在浏览器或手机上打开网站<code class="highlighter-rouge">http://username.github.io/</code>了。</p>
+<p>这样，本地项目中的所有文件就都被推送到了你的 GitHub 对应的 username.github.io 库中去了。打开你的 username.github.io 库页面，看看你刚推送的内容是否更新到此，若库中依然只有<code class="highlighter-rouge">README.md</code>这一个文件，那就再等几分钟，等待时长看网速快慢，成功后你就可以在浏览器或手机上打开网站<code class="highlighter-rouge">http://username.github.io/</code>了。</p>
 
 <h2 id="后记">后记</h2>
 
-<p>Congratulations! 到这一步，我们就已经学会了发布网站的整个流程，至于git的相关内容则不在本教程的讨论范围之内，同学们需自行学习。从下一章开始，我们将从基础知识入手，一步步学习如何润色我们的网站，并最终做出炫酷的效果。</p>
+<p>Congratulations! 到这一步，我们就已经学会了发布网站的整个流程，至于 git 的相关内容则不在本教程的讨论范围之内，同学们需自行学习，之后如果有空，我也可能专门出一个 git 的系列教程。</p>
+
+<p>从下一章开始，我们将从基础知识入手，一步步学习如何润色我们的网站，并最终做出炫酷的效果。</p>
 
 <h2 id="附录">附录</h2>
 
-<p>git常用命令：</p>
+<p>git 常用命令：</p>
 
 <figure class="highlight"><pre><code class="language-factor" data-lang="factor"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -368,10 +360,10 @@
 4
 5
 </pre></td><td class="code"><pre><span class="n">git</span> <span class="nb">clone</span> <span class="n">你的SSH地址</span>
-<span class="n">git</span> <span class="n">pull</span> <span class="n">（联系服务器，更新本地文件夹）</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">（联系服务器，用远端库记录更新本地库记录）</span>
 <span class="n">git</span> <span class="n">add</span> <span class="n">--all</span> <span class="n">（写入本地的所有新文件）</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s">"修改日志"</span> <span class="n">（在本地进行一次有记录地更新，包括本地所有文件的修改）</span>
-<span class="n">git</span> <span class="nb">push</span> <span class="n">-u</span> <span class="n">origin</span> <span class="n">master</span> <span class="n">（把本地的所有修改都推送到服务器）</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s">"修改日志"</span> <span class="n">（把本地所有文件的修改提交到本地库记录中去，并填写相关的修改日志）</span>
+<span class="n">git</span> <span class="nb">push</span> <span class="n">-u</span> <span class="n">origin</span> <span class="n">master</span> <span class="n">（把本地库记录推送到远端库记录中去）</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <div class="footnotes">
@@ -399,10 +391,11 @@
 
       <div class="col" style="padding-right: 0;">
         
-        <span tabindex="1" class="card" data-toggle="popover" data-content="没有下一篇了" data-placement="bottom"
-          data-trigger="focus">
-          <h4 class="text-muted text-center">下一篇</h4>
-        </span>
+        <a class="card" href="https://burnian.github.io/tutorial/2019/11/01/build-personal-website-3.html">
+          <h4 class="text-muted">下一篇</h4>
+          <p></p>
+          <h4>（三）从零开始搭建个人静态博客网站</h4>
+        </a>
         
       </div>
     </div>
