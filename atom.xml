@@ -70,13 +70,234 @@
 	<title>Hank Quinlan's Blog</title>
 	<link href="http://hankquinlan.github.io/blog/atom.xml" rel="self"/>
 	<link href="http://hankquinlan.github.io/blog"/>
-	<updated>2019-11-03T15:28:17+08:00</updated>
+	<updated>2019-11-04T21:03:40+08:00</updated>
 	<id>http://hankquinlan.github.io/blog</id>
 	<author>
 		<name>Hank Quinlan</name>
 		<email>hankquinlanhub@gmail.com</email>
 	</author>
 
+	
+		<entry>
+			<title>（四）从零开始搭建个人静态博客网站</title>
+			<link href="http://hankquinlan.github.io/tutorial/2019/11/02/build-personal-website-4.html"/>
+			<updated>2019-11-02T00:00:00+08:00</updated>
+			<id>http://hankquinlan.github.io/tutorial/2019/11/02/build-personal-website-4</id>
+			<content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#楔子&quot; id=&quot;markdown-toc-楔子&quot;&gt;楔子&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#jekyll-网站项目的基本文件夹结构&quot; id=&quot;markdown-toc-jekyll-网站项目的基本文件夹结构&quot;&gt;Jekyll 网站项目的基本文件夹结构&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#各文件夹详解&quot; id=&quot;markdown-toc-各文件夹详解&quot;&gt;各文件夹详解&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1_includes-文件传参举例&quot; id=&quot;markdown-toc-1_includes-文件传参举例&quot;&gt;1._includes 文件传参举例&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2布局文件&quot; id=&quot;markdown-toc-2布局文件&quot;&gt;2.布局文件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3数据文件&quot; id=&quot;markdown-toc-3数据文件&quot;&gt;3.数据文件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4资源文件&quot; id=&quot;markdown-toc-4资源文件&quot;&gt;4.资源文件&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;楔子&quot;&gt;楔子&lt;/h2&gt;
+
+&lt;p&gt;这一章主要把整个项目的文件夹结构剖析出来。&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-网站项目的基本文件夹结构&quot;&gt;Jekyll 网站项目的基本文件夹结构&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-factor&quot; data-lang=&quot;factor&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_config.yml&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_data&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;members.yml&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_drafts&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;begin-with-the-crazy-ideas.md&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on-simplicity-in-technology.md&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_includes&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;footer.html&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;header.html&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_layouts&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default.html&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post.html&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_posts&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;2007-10-29-why-every-programmer-should-play-nethack.md&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;2009-04-26-barcamp-boston-4-roundup.md&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_sass&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_base.scss&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_layout.scss&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_site&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;.jekyll-metadata&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index.html&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;also&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;an&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;'index.md'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;valid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matter&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;各文件夹详解&quot;&gt;各文件夹详解&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;文件 / 文件夹&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;_config.yml&lt;/td&gt;
+      &lt;td&gt;整个网站的全局配置信息都可以保存在这里，具体可以看看博主的&lt;a href=&quot;https://github.com/burnian/burnian.github.io.source/blob/master/_config.yml&quot;&gt;_config.yml&lt;/a&gt;，当我们修改了该文件后一定要重启 Jekyll server 修改才会生效，通过在命令行中按下&lt;code class=&quot;highlighter-rouge&quot;&gt;ctrl+c&lt;/code&gt;来关闭服务器，再输入&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;来开启服务器。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;_drafts&lt;/td&gt;
+      &lt;td&gt;这个文件夹作用不大，可以略过，因为它的功能可以通过对&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;文件夹内的文件扉页添加&lt;code class=&quot;highlighter-rouge&quot;&gt;publish: false&lt;/code&gt;（使得某篇博文不发布）来实现。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;_includes&lt;/td&gt;
+      &lt;td&gt;这里面存放的是各个页面的通用组件，可以通过&lt;code class=&quot;highlighter-rouge&quot;&gt;{% include filename.ext %}&lt;/code&gt;语句把该文件夹下的某个&lt;code class=&quot;highlighter-rouge&quot;&gt;filename.ext&lt;/code&gt;文件的内容插入到调用这条语句的页面中去。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;_layouts&lt;/td&gt;
+      &lt;td&gt;这里保存的都是布局类文件，可以用作某文件&lt;code class=&quot;highlighter-rouge&quot;&gt;file.ext&lt;/code&gt;扉页中的 layout 属性的值，而&lt;code class=&quot;highlighter-rouge&quot;&gt;file.ext&lt;/code&gt;的内容则会替换掉布局类文件的&lt;code class=&quot;highlighter-rouge&quot;&gt;{{ content }}&lt;/code&gt;变量。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;_posts&lt;/td&gt;
+      &lt;td&gt;这里存放的是你的博文，通常是 Markdown 文档。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;_data&lt;/td&gt;
+      &lt;td&gt;Jekyll 引擎会自动加载这个文件夹下的所有数据文件（文件可以使用 .yml，.yaml，.jso，.csv，.tsv 格式）如果该文件夹下有一个叫做&lt;code class=&quot;highlighter-rouge&quot;&gt;members.yml&lt;/code&gt;的文件，那么我们可以通过&lt;code class=&quot;highlighter-rouge&quot;&gt;site.data.members&lt;/code&gt;来获取它的信息。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;_sass&lt;/td&gt;
+      &lt;td&gt;这里存放的是用 Sass&lt;sup id=&quot;fnref:Sass&quot;&gt;&lt;a href=&quot;#fn:Sass&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 语言编写的 .scss 文件，这些文件最终将被导入到&lt;code class=&quot;highlighter-rouge&quot;&gt;assets/css/main.scss&lt;/code&gt;文件中去，最终生成一个单独的 css&lt;sup id=&quot;fnref:css&quot;&gt;&lt;a href=&quot;#fn:css&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; 样式文件&lt;code class=&quot;highlighter-rouge&quot;&gt;main.css&lt;/code&gt;。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;_site&lt;/td&gt;
+      &lt;td&gt;这个文件夹不需要用户关心，它是 jekyll 生成的，由最终会部署到服务器上的目标文件构成，可以把它添加到&lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt;文件中，让 git 不去关心它。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.jekyll-metadata&lt;/td&gt;
+      &lt;td&gt;它可以帮助 Jekyll 追踪自上次 build 以来哪些文件没有被修改，以及哪些文件需要在下一次 build 的时候重新生成。这个文件夹不会被包含到&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;文件夹里面去。可以把它添加到&lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt;文件中去。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;1_includes-文件传参举例&quot;&gt;1._includes 文件传参举例&lt;/h3&gt;
+
+&lt;p&gt;假如在&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;中有个文件&lt;code class=&quot;highlighter-rouge&quot;&gt;note.html&lt;/code&gt;，其中有一条语句&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt; {{ include.myVar }} and {{ include.url }} &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;则我们在&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;中可以通过调用下列语句来给&lt;code class=&quot;highlighter-rouge&quot;&gt;{{ include.myVar }}&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;{{ include.url }}&lt;/code&gt;赋值&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;note.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;myVar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;This is my var.&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url=&quot;http://jekyllrb.com&lt;/span&gt;&quot;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;2布局文件&quot;&gt;2.布局文件&lt;/h3&gt;
+
+&lt;p&gt;我们通常会有多个布局相同的页面，当这类页面很多的时候，比如50个，这时重复代码就多到不可接受了。于是布局文件应运而生，例如我的布局文件&lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt;如下：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;zh-CN&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    {% include head.html  %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+        {% include header.html %}
+        {% include navigation.html %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bcontent&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container-fluid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            {{ content }}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+        {% include footer.html %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ '/assets/js/autoload.js' | prepend: site.baseurl }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;假如现在有一个文件&lt;code class=&quot;highlighter-rouge&quot;&gt;note.html&lt;/code&gt;，它的布局是 default 的，则只需要在其扉页中添加&lt;code class=&quot;highlighter-rouge&quot;&gt;layout: default&lt;/code&gt;即可，&lt;code class=&quot;highlighter-rouge&quot;&gt;note.html&lt;/code&gt;的内容会自动填充到上面代码中的&lt;code class=&quot;highlighter-rouge&quot;&gt;{{ content }}&lt;/code&gt;处。&lt;/p&gt;
+
+&lt;h3 id=&quot;3数据文件&quot;&gt;3.数据文件&lt;/h3&gt;
+
+&lt;p&gt;数据文件&lt;code class=&quot;highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt;的内容大致如下所示：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yml&quot; data-lang=&quot;yml&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;navbar-blog&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Blog&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/#bnavbar&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;navbar-gallery&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Gallery&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/pages/gallery/#bnavbar&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;我们可以通过以下语句来遍历&lt;code class=&quot;highlighter-rouge&quot;&gt;navigation.yml&lt;/code&gt;中的每一组数据（一个小横线代表一组数据）：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;{% for item in site.data.navigation %}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ item.link }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; {{ item.name }} &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+{% endfor %}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;4资源文件&quot;&gt;4.资源文件&lt;/h3&gt;
+
+&lt;p&gt;由于 Jekyll 的默认文件夹结构中并没有资源文件夹，所以我们需要自己来有序地整合这些文件，通常把它们统一存放在&lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt;文件夹中，结构大致如下所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/11/04/W5wRLSkjHE3v2gn.png&quot; alt=&quot;assets-dir&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt;存放 .css 和&lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt;文件。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fonts&lt;/code&gt;存放字体资源。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;img&lt;/code&gt;存放图片文件。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;存放 JavaScript 脚本文件，用于各页面的业务逻辑。&lt;/li&gt;
+  &lt;li&gt;根目录下存放其他文件，如 .json 类型的第三方配置文件。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:Sass&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.sass.hk/&quot;&gt;Sass&lt;/a&gt;是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合 (mixins)、导入 (inline imports) 等高级功能，这些拓展令 CSS 更加强大与优雅。 &lt;a href=&quot;#fnref:Sass&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:css&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.w3school.com.cn/css/index.asp&quot;&gt;css&lt;/a&gt;即层叠样式表(Cascading Style Sheets)是一种用来表现 HTML 或 XML（标准通用标记语言的一个子集）等文件样式的程序语言。 &lt;a href=&quot;#fnref:css&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+		</entry>
 	
 		<entry>
 			<title>（三）从零开始搭建个人静态博客网站</title>
@@ -89,7 +310,9 @@
   &lt;li&gt;&lt;a href=&quot;#gem-是什么&quot; id=&quot;markdown-toc-gem-是什么&quot;&gt;gem 是什么&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#rubygems-是什么&quot; id=&quot;markdown-toc-rubygems-是什么&quot;&gt;RubyGems 是什么&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#jekyll-是什么&quot; id=&quot;markdown-toc-jekyll-是什么&quot;&gt;Jekyll 是什么&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#markdown-是什么&quot; id=&quot;markdown-toc-markdown-是什么&quot;&gt;Markdown 是什么&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#liquid-是什么&quot; id=&quot;markdown-toc-liquid-是什么&quot;&gt;Liquid 是什么&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#front-matter-是什么&quot; id=&quot;markdown-toc-front-matter-是什么&quot;&gt;Front Matter 是什么&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#jekyll-的全局变量&quot; id=&quot;markdown-toc-jekyll-的全局变量&quot;&gt;Jekyll 的全局变量&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#后记&quot; id=&quot;markdown-toc-后记&quot;&gt;后记&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -133,19 +356,62 @@
 
 &lt;h2 id=&quot;jekyll-是什么&quot;&gt;Jekyll 是什么&lt;/h2&gt;
 
-&lt;p&gt;Jekyll 是一种用 Ruby 语言开发的静态网页生成系统，我们的网站就是由它生成的。Jekyll 可以识别的文件中既能有语句又能有HTML（称为超文本标记语言，是一种标识性的语言。文件后缀通常为.html）语句。&lt;/p&gt;
+&lt;p&gt;Jekyll 是一个原生支持 GitHub Pages 且创建流程简单的静态网站生成系统，能够识别 Markdown&lt;sup id=&quot;fnref:Markdown&quot;&gt;&lt;a href=&quot;#fn:Markdown&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; 和 HTML&lt;sup id=&quot;fnref:HTML&quot;&gt;&lt;a href=&quot;#fn:HTML&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; 文件，并根据你的布局生成一个完全静态的网站。Jekyll 还支持 Markdown 和 Liquid 语法。我们的网站就是以 Jekyll + GitHub Pages 为核心来支撑的。&lt;/p&gt;
 
-&lt;h2 id=&quot;markdown-是什么&quot;&gt;Markdown 是什么&lt;/h2&gt;
+&lt;h2 id=&quot;liquid-是什么&quot;&gt;Liquid 是什么&lt;/h2&gt;
 
-&lt;p&gt;Markdown 是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式，文件后缀通常为.md或.markdown。其使用方法参见&lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.zybuluo.com/mdeditor&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://liquid.bootcss.com/&quot;&gt;Liquid&lt;/a&gt;由 Shopify 创造并用 Ruby 实现。它既是一门开源的标记语言，又是一个安全且面向用户的灵活网页应用模板引擎。其代码可分为对象（object）、标记（tag）和过滤器（filter）。我们不用记那么多，只需要知道它在项目中怎么使用即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://help.github.com/assets/images/help/repository/repo-create.png&quot; alt=&quot;repo-create&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;front-matter-是什么&quot;&gt;Front Matter 是什么&lt;/h2&gt;
+
+&lt;p&gt;Front matter（扉页）是一个如下所示的 YAML&lt;sup id=&quot;fnref:YAML&quot;&gt;&lt;a href=&quot;#fn:YAML&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; 代码块，由插件&lt;a href=&quot;https://github.com/jekyll/jekyll-coffeescript&quot;&gt;jekyll-coffeescript&lt;/a&gt;实现。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-factor&quot; data-lang=&quot;factor&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;layout:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;title:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Blogging&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Like&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Hacker&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;---&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;对于你网站项目中的每一个文件，但凡包含上述代码块的都会被 Jekyll 视为一个特殊文件进行特殊处理，其主要作用是给该文件添加各种属性。&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-的全局变量&quot;&gt;Jekyll 的全局变量&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;变量&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://jekyllrb.com/docs/variables/#site-variables&quot;&gt;site&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;文件中的所有配置信息都可以通过这个变量获取。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://jekyllrb.com/docs/variables/#page-variables&quot;&gt;page&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;表示一个 .html 文件，该页面的特定数据和定义在其扉页中的数据都可以通过这个变量获取。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;content&lt;/td&gt;
+      &lt;td&gt;该变量主要用于 layout 类型的文件。表示其他使用了某布局类型 default 的文件会把自己的内容填在 default 中的&lt;code class=&quot;highlighter-rouge&quot;&gt;{{ content }}&lt;/code&gt;位置。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://jekyllrb.com/docs/variables/#paginator&quot;&gt;paginator&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;当我们使用了分页插件以后，这个变量就可用了&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
 
-&lt;p&gt;Congratulations! 到这一步，我们就已经学会了发布网站的整个流程，至于 git 的相关内容则不在本教程的讨论范围之内，同学们需自行学习，之后如果有空，我也可能专门出一个 git 的系列教程。&lt;/p&gt;
+&lt;p&gt;Congratulations! 到这一步，我们就基本掌握了利用 Jekyll + GitHub Pages 来搭建个人网站的所有相关知识，在之后的学习中如果碰到哪里不懂我们就可以问出有价值的问题并通过网络途经自行解决了。&lt;/p&gt;
 
-&lt;p&gt;从下一章开始，我们将从基础知识入手，一步步学习如何润色我们的网站，并最终做出炫酷的效果。&lt;/p&gt;
+&lt;p&gt;下一章我将把整个项目的文件夹结构剖析给大家看，让大家对整个项目有个较为清晰的认识，不再畏手畏脚。&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
@@ -157,6 +423,15 @@
     &lt;/li&gt;
     &lt;li id=&quot;fn:renaming&quot;&gt;
       &lt;p&gt;重命名。 &lt;a href=&quot;#fnref:renaming&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:Markdown&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.zybuluo.com/mdeditor&quot;&gt;Markdown&lt;/a&gt;是一种目前比较流行的标记语言，能使普通文本内容具有一定的格式，文件后缀通常为 .md 或 .markdown，常用来写博客。 &lt;a href=&quot;#fnref:Markdown&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:HTML&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://baike.baidu.com/item/HTML/97049?fr=aladdin&quot;&gt;HTML&lt;/a&gt;属于 web 开发的基础内容，但不属于本教程的讲解范畴，同学们务必自学，可以看看&lt;a href=&quot;https://whatwg-cn.github.io/html/#toc-introduction&quot;&gt;HTML标准&lt;/a&gt;。 &lt;a href=&quot;#fnref:HTML&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:YAML&quot;&gt;
+      &lt;p&gt;YAML 不是标记语言，而是一个面向所有编程语言的数据序列化标准。 &lt;a href=&quot;#fnref:YAML&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -175,7 +450,7 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#部署网站&quot; id=&quot;markdown-toc-部署网站&quot;&gt;部署网站&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#1在-github-账号下创建新库&quot; id=&quot;markdown-toc-1在-github-账号下创建新库&quot;&gt;1.在 GitHub 账号下创建新库&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#1在-github-账号下创建新库-usernamegithubio&quot; id=&quot;markdown-toc-1在-github-账号下创建新库-usernamegithubio&quot;&gt;1.在 GitHub 账号下创建新库 username.github.io&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#2下载并安装-git&quot; id=&quot;markdown-toc-2下载并安装-git&quot;&gt;2.下载并安装 git&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#3把项目推送到-github-的对应库&quot; id=&quot;markdown-toc-3把项目推送到-github-的对应库&quot;&gt;3.把项目推送到 GitHub 的对应库&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
@@ -198,9 +473,9 @@
 
 &lt;h2 id=&quot;部署网站&quot;&gt;部署网站&lt;/h2&gt;
 
-&lt;h3 id=&quot;1在-github-账号下创建新库&quot;&gt;1.在 GitHub 账号下创建新库&lt;/h3&gt;
+&lt;h3 id=&quot;1在-github-账号下创建新库-usernamegithubio&quot;&gt;1.在 GitHub 账号下创建新库 username.github.io&lt;/h3&gt;
 
-&lt;p&gt;点击&lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt;链接，注册并登陆自己的 GitHub 账号，点击右上角&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;按钮并选择&lt;code class=&quot;highlighter-rouge&quot;&gt;New repository&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;点击&lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt;链接，注册并登陆自己的 GitHub 账号，点击右上角&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;按钮并选择&lt;code class=&quot;highlighter-rouge&quot;&gt;New repository&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://help.github.com/assets/images/help/repository/repo-create.png&quot; alt=&quot;repo-create&quot; /&gt;&lt;/p&gt;
 
@@ -238,7 +513,7 @@
 
 &lt;p&gt;选择一个你认为合适的文件夹，右键点击菜单中的&lt;code class=&quot;highlighter-rouge&quot;&gt;Git Bash Here&lt;/code&gt;按钮打开 git 命令行界面，输入&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/username/username.github.io&lt;/code&gt;其中 username 为你的 GitHub 账号名，回车后等待 git 把远端的库文件&lt;code class=&quot;highlighter-rouge&quot;&gt;clone&lt;/code&gt;到本地来。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://pzn1a9240.bkt.clouddn.com/8git-bash.PNG&quot; alt=&quot;git-bash&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/11/04/j4FuI2VOR3eBYr5.png&quot; alt=&quot;git-bash&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;当你看到上图所示内容时，说明远端库已经&lt;code class=&quot;highlighter-rouge&quot;&gt;clone&lt;/code&gt;完毕，此时 username.github.io 文件夹内应该只有一个 .git 文件夹和一个 README.md 文件。接下来打开我们上一章创建的网站项目文件夹，忘记路径的同学可以去&lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\UserName\myblog&lt;/code&gt;找。把 myblog 文件夹里面的文件全部拷贝到 username.github.io 文件夹内，然后分别输入下面的指令：&lt;/p&gt;
 
@@ -291,10 +566,9 @@
 			<id>http://hankquinlan.github.io/tutorial/2019/10/30/build-personal-website-1</id>
 			<content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#简单的开始&quot; id=&quot;markdown-toc-简单的开始&quot;&gt;简单的开始&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#1下载带-devkit-的-ruby-安装包&quot; id=&quot;markdown-toc-1下载带-devkit-的-ruby-安装包&quot;&gt;1.下载带 Devkit 的 Ruby 安装包&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#2安装&quot; id=&quot;markdown-toc-2安装&quot;&gt;2.安装&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3安装-jekyll-和-bundler&quot; id=&quot;markdown-toc-3安装-jekyll-和-bundler&quot;&gt;3.安装 Jekyll 和 bundler&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#4创建你的第一个-jekyll-默认网站项目并运行&quot; id=&quot;markdown-toc-4创建你的第一个-jekyll-默认网站项目并运行&quot;&gt;4.创建你的第一个 jekyll 默认网站项目并运行&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#1下载并安装带-devkit-的-ruby-安装包&quot; id=&quot;markdown-toc-1下载并安装带-devkit-的-ruby-安装包&quot;&gt;1.下载并安装带 Devkit 的 Ruby 安装包&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2安装-jekyll-和-bundler&quot; id=&quot;markdown-toc-2安装-jekyll-和-bundler&quot;&gt;2.安装 Jekyll 和 bundler&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3创建你的第一个-jekyll-默认网站项目并运行&quot; id=&quot;markdown-toc-3创建你的第一个-jekyll-默认网站项目并运行&quot;&gt;3.创建你的第一个 jekyll 默认网站项目并运行&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#后记&quot; id=&quot;markdown-toc-后记&quot;&gt;后记&lt;/a&gt;&lt;/li&gt;
@@ -302,11 +576,11 @@
 
 &lt;h2 id=&quot;简单的开始&quot;&gt;简单的开始&lt;/h2&gt;
 
-&lt;h3 id=&quot;1下载带-devkit-的-ruby-安装包&quot;&gt;1.下载带 Devkit 的 Ruby&lt;sup id=&quot;fnref:Ruby&quot;&gt;&lt;a href=&quot;#fn:Ruby&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 安装包&lt;/h3&gt;
+&lt;h3 id=&quot;1下载并安装带-devkit-的-ruby-安装包&quot;&gt;1.下载并安装带 Devkit 的 Ruby&lt;sup id=&quot;fnref:Ruby&quot;&gt;&lt;a href=&quot;#fn:Ruby&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 安装包&lt;/h3&gt;
 
 &lt;p&gt;网上搜一下就能找到下载链接，这里以 Windows 操作系统为例，可以去&lt;a href=&quot;https://rubyinstaller.org/downloads/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;官网下载对应安装包。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://wx4.sinaimg.cn/mw690/6fbea8e9ly1g8kv8ts9k6j20cf07adfz.jpg&quot; alt=&quot;RubyInstaller&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/11/04/wJ2hSVXLQvUToxn.png&quot; alt=&quot;RubyInstaller&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;根据自己的操作系统情况选择对应的最新安装包下载即可，包名中的 Devkit 表示该安装包会自带许多 gem&lt;sup id=&quot;fnref:gem&quot;&gt;&lt;a href=&quot;#fn:gem&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;，其中就包括了 RubyGems&lt;sup id=&quot;fnref:RubyGems&quot;&gt;&lt;a href=&quot;#fn:RubyGems&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; 以及很多 Jekyll&lt;sup id=&quot;fnref:Jekyll&quot;&gt;&lt;a href=&quot;#fn:Jekyll&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; 相关的组件，方便我们接下来的网站开发。&lt;/p&gt;
 
@@ -317,17 +591,15 @@
   &lt;li&gt;&lt;a href=&quot;https://pan.baidu.com/s/17x-3ZNJ8N1UgdmvsbnyinQ&quot;&gt;百度网盘&lt;/a&gt;的源，提取码: exc7&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;2安装&quot;&gt;2.安装&lt;/h3&gt;
+&lt;p&gt;下载完毕后双击安装，各种下一步，安装好后打开 Windows 控制台&lt;sup id=&quot;fnref:console&quot;&gt;&lt;a href=&quot;#fn:console&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;，输入&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt;，若出现下图所示内容（版本号不同没关系）则证明安装成功。&lt;/p&gt;
 
-&lt;p&gt;各种下一步，安装好后打开 Windows 控制台&lt;sup id=&quot;fnref:console&quot;&gt;&lt;a href=&quot;#fn:console&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;，输入&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt;，若出现下图所示内容（版本号不同没关系）则证明安装成功。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/11/04/9c7XVRS3DtM1Tam.png&quot; alt=&quot;setup-success&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/mw690/6fbea8e9ly1g8kvgub7enj20cp014myv.jpg&quot; alt=&quot;setup-success&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3安装-jekyll-和-bundler&quot;&gt;3.安装 Jekyll 和 bundler&lt;/h3&gt;
+&lt;h3 id=&quot;2安装-jekyll-和-bundler&quot;&gt;2.安装 Jekyll 和 bundler&lt;/h3&gt;
 
 &lt;p&gt;在控制台界面输入&lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll bundler&lt;/code&gt;，其中 bundler 是一个辅助工具，它会根据你项目根目录下的 Gemfile 文件中的指定记录来安装 gem，并能确保用户在不同的环境下运行的都是同一个版本的 Jekyll 和 Jekyll plugin （Jekyll插件）。&lt;/p&gt;
 
-&lt;h3 id=&quot;4创建你的第一个-jekyll-默认网站项目并运行&quot;&gt;4.创建你的第一个 jekyll 默认网站项目并运行&lt;/h3&gt;
+&lt;h3 id=&quot;3创建你的第一个-jekyll-默认网站项目并运行&quot;&gt;3.创建你的第一个 jekyll 默认网站项目并运行&lt;/h3&gt;
 
 &lt;p&gt;在控制台界面输入&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new myblog&lt;/code&gt;，其中 myblog 指代你的项目名称。然后输入&lt;code class=&quot;highlighter-rouge&quot;&gt;cd myblog&lt;/code&gt;切换到 myblog 文件夹，最后输入&lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;，Jekyll就会在 myblog 文件夹下生成一个目标网站文件夹 _site ，并在本地开启一个 Jekyll 服务器，于是用户就可以通过地址 &lt;a href=&quot;http://localhost:4000&quot;&gt;http://localhost:4000&lt;/a&gt; 来访问自己的网站了。&lt;/p&gt;
 
@@ -519,7 +791,7 @@
 
 &lt;p&gt;&lt;strong&gt;“终生成长，从未长大。”&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/mw690/6fbea8e9ly1g8kvh41gtij20sp0guq3e.jpg&quot; alt=&quot;lixigui-profile&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/11/04/dBtPnZ9oJc4LgWl.jpg&quot; alt=&quot;lixigui-profile&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;引用&quot;&gt;引用&lt;/h3&gt;
 

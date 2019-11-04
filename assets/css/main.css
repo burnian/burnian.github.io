@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face { font-family: devicon; src: url(../fonts/devicon.eot?-hdf3wh); src: url(../fonts/devicon.eot?#iefix-hdf3wh) format("embedded-opentype"), url(../fonts/devicon.woff?-hdf3wh) format("woff"), url(../fonts/devicon.ttf?-hdf3wh) format("truetype"), url(../fonts/devicon.svg?-hdf3wh#devicon) format("svg"); font-weight: 400; font-style: normal; }
 
 [class*=" devicon-"], [class^=devicon-] { font-family: devicon; speak: none; font-style: normal; font-weight: 400; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -2248,13 +2249,20 @@
 .highlight .gi { color: #a6e22e; }
 
 /* Generic.Inserted & Diff Inserted */
-figure pre { padding: .5em; border-radius: .25em; }
+figure pre { padding: .5rem; border-radius: .25em; }
 
 figure .lineno { margin-bottom: 0px; color: white; font-size: 1rem; }
 
-figure .code pre { margin-bottom: 0px; font-size: 1rem; }
+figure code table { border: none !important; margin: 0 !important; }
 
-.highlighter-rouge { color: black; background-color: #D6DDE1; padding: 0 .25rem; border-radius: .25rem; }
+figure code table th { padding: 0 !important; }
+
+figure code table td { padding: 0 !important; }
+
+figure .code pre { margin-bottom: 0px; font-size: 1rem; color: white; }
+
+/* 文字背景色，类似荧光笔效果 */
+.highlighter-rouge { color: black; background-color: #cacfd1; padding: 0 .25rem; border-radius: .25rem; }
 
 @media only screen and (min-width: 1400px) { .col-xxl-4 { -ms-flex: 0 0 33.333333%; flex: 0 0 33.333333%; max-width: 33.333333%; } }
 
@@ -2346,6 +2354,16 @@ bcard:hover { color: #0062cc; }
 
 .footer a:active { color: #4B5664; }
 
+.post table { border-top: 2px solid #777; border-bottom: 2px solid #777; margin: 8px 0; }
+
+.post table thead { border-bottom: 1px dashed #777; background-color: #aaa; color: #fff; }
+
+.post table th { padding: 2px 10px; min-width: 8rem; }
+
+.post table tr:nth-child(2n) { background-color: #eaeff1; }
+
+.post table td { padding: 2px 10px; vertical-align: top; }
+
 /* post post articles area */
 .post header { margin-left: -30px; padding-left: 25px; border-left: 5px solid #2ca6cb; line-height: 1.5; }
 
@@ -2366,6 +2384,14 @@ bcard:hover { color: #0062cc; }
 .post .footnotes { color: #6c757d; }
 
 /** Blockquotes */
+@media screen and (max-width: 1199px) { .content-navigation { display: none !important; }
+  .post pre code { font-size: 85%; } }
+
+@media screen and (max-width: 991px) { .post pre code { font-size: 70%; } }
+
+@media screen and (max-width: 767px) { .post header { margin-left: -10px; padding-left: 5px; }
+  .post pre code { font-size: 55%; } }
+
 .boundary { border-bottom: .1875em solid #ccc; }
 
 .switch-card { margin: 30px 0; }
@@ -2380,6 +2406,6 @@ bcard:hover { color: #0062cc; }
 
 .switch-card .card { height: 130px; }
 
-.switch-card h4 { margin: 0; }
+.switch-card h4 { padding: 0 1rem; }
 
 /*# sourceMappingURL=main.css.map */
