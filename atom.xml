@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://burnian.github.io/atom.xml" />
 <meta property="og:site_name" content="Burnian’s Blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"https://burnian.github.io/atom.xml","headline":"Burnian’s Blog","description":"Burnian Zhou’s Personal Blog Site","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Burnian’s Blog","url":"https://burnian.github.io/atom.xml","description":"Burnian Zhou’s Personal Blog Site","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <!-- baidu 流量统计 -->
@@ -70,7 +70,7 @@
 	<title>Hank Quinlan's Blog</title>
 	<link href="http://hankquinlan.github.io/blog/atom.xml" rel="self"/>
 	<link href="http://hankquinlan.github.io/blog"/>
-	<updated>2019-11-04T21:03:40+08:00</updated>
+	<updated>2019-11-04T21:34:14+08:00</updated>
 	<id>http://hankquinlan.github.io/blog</id>
 	<author>
 		<name>Hank Quinlan</name>
