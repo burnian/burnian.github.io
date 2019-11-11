@@ -6,24 +6,25 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Burnian Zhou's Personal Blog Site">
+    content="记录 spark 学习过程中的坑，持续更新">
   <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
   <title>Burnian's Blog</title>
   <link type="application/atom+xml" rel="alternate" href="https://burnian.github.io/feed.xml" title="Burnian's Blog" />
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>小说（二） | Burnian’s Blog</title>
+<title>spark 学习踩坑记录 | Burnian’s Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="小说（二）" />
+<meta property="og:title" content="spark 学习踩坑记录" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="小说测试" />
-<meta property="og:description" content="小说测试" />
-<link rel="canonical" href="https://burnian.github.io/fiction/2018/08/22/fic-2.html" />
-<meta property="og:url" content="https://burnian.github.io/fiction/2018/08/22/fic-2.html" />
+<meta name="description" content="记录 spark 学习过程中的坑，持续更新" />
+<meta property="og:description" content="记录 spark 学习过程中的坑，持续更新" />
+<link rel="canonical" href="https://burnian.github.io/technology/2019/11/08/spark-setup-pits.html" />
+<meta property="og:url" content="https://burnian.github.io/technology/2019/11/08/spark-setup-pits.html" />
 <meta property="og:site_name" content="Burnian’s Blog" />
+<meta property="og:image" content="http://spark.apache.org/images/spark-logo-trademark.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-08-22T00:00:00+08:00" />
+<meta property="article:published_time" content="2019-11-08T00:00:00+08:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"小说（二）","dateModified":"2018-08-22T00:00:00+08:00","datePublished":"2018-08-22T00:00:00+08:00","url":"https://burnian.github.io/fiction/2018/08/22/fic-2.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://burnian.github.io/fiction/2018/08/22/fic-2.html"},"description":"小说测试","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"https://burnian.github.io/technology/2019/11/08/spark-setup-pits.html","headline":"spark 学习踩坑记录","dateModified":"2019-11-08T00:00:00+08:00","datePublished":"2019-11-08T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://burnian.github.io/technology/2019/11/08/spark-setup-pits.html"},"image":"http://spark.apache.org/images/spark-logo-trademark.png","description":"记录 spark 学习过程中的坑，持续更新","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <!-- baidu 流量统计 -->
@@ -64,7 +65,7 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 
 <body>
-  <div id="particles-js" url="/fiction/2018/08/22/fic-2.html">
+  <div id="particles-js" url="/technology/2019/11/08/spark-setup-pits.html">
   <div class="header">
     <h1>
       <span class="site-title">Burnian Zhou</span>
@@ -192,7 +193,7 @@
             小说
             
             <i class="badge badge-pill badge-secondary"
-              style="float: right;margin-top: 3px;">5</i></a>
+              style="float: right;margin-top: 3px;">3</i></a>
           
           
           
@@ -212,7 +213,7 @@
             生活
             
             <i class="badge badge-pill badge-secondary"
-              style="float: right;margin-top: 3px;">3</i></a>
+              style="float: right;margin-top: 3px;">4</i></a>
           
           
           
@@ -223,6 +224,16 @@
             
             <i class="badge badge-pill badge-secondary"
               style="float: right;margin-top: 3px;">4</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/technology/">
+            
+            技术
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">1</i></a>
           
           
           <!-- <div class="dropdown-divider"></div> -->
@@ -242,24 +253,34 @@
     <!-- 正文 -->
     <div class="sheet post">
       <header>
-        <h2>小说（二）</h2>
+        <h2>spark 学习踩坑记录</h2>
         <p class="post-meta">
           <i class="fa fa-user"></i>
           Burnian Zhou&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-calendar"></i> 2018年08月22日&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-calendar"></i> 2019年11月08日&nbsp;&nbsp;&nbsp;
           <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
         </p>
         <p class="post-tag">
           
-          <span class="fa fa-tag"></span>&nbsp;ficx&nbsp;&nbsp;&nbsp;
+          <span class="fa fa-tag"></span>&nbsp;spark&nbsp;&nbsp;&nbsp;
           
         </p>
       </header>
       <hr class="boundary">
       <article>
-        <p>小说测试</p>
+        <p><strong>1.</strong> hadoop 有其匹配的 JDK 版本，比如：hadoop 版本 &gt;= 2.7 时，要求<code class="highlighter-rouge">Java 7</code>或<code class="highlighter-rouge">java 8(openjdk/oracle)</code>，<code class="highlighter-rouge">java 13</code>运行 hadoop 会出错。hadoop 版本 &lt; 2.7 只能基于<code class="highlighter-rouge">java 6</code>运行。</p>
 
-<p>一这是十个字的测试鸭二这是十个字的测试鸭三这是十个字的测试鸭四这是十个字的测试鸭五这是十个字的测试鸭六这是十个字的测试鸭七这是十个字的测试鸭八这是十个字的测试鸭九这是十个字的测试鸭十这是十个字的测试鸭11这是十个字的测试鸭12这是十个字的测试鸭13这是十个字的测试鸭14这是十个字的测试鸭15这是十个字的测试鸭16这是十个字的测试鸭17这是十个字的测试鸭</p>
+<p><strong>2.</strong> <code class="highlighter-rouge">hadoop-env.cmd</code>文件里面有一条设置 JAVA_HOME 的语句：
+<!-- console or escape--></p>
+
+<figure class="highlight"><pre><code class="language-escape" data-lang="escape"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>set JAVA_HOME=%JAVA_HOME%
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>如果 java 按照默认路径安装在<code class="highlighter-rouge">C:\Program Files</code>，则会因为 Program 后面的空格导致 JAVA_HOME 配置出错。</p>
+
+<p><strong>3.</strong> 运行<code class="highlighter-rouge">spark-shell</code>报错 hadoop 缺了<code class="highlighter-rouge">winutils.exe</code>文件，则需要去下载对应 hadoop 版本的<code class="highlighter-rouge">winutils.exe</code>文件，可以去<a href="https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe">这里</a>下载然后放入 hadoop 的 bin 目录下。</p>
+
 
       </article>
       <hr class="boundary">
@@ -268,18 +289,18 @@
     <div class="row switch-card">
       <div class="col" style="padding-left: 0;">
         
-        <a class="card" href="https://burnian.github.io/fiction/2018/08/22/fic-1.html">
+        <a class="card" href="https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4.html">
           <h4 class="text-muted">上一篇</h4>
-          <h4>小说（一）</h4>
+          <h4>（四）从零开始搭建个人静态博客网站</h4>
         </a>
         
       </div>
 
       <div class="col" style="padding-right: 0;">
         
-        <a class="card" href="https://burnian.github.io/travel/2018/08/22/kiwifruit-copy-2.html">
+        <a class="card" href="https://burnian.github.io/life/2019/11/12/like-a-stupid.html">
           <h4 class="text-muted">下一篇</h4>
-          <h4>Kiwifruit copy 2</h4>
+          <h4>关于孤独</h4>
         </a>
         
       </div>

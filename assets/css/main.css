@@ -2384,6 +2384,10 @@ bcard:hover { color: #0062cc; }
 .post .footnotes { color: #6c757d; }
 
 /** Blockquotes */
+.post blockquote { border-left: 5px solid #D6DBDF; background: rgba(112, 138, 153, 0.1); font-size: 100%; }
+
+.post blockquote:last-child { margin-bottom: 0; }
+
 @media screen and (max-width: 1199px) { .content-navigation { display: none !important; }
   .post pre code { font-size: 85%; } }
 

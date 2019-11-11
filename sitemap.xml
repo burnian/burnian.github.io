@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://jmcglone.com/life/2019/11/12/like-a-stupid.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://jmcglone.com/technology/2019/11/08/spark-setup-pits.html</loc>
+    </url>
+    
+    <url>
         <loc>http://jmcglone.com/tutorial/2019/11/02/build-personal-website-4.html</loc>
     </url>
     
@@ -39,14 +47,6 @@
     
     <url>
         <loc>http://jmcglone.com/travel/2018/08/22/kiwifruit-copy-2.html</loc>
-    </url>
-    
-    <url>
-        <loc>http://jmcglone.com/fiction/2018/08/22/fic-2.html</loc>
-    </url>
-    
-    <url>
-        <loc>http://jmcglone.com/fiction/2018/08/22/fic-1.html</loc>
     </url>
     
     <url>
@@ -133,6 +133,14 @@
     
     <url>
         <loc>http://jmcglone.com/pages/life/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://jmcglone.com/pages/technology/</loc>
     </url>
     
     

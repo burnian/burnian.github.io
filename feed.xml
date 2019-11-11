@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://burnian.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://burnian.github.io/" rel="alternate" type="text/html" /><updated>2019-11-04T21:34:14+08:00</updated><id>https://burnian.github.io/feed.xml</id><title type="html">Burnian’s Blog</title><subtitle>Burnian Zhou's Personal Blog Site</subtitle><entry><title type="html">（四）从零开始搭建个人静态博客网站</title><link href="https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4.html" rel="alternate" type="text/html" title="（四）从零开始搭建个人静态博客网站" /><published>2019-11-02T00:00:00+08:00</published><updated>2019-11-02T00:00:00+08:00</updated><id>https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4</id><content type="html" xml:base="https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://burnian.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://burnian.github.io/" rel="alternate" type="text/html" /><updated>2019-11-12T01:57:15+08:00</updated><id>https://burnian.github.io/feed.xml</id><title type="html">Burnian’s Blog</title><subtitle>Burnian Zhou's Personal Blog Site</subtitle><entry><title type="html">关于孤独</title><link href="https://burnian.github.io/life/2019/11/12/like-a-stupid.html" rel="alternate" type="text/html" title="关于孤独" /><published>2019-11-12T00:00:00+08:00</published><updated>2019-11-12T00:00:00+08:00</updated><id>https://burnian.github.io/life/2019/11/12/like-a-stupid</id><content type="html" xml:base="https://burnian.github.io/life/2019/11/12/like-a-stupid.html">&lt;blockquote&gt;
+
+  &lt;p&gt;孤独并不是来自身边无人。感到孤独的真正原因是，无法与他人交流最要紧的感受。&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;——卡尔·荣格&lt;/em&gt;&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;有一次吃完了泡面&lt;/p&gt;
+
+&lt;p&gt;发现洗洁精用光了，&lt;/p&gt;
+
+&lt;p&gt;我随手挤了牙膏洗碗，&lt;/p&gt;
+
+&lt;p&gt;突然会觉得可能要是&lt;/p&gt;
+
+&lt;p&gt;有ta在就好了。&lt;/p&gt;
+
+&lt;p&gt;并不是因为有了ta&lt;/p&gt;
+
+&lt;p&gt;就不会吃泡面。&lt;/p&gt;
+
+&lt;p&gt;也不是因为有了ta&lt;/p&gt;
+
+&lt;p&gt;就不用自己洗碗，&lt;/p&gt;
+
+&lt;p&gt;是我想在洗了碗转身回头时&lt;/p&gt;
+
+&lt;p&gt;ta在那里，&lt;/p&gt;
+
+&lt;p&gt;等着我一脸神秘地说：&lt;/p&gt;
+
+&lt;p&gt;“嘿嘿！你猜我刚刚用什么洗的碗？”&lt;/p&gt;</content><author><name></name></author><category term="心情随笔" /><summary type="html">孤独并不是来自身边无人。感到孤独的真正原因是，无法与他人交流最要紧的感受。 ——卡尔·荣格</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://i.loli.net/2019/11/12/zVeqAMyWvRuS82i.jpg" /></entry><entry><title type="html">spark 学习踩坑记录</title><link href="https://burnian.github.io/technology/2019/11/08/spark-setup-pits.html" rel="alternate" type="text/html" title="spark 学习踩坑记录" /><published>2019-11-08T00:00:00+08:00</published><updated>2019-11-08T00:00:00+08:00</updated><id>https://burnian.github.io/technology/2019/11/08/spark-setup-pits</id><content type="html" xml:base="https://burnian.github.io/technology/2019/11/08/spark-setup-pits.html">&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; hadoop 有其匹配的 JDK 版本，比如：hadoop 版本 &amp;gt;= 2.7 时，要求&lt;code class=&quot;highlighter-rouge&quot;&gt;Java 7&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;java 8(openjdk/oracle)&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;java 13&lt;/code&gt;运行 hadoop 会出错。hadoop 版本 &amp;lt; 2.7 只能基于&lt;code class=&quot;highlighter-rouge&quot;&gt;java 6&lt;/code&gt;运行。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;hadoop-env.cmd&lt;/code&gt;文件里面有一条设置 JAVA_HOME 的语句：
+&lt;!-- console or escape--&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-escape&quot; data-lang=&quot;escape&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;set JAVA_HOME=%JAVA_HOME%
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果 java 按照默认路径安装在&lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Program Files&lt;/code&gt;，则会因为 Program 后面的空格导致 JAVA_HOME 配置出错。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; 运行&lt;code class=&quot;highlighter-rouge&quot;&gt;spark-shell&lt;/code&gt;报错 hadoop 缺了&lt;code class=&quot;highlighter-rouge&quot;&gt;winutils.exe&lt;/code&gt;文件，则需要去下载对应 hadoop 版本的&lt;code class=&quot;highlighter-rouge&quot;&gt;winutils.exe&lt;/code&gt;文件，可以去&lt;a href=&quot;https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe&quot;&gt;这里&lt;/a&gt;下载然后放入 hadoop 的 bin 目录下。&lt;/p&gt;</content><author><name></name></author><category term="spark" /><summary type="html">1. hadoop 有其匹配的 JDK 版本，比如：hadoop 版本 &amp;gt;= 2.7 时，要求Java 7或java 8(openjdk/oracle)，java 13运行 hadoop 会出错。hadoop 版本 &amp;lt; 2.7 只能基于java 6运行。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://spark.apache.org/images/spark-logo-trademark.png" /></entry><entry><title type="html">（四）从零开始搭建个人静态博客网站</title><link href="https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4.html" rel="alternate" type="text/html" title="（四）从零开始搭建个人静态博客网站" /><published>2019-11-02T00:00:00+08:00</published><updated>2019-11-02T00:00:00+08:00</updated><id>https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4</id><content type="html" xml:base="https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#楔子&quot; id=&quot;markdown-toc-楔子&quot;&gt;楔子&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#jekyll-网站项目的基本文件夹结构&quot; id=&quot;markdown-toc-jekyll-网站项目的基本文件夹结构&quot;&gt;Jekyll 网站项目的基本文件夹结构&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#各文件夹详解&quot; id=&quot;markdown-toc-各文件夹详解&quot;&gt;各文件夹详解&lt;/a&gt;    &lt;ul&gt;
@@ -737,13 +780,4 @@
 the genus Malus. The tree originated in Central Asia, where its wild ancestor,
 Malus sieversii, is still found today. Apples have been grown for thousands of
 years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;</content><author><name></name></author><category term="fruit" /><summary type="html">An apple is a sweet, edible fruit produced by an apple tree.</summary></entry><entry><title type="html">小说（一）</title><link href="https://burnian.github.io/fiction/2018/08/22/fic-1.html" rel="alternate" type="text/html" title="小说（一）" /><published>2018-08-22T00:00:00+08:00</published><updated>2018-08-22T00:00:00+08:00</updated><id>https://burnian.github.io/fiction/2018/08/22/fic-1</id><content type="html" xml:base="https://burnian.github.io/fiction/2018/08/22/fic-1.html">&lt;p&gt;小说测试&lt;/p&gt;
-
-&lt;p&gt;一这是十个字的测试鸭二这是十个字的测试鸭三这是十个字的测试鸭四这是十个字的测试鸭五这是十个字的测试鸭六这是十个字的测试鸭七这是十个字的测试鸭八这是十个字的测试鸭九这是十个字的测试鸭十这是十个字的测试鸭11这是十个字的测试鸭12这是十个字的测试鸭13这是十个字的测试鸭14这是十个字的测试鸭15这是十个字的测试鸭16这是十个字的测试鸭17这是十个字的测试鸭&lt;/p&gt;</content><author><name></name></author><category term="ficx" /><summary type="html">小说测试</summary></entry><entry><title type="html">Kiwifruit copy 3</title><link href="https://burnian.github.io/travel/2018/08/22/kiwifruit-copy-3.html" rel="alternate" type="text/html" title="Kiwifruit copy 3" /><published>2018-08-22T00:00:00+08:00</published><updated>2018-08-22T00:00:00+08:00</updated><id>https://burnian.github.io/travel/2018/08/22/kiwifruit%20copy%203</id><content type="html" xml:base="https://burnian.github.io/travel/2018/08/22/kiwifruit-copy-3.html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
-
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;</content><author><name></name></author><category term="ddd" /><summary type="html">Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible berry of several species of woody vines in the genus Actinidia.</summary></entry></feed>
+colonists.&lt;/p&gt;</content><author><name></name></author><category term="fruit" /><summary type="html">An apple is a sweet, edible fruit produced by an apple tree.</summary></entry></feed>
