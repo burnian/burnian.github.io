@@ -9,7 +9,7 @@
     content="Burnian Zhou's Personal Blog Site">
   <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
   <title>Burnian's Blog</title>
-  <link type="application/atom+xml" rel="alternate" href="https://burnian.github.io/feed.xml" title="Burnian's Blog" />
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Burnian's Blog" />
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Burnian’s Blog | Burnian Zhou’s Personal Blog Site</title>
 <meta name="generator" content="Jekyll v4.0.0" />
@@ -17,11 +17,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Burnian Zhou’s Personal Blog Site" />
 <meta property="og:description" content="Burnian Zhou’s Personal Blog Site" />
-<link rel="canonical" href="https://burnian.github.io/atom.xml" />
-<meta property="og:url" content="https://burnian.github.io/atom.xml" />
+<link rel="canonical" href="http://localhost:4000/atom.xml" />
+<meta property="og:url" content="http://localhost:4000/atom.xml" />
 <meta property="og:site_name" content="Burnian’s Blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"https://burnian.github.io/atom.xml","headline":"Burnian’s Blog","description":"Burnian Zhou’s Personal Blog Site","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/atom.xml","headline":"Burnian’s Blog","description":"Burnian Zhou’s Personal Blog Site","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <!-- baidu 流量统计 -->
@@ -70,7 +70,7 @@
 	<title>Hank Quinlan's Blog</title>
 	<link href="http://hankquinlan.github.io/blog/atom.xml" rel="self"/>
 	<link href="http://hankquinlan.github.io/blog"/>
-	<updated>2019-11-26T13:25:43+08:00</updated>
+	<updated>2019-12-07T14:08:36+08:00</updated>
 	<id>http://hankquinlan.github.io/blog</id>
 	<author>
 		<name>Hank Quinlan</name>
@@ -116,6 +116,20 @@
 &lt;p&gt;等着我一脸神秘地说：&lt;/p&gt;
 
 &lt;p&gt;“嘿嘿！你猜我刚刚用什么洗的碗？”&lt;/p&gt;
+
+&lt;p&gt;I heard cracked sound somewhere deep in my heart.&lt;/p&gt;
+
+&lt;p&gt;I knew I deserved it just at the very moment I ended it personally.&lt;/p&gt;
+
+&lt;p&gt;May the permanent happiness with you,&lt;/p&gt;
+
+&lt;p&gt;as the pillar of my spirit,&lt;/p&gt;
+
+&lt;p&gt;the light in my dim sky,&lt;/p&gt;
+
+&lt;p&gt;once.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/11/12/zVeqAMyWvRuS82i.jpg&quot; alt=&quot;solitude-whale&quot; /&gt;&lt;/p&gt;
 </content>
 		</entry>
 	
@@ -939,79 +953,73 @@
 		</entry>
 	
 		<entry>
-			<title>烂苹果（一）</title>
-			<link href="http://hankquinlan.github.io/fiction/2018/08/27/bad-apples-1.html"/>
-			<updated>2018-08-27T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/fiction/2018/08/27/bad-apples-1</id>
-			<content type="html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
+			<title>我们与恶的距离</title>
+			<link href="http://hankquinlan.github.io/2019/06/11/distance-between-evil-and-us.html"/>
+			<updated>2019-06-11T00:00:00+08:00</updated>
+			<id>http://hankquinlan.github.io/2019/06/11/distance-between-evil-and-us</id>
+			<content type="html">&lt;p&gt;今天看完了台剧《我们与恶的距离》，感慨良多。不出意外在我这儿应该能算年度最佳影视剧了。&lt;/p&gt;
 
-&lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
-the genus Malus. The tree originated in Central Asia, where its wild ancestor,
-Malus sieversii, is still found today. Apples have been grown for thousands of
-years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;
+&lt;p&gt;剧中最敬佩的人是王赦，一个矢志不渝的普通律师，身上闪耀的是近乎圣人的光辉，是一个真真正正的善良之人。他的两次泪崩都直接把我穿透。&lt;/p&gt;
+
+&lt;p&gt;第一次，他醉酒，谈到杀人犯李晓明的死刑，表现出的是一个典型的讲理之人对这个无理世界的声嘶力竭，他有自己的正义，即人人生而平等，天赋人权，他想用自己的一生去捍卫这正义，尤其是弱者的正义，哪怕是个杀人犯。大多数人都不理解，甚至不愿意去理解王赦的这种行为，认为恶人就该死，讲人权的王赦就是圣母，应该让他尝尝家属被害的滋味。接下来是我替王赦的申辩。&lt;/p&gt;
+
+&lt;p&gt;身为普通老百姓，我们想要的究竟是什么？是制裁了犯人之后情感上的高潮，还是希望在未来，我们和我们的孩子能活在安全的阳光下？如果我们真正想要的是安全，那么武力震慑带来安全了吗？为什么罪犯还是一个接一个的出现？是刑罚不够严酷吗？要不然加个炮烙、凌迟？大家都犯过错，我想请问一句，你在犯错之前会先去考虑惩罚再犯错吗？显然人人都不想犯错，也就永远会去做自认为对的事，自然不可能去考虑惩罚的问题，所以更多的是因为一时失误、情绪激动或者压抑太久导致犯错。这时你把刑罚订的再重又有何意义？人家犯罪的时候根本不会去考虑，尤其是欠发达国家，劳苦大众生活已然不易，哪有心思去懂法量刑？为了安抚受害者家属和大众舆情，我们当然应该依法惩治施害者，可是讲道理，这就是典型的头痛医头脚痛医脚，问题根本就没有得到解决，下一个“恶人”还会以同样的方式出现在你我身边。&lt;/p&gt;
+
+&lt;p&gt;所以大家看到了吧，真正的解决方案应该是遏制“恶人”的产生，“恶人”减少了安全才有保障，这就需要我们好好了解一下那些和我们一样，经过母亲十月怀胎，成长在这片相同土地上的同胞，他们到底经历了什么，才变成了“恶人”的模样？人性本恶吗？或许是，但我绝不相信一个灵长类一生下来就以迫害或杀死同类为本能，并一以贯之。大家好好想想，那些被逼到绝境的“恶人”到底为何会作恶。其他的我不想赘言，我只想说，当大多数人享受着家庭的完整，父母的慈爱，师长的关爱，亲朋的友爱，恋人的情爱，就好像享受着阳光空气水一样时，这些，真的理所当然吗？拥有者更努力更优秀所以值得拥有吗？是不是存在太多太多的人享受不到这一切呢？他们活该吗？The rot sets in early，我相信逻辑正常的人都能推得出来，这些运气差的可怜人只会变得更糟，因为一步错步步错，最终，很有一部分可怜人成了我们整个社会犯下的各种错误的替罪羊，就像身体排毒一样和各种肮脏混在一起，排泄出去。他们到底做错了什么，要替整个社会背锅？这就是我们文明社会的文明人干的事情，所以善恶的标准是什么？替罪羊是恶吗？身为看客的我们是善吗？而我们的孩子还要在这个“吃人”的社会里生活，真他妈的自然、合理！&lt;/p&gt;
+
+&lt;p&gt;李晓明的死刑被提前执行，已经让王赦觉得法律的尊严被践踏了，加之王赦的亲人和他争论，觉得这些替罪羊不值得同情，被放上了最后一根稻草的王赦泪崩了，so do I，真的感同身受，那种连自己的亲人都不理解自己的深深的无力感，如堕冰窟。他自己就差点成为替罪羊，所以他很明白那些可怜人的无助，他想要拯救他们，就仿佛拯救当年的自己。&lt;/p&gt;
+
+&lt;p&gt;第二次，因为孩子的早夭，和妻子的痛苦，王赦撑不住了，决定不再坚持自己的理想，转而为钱去接了昧良心的案子，后来他的妻子跟他说，希望那个曾经眼中充满光芒，有温度的老公回来，他哭了，像个孩子一样，so do I。&lt;/p&gt;
+
+&lt;p&gt;这是最好的时代，也是最坏的时代。在互联网高速发展的今天，各色媒体百家争鸣，我们享受着人类社会迄今为止最好的信息服务，真正做到了“秀才不出门，全知天下事”，但为了利益而断章取义的无良媒体和唯恐天下不乱的键盘侠，以及先入为主了某些一面之词的善良国民，大家有意无意间便构成了网络暴力，那些被迫害的无辜者们该去何处伸张正义？&lt;/p&gt;
+
+&lt;p&gt;剧终制作组横幅上的那句话特别打动我——“没有人是局外人。”&lt;/p&gt;
+
+&lt;p&gt;是的，你怎样，你的国家就怎样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/12/07/NUYtaA3XPV5kOdx.jpg&quot; alt=&quot;wechat-cover&quot; /&gt;&lt;/p&gt;
 </content>
 		</entry>
 	
 		<entry>
-			<title>Kiwifruit copy 3</title>
-			<link href="http://hankquinlan.github.io/travel/2018/08/22/kiwifruit-copy-3.html"/>
-			<updated>2018-08-22T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/travel/2018/08/22/kiwifruit copy 3</id>
-			<content type="html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
+			<title>今夜中秋</title>
+			<link href="http://hankquinlan.github.io/life/2013/09/20/today-is-Mid-Autumn-festival.html"/>
+			<updated>2013-09-20T00:00:00+08:00</updated>
+			<id>http://hankquinlan.github.io/life/2013/09/20/today-is-Mid-Autumn-festival</id>
+			<content type="html">&lt;p&gt;今年中秋本打算不吃月饼，但意外的是，在图书馆收到一个。受宠若惊……截至此时，我连送饼人的名字都还不知道，唯一可能在我和ta之间产生交集的地方恐怕就是我俩都认识卿伟。萍水相逢，一面之缘……&lt;/p&gt;
 
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;
+&lt;p&gt;咬开月饼，是蛋黄馅的。人们总会因为各式的欲望或者因为环境所迫而忽略了真善美，但是总有一些爱与正义需要我们去保护、去坚守。人类之所以能够延续，我以为，也正是因为那些纯粹的美好得到了继承。&lt;/p&gt;
+
+&lt;p&gt;走在夜路上，头顶，是晧亮得让人不忍亵渎的明月，心中，是如幻灯片般翻涌而过的种种回忆，脚下，是曾经和小卜一起走过的石板路。一路沿湖，那排曾经稀稀疏疏的杨柳树如今也几如屏风一般慵懒地拦住了我的去路，一阵凉爽的微风吹过，窸窸窣窣，筛下一地斑驳的月影。不远处，已近干涸的小湖，不知还有没有当年一起喂过的小青鱼。远处的小山坡上，传来小情侣的窃窃私语，再远处的路灯下，便是三三两两来往的行人了。孩子般的笑脸，抬起头，瞧见的月色也该是和我一样的吧。&lt;/p&gt;
+
+&lt;p&gt;人，似乎只有在孤独的时候才会想要去记录点什么，似乎只有在寂寞的时候才会想要去怀想点什么。&lt;/p&gt;
+
+&lt;p&gt;此时此刻，我仿佛又坐在了家中的小书房里，正对着窗外的月光赋诗，然后把蹩脚但押韵的咏月诗发给同样诗兴大发的嚼仙，两个人倒也乐在其中。&lt;/p&gt;
+
+&lt;p&gt;今夜中秋，恬淡安适。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/12/07/SfMJ6rzOhWXPKU1.jpg&quot; alt=&quot;wechat-cover&quot; /&gt;&lt;/p&gt;
 </content>
 		</entry>
 	
 		<entry>
-			<title>Kiwifruit copy 2</title>
-			<link href="http://hankquinlan.github.io/travel/2018/08/22/kiwifruit-copy-2.html"/>
-			<updated>2018-08-22T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/travel/2018/08/22/kiwifruit copy 2</id>
-			<content type="html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
+			<title>关于一首悲伤的歌</title>
+			<link href="http://hankquinlan.github.io/life/2010/09/10/a-sad-song.html"/>
+			<updated>2010-09-10T00:00:00+08:00</updated>
+			<id>http://hankquinlan.github.io/life/2010/09/10/a-sad-song</id>
+			<content type="html">&lt;p&gt;真正的悲伤，那是一种高贵的情绪透过浮华散发出来的薄雾，它会很淡，淡的让你无法触摸，琢磨不定，然而却又是实实在在的缭绕在彼岸。&lt;/p&gt;
 
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>烂苹果</title>
-			<link href="http://hankquinlan.github.io/fiction/2018/08/21/bad-apples-3.html"/>
-			<updated>2018-08-21T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/fiction/2018/08/21/bad-apples-3</id>
-			<content type="html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
+&lt;p&gt;它不是故作姿态，为赋新辞强说愁的矫情，也不是为了赶时髦，而在他人面前刻意“展示”的一种无病呻吟，它应该是孤独的，常人难以理解的。&lt;/p&gt;
 
-&lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
-the genus Malus. The tree originated in Central Asia, where its wild ancestor,
-Malus sieversii, is still found today. Apples have been grown for thousands of
-years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;
-</content>
-		</entry>
-	
-		<entry>
-			<title>烂苹果</title>
-			<link href="http://hankquinlan.github.io/fiction/2018/08/21/bad-apples-2.html"/>
-			<updated>2018-08-21T00:00:00+08:00</updated>
-			<id>http://hankquinlan.github.io/fiction/2018/08/21/bad-apples-2</id>
-			<content type="html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
+&lt;p&gt;带着淡淡的口吻，让悲伤缓缓地汇聚成一条涓涓的小流，仿佛慢镜头般流过你全身的每一个细胞，让你感受到一种来自心灵深处的厚重，让你切实地体会到一种充盈着无穷魅力的感情。&lt;/p&gt;
 
-&lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
-the genus Malus. The tree originated in Central Asia, where its wild ancestor,
-Malus sieversii, is still found today. Apples have been grown for thousands of
-years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;
+&lt;p&gt;然后，你陶醉了，陶醉在每一个梦呓般的音符中，肤浅因无法抵御那惊人的深沉震慑，从一开始便干净地消失了。&lt;/p&gt;
+
+&lt;p&gt;听者无须分担歌者的难过，因为每一个悲伤的歌者都是华丽而高贵的独语者，我们只需细细品味，那来自一个深刻的思想，令人无比感动的美感。&lt;/p&gt;
+
+&lt;p&gt;不着痕迹，仅此而已。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/12/07/uUEZBlkd4NtVMXc.jpg&quot; alt=&quot;piano&quot; /&gt;&lt;/p&gt;
 </content>
 		</entry>
 	
