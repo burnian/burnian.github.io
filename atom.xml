@@ -9,7 +9,7 @@
     content="Burnian Zhou's Personal Blog Site">
   <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
   <title>Burnian's Blog</title>
-  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Burnian's Blog" />
+  <link type="application/atom+xml" rel="alternate" href="https://burnian.github.io/feed.xml" title="Burnian's Blog" />
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Burnian’s Blog | Burnian Zhou’s Personal Blog Site</title>
 <meta name="generator" content="Jekyll v4.0.0" />
@@ -17,11 +17,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Burnian Zhou’s Personal Blog Site" />
 <meta property="og:description" content="Burnian Zhou’s Personal Blog Site" />
-<link rel="canonical" href="http://localhost:4000/atom.xml" />
-<meta property="og:url" content="http://localhost:4000/atom.xml" />
+<link rel="canonical" href="https://burnian.github.io/atom.xml" />
+<meta property="og:url" content="https://burnian.github.io/atom.xml" />
 <meta property="og:site_name" content="Burnian’s Blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://localhost:4000/atom.xml","headline":"Burnian’s Blog","description":"Burnian Zhou’s Personal Blog Site","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Burnian’s Blog","url":"https://burnian.github.io/atom.xml","description":"Burnian Zhou’s Personal Blog Site","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <!-- baidu 流量统计 -->
@@ -70,7 +70,7 @@
 	<title>Hank Quinlan's Blog</title>
 	<link href="http://hankquinlan.github.io/blog/atom.xml" rel="self"/>
 	<link href="http://hankquinlan.github.io/blog"/>
-	<updated>2019-12-07T14:08:36+08:00</updated>
+	<updated>2019-12-07T14:29:31+08:00</updated>
 	<id>http://hankquinlan.github.io/blog</id>
 	<author>
 		<name>Hank Quinlan</name>
