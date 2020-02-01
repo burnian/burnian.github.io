@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://burnian.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://burnian.github.io/" rel="alternate" type="text/html" /><updated>2019-12-07T14:48:56+08:00</updated><id>https://burnian.github.io/feed.xml</id><title type="html">Burnian’s Blog</title><subtitle>Burnian Zhou's Personal Blog Site</subtitle><entry><title type="html">关于孤独</title><link href="https://burnian.github.io/life/2019/11/12/like-a-stupid.html" rel="alternate" type="text/html" title="关于孤独" /><published>2019-11-12T00:00:00+08:00</published><updated>2019-11-12T00:00:00+08:00</updated><id>https://burnian.github.io/life/2019/11/12/like-a-stupid</id><content type="html" xml:base="https://burnian.github.io/life/2019/11/12/like-a-stupid.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://burnian.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://burnian.github.io/" rel="alternate" type="text/html" /><updated>2020-02-01T16:43:05+08:00</updated><id>https://burnian.github.io/feed.xml</id><title type="html">Burnian’s Blog</title><subtitle>Burnian Zhou's Personal Blog Site</subtitle><entry><title type="html">法线变换矩阵</title><link href="https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html" rel="alternate" type="text/html" title="法线变换矩阵" /><published>2020-01-31T00:00:00+08:00</published><updated>2020-01-31T00:00:00+08:00</updated><id>https://burnian.github.io/technology/2020/01/31/the-normal-matrix</id><content type="html" xml:base="https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html">&lt;p&gt;模型光照的计算必然是要用到法线的，一定会有小伙伴和我一样对下面的问题感到疑惑，为什么需要区分模型变换矩阵和法线变换矩阵？二者不可以相同吗？今天我就来给各位小伙伴答疑解惑。&lt;/p&gt;
+
+&lt;p&gt;法线变换矩阵&lt;code class=&quot;highlighter-rouge&quot;&gt;gl_NormalMatrix&lt;/code&gt;存在于许多顶点着色器中，本文主讲该矩阵是什么，以及它是怎么来的。文章译自&lt;a href=&quot;http://www.lighthouse3d.com/tutorials/glsl-12-tutorial/the-normal-matrix/&quot;&gt;原文&lt;/a&gt;，多有自我理解夹杂其间。&lt;/p&gt;
+
+&lt;p&gt;许多计算都是在观察空间&lt;code class=&quot;highlighter-rouge&quot;&gt;eye space&lt;/code&gt;或者说相机空间&lt;code class=&quot;highlighter-rouge&quot;&gt;camera space&lt;/code&gt;中完成的。这与照明&lt;code class=&quot;highlighter-rouge&quot;&gt;lighting&lt;/code&gt;通常是在这个空间进行的事实有关，否则就会受到眼睛位置的影响，例如镜面反射光&lt;code class=&quot;highlighter-rouge&quot;&gt;specular light&lt;/code&gt;，如果不在观察空间中计算就较难实现。&lt;/p&gt;
+
+&lt;p&gt;因此我们需要一种把法线变换到观察空间的方式。为了把一个顶点变换到观察空间，我们是这么写的：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-factor&quot; data-lang=&quot;factor&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;vertexEyeSpace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gl_ModelViewMatrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gl_Vertex;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;那我们为什么不对法向量也这么干呢？第一，因为法向量是一个带有3个浮点数的向量，而模型观察矩阵&lt;code class=&quot;highlighter-rouge&quot;&gt;modelview matrix&lt;/code&gt;是4x4阶的。第二，因为法向量是个向量，它的位置和模我们其实并不关心，我们只想变换它的方向。模型观察矩阵的方向变换部分在于左上角的3x3子矩阵。所以为什么不用这个子矩阵直接和法向量做矩阵乘法呢？&lt;/p&gt;
+
+&lt;p&gt;这很容易就能通过下面的代码实现：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-factor&quot; data-lang=&quot;factor&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;normalEyeSpace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec3(gl_ModelViewMatrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec4(gl_Normal,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;0.0));&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;所以，&lt;code class=&quot;highlighter-rouge&quot;&gt;gl_NormalMatrix&lt;/code&gt;只是一种用来简化代码书写或者优化性能的快捷方式吗？并非如此。上面这行代码只在某些情况下能得到正确的变换法线，而非所有情况。&lt;/p&gt;
+
+&lt;p&gt;让我们看一看一个潜在的问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/01/31/lJmN7kPHZ8np4uf.gif&quot; alt=&quot;origin&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上图中的三角形在其斜边上有一条切向量和一条法向量。下图则展示了当模型观察矩阵对图中所有顶点做了不均匀缩放后的结果。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/01/31/TWm2EitHznvh3XP.gif&quot; alt=&quot;transformation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;注意：如果缩放是均匀的，那么法线方向会保留下来，模虽然会受影响但很容易通过标准化方式来修正。&lt;/p&gt;
+
+&lt;p&gt;上图中的模型观察矩阵不仅用来对所有模型顶点做了变换，还对法线也做了变换，结果显然错了：变换后的法线不再和斜边垂直。&lt;/p&gt;
+
+&lt;p&gt;我们知道俩顶点之差代表一条向量。来看斜边切向量，它能由三角形斜边上的两点得出。如果&lt;script type=&quot;math/tex&quot;&gt;P_1&lt;/script&gt;和&lt;script type=&quot;math/tex&quot;&gt;P_2&lt;/script&gt;是斜边上的两点，我们可以得到：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;T = P_2 - P_1&lt;/script&gt;
+
+&lt;p&gt;现在我们把三维向量&lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;和三维顶点&lt;script type=&quot;math/tex&quot;&gt;P_1&lt;/script&gt;，&lt;script type=&quot;math/tex&quot;&gt;P_2&lt;/script&gt;转换成一个末尾元素为0的四元数，上述等式依然成立，然后两边同时左乘模型观察矩阵：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Modelview \times T = Modelview \times (P_2 - P_1)&lt;/script&gt;
+
+&lt;p&gt;展开：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Modelview \times T = Modelview \times P_2 - Modelview \times P_1&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;T' = P_2' - P_1'&lt;/script&gt;
+
+&lt;p&gt;因为&lt;script type=&quot;math/tex&quot;&gt;P_1'&lt;/script&gt;和&lt;script type=&quot;math/tex&quot;&gt;P_2'&lt;/script&gt;是变换后的三角形顶点，所以&lt;script type=&quot;math/tex&quot;&gt;T'&lt;/script&gt;依然是三角形斜边的切向量。但经过模型观察矩阵的变换，斜边的法向量却不再是其法向量了。&lt;/p&gt;
+
+&lt;p&gt;我们把考虑向量&lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;的方法同样地用到&lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt;上面就可以得到两个点&lt;script type=&quot;math/tex&quot;&gt;Q_1&lt;/script&gt;和&lt;script type=&quot;math/tex&quot;&gt;Q_2&lt;/script&gt;：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;N = Q_2 - Q_1&lt;/script&gt;
+
+&lt;p&gt;现在的主要问题是，变换后的点构成的向量&lt;script type=&quot;math/tex&quot;&gt;N' = Q_2' - Q_1'&lt;/script&gt;不再和斜边垂直，如上图所示。法向量不再跟斜边切向量一样，由变换后的两点差构成，而是被定义为和斜边垂直的向量。&lt;/p&gt;
+
+&lt;p&gt;所以现在我们明白了不能把模型观察矩阵应用到所有法线变换的情况中去。那么问题来了，我们应该应用什么样的矩阵？&lt;/p&gt;
+
+&lt;p&gt;考虑一个3x3阶的矩阵&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;，假定它就是我们要找的法线变换矩阵的左上角子矩阵，让我们来看看该矩阵是如何把法向量变换成合适的模样的。&lt;/p&gt;
+
+&lt;p&gt;因为向量&lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;和&lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt;垂直，&lt;script type=&quot;math/tex&quot;&gt;T'&lt;/script&gt;和&lt;script type=&quot;math/tex&quot;&gt;N'&lt;/script&gt;也垂直，所以它们各自点积为0：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;T \cdot N = 0&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;T' \cdot N' = 0&lt;/script&gt;
+
+&lt;p&gt;我们设模型观察矩阵左上角的3x3子矩阵为&lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt;，因为&lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt;和&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;包含的是对向量&lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;和&lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt;的方向变换，虽然没有把平移变换也纳入进来，但这并不影响下式成立，可得：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;T' \cdot N' = (MT) \cdot (GN) = 0&lt;/script&gt;
+
+&lt;p&gt;我们通常将向量视为列向量，则向量点积&lt;script type=&quot;math/tex&quot;&gt;a \cdot b&lt;/script&gt;可以转化为矩阵乘法&lt;script type=&quot;math/tex&quot;&gt;a^T \times b&lt;/script&gt;，所以上式可以做如下转化:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(MT) \cdot (GN) = (MT)^T \times (GN) = T^T M^T G N = 0&lt;/script&gt;
+
+&lt;p&gt;我们已经知道&lt;script type=&quot;math/tex&quot;&gt;T^T \times N = 0&lt;/script&gt;了，所以要想上式成立只需：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;M^T G = E&lt;/script&gt;
+
+&lt;p&gt;其中&lt;script type=&quot;math/tex&quot;&gt;E&lt;/script&gt;为单位矩阵，所以：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;G = (M^T)^{-1}&lt;/script&gt;
+
+&lt;p&gt;综上可知，正确的法线变换矩阵其实是&lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt;的转置的逆再扩展成一个4x4阶矩阵。OpenGL已经为我们计算好并存放在&lt;code class=&quot;highlighter-rouge&quot;&gt;gl_NormalMatrix&lt;/code&gt;中了。&lt;/p&gt;
+
+&lt;p&gt;在文章开头我们就说过，使用模型观察矩阵变换法向量在某些情况下可行，这里的“某些情况”是指那些模型观察矩阵的&lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt;为正交矩阵（orthogonal matrix）&lt;sup id=&quot;fnref:orthogonal&quot;&gt;&lt;a href=&quot;#fn:orthogonal&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;的情况：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;M^{-1} = M^T \Rightarrow G = M&lt;/script&gt;
+
+&lt;p&gt;当两个向量经过左上角为正交矩阵的变换矩阵变换后，它俩的夹角不变。简而言之，该变换矩阵保护向量间的夹角关系。另外，该变换矩阵还保护向量的模。&lt;/p&gt;
+
+&lt;p&gt;最后，我们怎么判断模型观察矩阵的&lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt;是不是正交的？其实，当我们的几何操作都限制在旋转和平移中时，例如，在OpenGL中就是只调用&lt;code class=&quot;highlighter-rouge&quot;&gt;glRotate&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;glTranslate&lt;/code&gt;而不调用&lt;code class=&quot;highlighter-rouge&quot;&gt;glScale&lt;/code&gt;来处理我们的模型观察矩阵，我们就能确定得到的模型观察矩阵其&lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt;是正交的，是可以做法线变换的。&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:orthogonal&quot;&gt;
+      &lt;p&gt;正交矩阵就是指那些其逆等于其转置的矩阵，正交矩阵的所有列/行向量都是相互正交的单位向量。 &lt;a href=&quot;#fnref:orthogonal&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="Computer Graphics" /><summary type="html">模型光照的计算必然是要用到法线的，一定会有小伙伴和我一样对下面的问题感到疑惑，为什么需要区分模型变换矩阵和法线变换矩阵？二者不可以相同吗？今天我就来给各位小伙伴答疑解惑。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://i.loli.net/2020/01/31/TWm2EitHznvh3XP.gif" /></entry><entry><title type="html">关于孤独</title><link href="https://burnian.github.io/life/2019/11/12/like-a-stupid.html" rel="alternate" type="text/html" title="关于孤独" /><published>2019-11-12T00:00:00+08:00</published><updated>2019-11-12T00:00:00+08:00</updated><id>https://burnian.github.io/life/2019/11/12/like-a-stupid</id><content type="html" xml:base="https://burnian.github.io/life/2019/11/12/like-a-stupid.html">&lt;blockquote&gt;
 
   &lt;p&gt;孤独并不是来自身边无人。感到孤独的真正原因是，无法与他人交流最要紧的感受。&lt;/p&gt;
 
@@ -788,24 +886,4 @@
 &lt;p&gt;与它初识是在一个阳光明媚的午后，它毛色如墨，冷冷地盯着我，就好像我偷了它的小鱼干似的，但它毕竟是一只小猫，我难道还不甘示弱地瞪回去？这个想法不错。
 于是我瞬间掐灭了这个好想法，笑嘻嘻地拿起自己的热脸贴上猫家的冷屁股，您别说，还挺带感。&lt;/p&gt;
 
-&lt;p&gt;很多年以后，当小年再次回想起那个遥远的下午，竟恍然不觉这简简单单的邂逅会碰撞出那么多故事……&lt;/p&gt;</content><author><name></name></author><category term="猫" /><category term="情感" /><summary type="html">楔子：猫</summary></entry><entry><title type="html">我们与恶的距离</title><link href="https://burnian.github.io/comment/2019/06/11/distance-between-evil-and-us.html" rel="alternate" type="text/html" title="我们与恶的距离" /><published>2019-06-11T00:00:00+08:00</published><updated>2019-06-11T00:00:00+08:00</updated><id>https://burnian.github.io/comment/2019/06/11/distance-between-evil-and-us</id><content type="html" xml:base="https://burnian.github.io/comment/2019/06/11/distance-between-evil-and-us.html">&lt;p&gt;今天看完了台剧《我们与恶的距离》，感慨良多。不出意外在我这儿应该能算年度最佳影视剧了。&lt;/p&gt;
-
-&lt;p&gt;剧中最敬佩的人是王赦，一个矢志不渝的普通律师，身上闪耀的是近乎圣人的光辉，是一个真真正正的善良之人。他的两次泪崩都直接把我穿透。&lt;/p&gt;
-
-&lt;p&gt;第一次，他醉酒，谈到杀人犯李晓明的死刑，表现出的是一个典型的讲理之人对这个无理世界的声嘶力竭，他有自己的正义，即人人生而平等，天赋人权，他想用自己的一生去捍卫这正义，尤其是弱者的正义，哪怕是个杀人犯。大多数人都不理解，甚至不愿意去理解王赦的这种行为，认为恶人就该死，讲人权的王赦就是圣母，应该让他尝尝家属被害的滋味。接下来是我替王赦的申辩。&lt;/p&gt;
-
-&lt;p&gt;身为普通老百姓，我们想要的究竟是什么？是制裁了犯人之后情感上的高潮，还是希望在未来，我们和我们的孩子能活在安全的阳光下？如果我们真正想要的是安全，那么武力震慑带来安全了吗？为什么罪犯还是一个接一个的出现？是刑罚不够严酷吗？要不然加个炮烙、凌迟？大家都犯过错，我想请问一句，你在犯错之前会先去考虑惩罚再犯错吗？显然人人都不想犯错，也就永远会去做自认为对的事，自然不可能去考虑惩罚的问题，所以更多的是因为一时失误、情绪激动或者压抑太久导致犯错。这时你把刑罚订的再重又有何意义？人家犯罪的时候根本不会去考虑，尤其是欠发达国家，劳苦大众生活已然不易，哪有心思去懂法量刑？为了安抚受害者家属和大众舆情，我们当然应该依法惩治施害者，可是讲道理，这就是典型的头痛医头脚痛医脚，问题根本就没有得到解决，下一个“恶人”还会以同样的方式出现在你我身边。&lt;/p&gt;
-
-&lt;p&gt;所以大家看到了吧，真正的解决方案应该是遏制“恶人”的产生，“恶人”减少了安全才有保障，这就需要我们好好了解一下那些和我们一样，经过母亲十月怀胎，成长在这片相同土地上的同胞，他们到底经历了什么，才变成了“恶人”的模样？人性本恶吗？或许是，但我绝不相信一个灵长类一生下来就以迫害或杀死同类为本能，并一以贯之。大家好好想想，那些被逼到绝境的“恶人”到底为何会作恶。其他的我不想赘言，我只想说，当大多数人享受着家庭的完整，父母的慈爱，师长的关爱，亲朋的友爱，恋人的情爱，就好像享受着阳光空气水一样时，这些，真的理所当然吗？拥有者更努力更优秀所以值得拥有吗？是不是存在太多太多的人享受不到这一切呢？他们活该吗？The rot sets in early，我相信逻辑正常的人都能推得出来，这些运气差的可怜人只会变得更糟，因为一步错步步错，最终，很有一部分可怜人成了我们整个社会犯下的各种错误的替罪羊，就像身体排毒一样和各种肮脏混在一起，排泄出去。他们到底做错了什么，要替整个社会背锅？这就是我们文明社会的文明人干的事情，所以善恶的标准是什么？替罪羊是恶吗？身为看客的我们是善吗？而我们的孩子还要在这个“吃人”的社会里生活，真他妈的自然、合理！&lt;/p&gt;
-
-&lt;p&gt;李晓明的死刑被提前执行，已经让王赦觉得法律的尊严被践踏了，加之王赦的亲人和他争论，觉得这些替罪羊不值得同情，被放上了最后一根稻草的王赦泪崩了，so do I，真的感同身受，那种连自己的亲人都不理解自己的深深的无力感，如堕冰窟。他自己就差点成为替罪羊，所以他很明白那些可怜人的无助，他想要拯救他们，就仿佛拯救当年的自己。&lt;/p&gt;
-
-&lt;p&gt;第二次，因为孩子的早夭，和妻子的痛苦，王赦撑不住了，决定不再坚持自己的理想，转而为钱去接了昧良心的案子，后来他的妻子跟他说，希望那个曾经眼中充满光芒，有温度的老公回来，他哭了，像个孩子一样，so do I。&lt;/p&gt;
-
-&lt;p&gt;这是最好的时代，也是最坏的时代。在互联网高速发展的今天，各色媒体百家争鸣，我们享受着人类社会迄今为止最好的信息服务，真正做到了“秀才不出门，全知天下事”，但为了利益而断章取义的无良媒体和唯恐天下不乱的键盘侠，以及先入为主了某些一面之词的善良国民，大家有意无意间便构成了网络暴力，那些被迫害的无辜者们该去何处伸张正义？&lt;/p&gt;
-
-&lt;p&gt;剧终制作组横幅上的那句话特别打动我——“没有人是局外人。”&lt;/p&gt;
-
-&lt;p&gt;是的，你怎样，你的国家就怎样。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/12/07/NUYtaA3XPV5kOdx.jpg&quot; alt=&quot;wechat-cover&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="电视剧" /><summary type="html">今天看完了台剧《我们与恶的距离》，感慨良多。不出意外在我这儿应该能算年度最佳影视剧了。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://i.loli.net/2019/12/07/NUYtaA3XPV5kOdx.jpg" /></entry></feed>
+&lt;p&gt;很多年以后，当小年再次回想起那个遥远的下午，竟恍然不觉这简简单单的邂逅会碰撞出那么多故事……&lt;/p&gt;</content><author><name></name></author><category term="猫" /><category term="情感" /><summary type="html">楔子：猫</summary></entry></feed>

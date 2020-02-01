@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="模型光照的计算必然是要用到法线的，一定会有小伙伴和我一样对下面的问题感到疑惑，为什么需要区分模型变换矩阵和法线变换矩阵？二者不可以相同吗？今天我就来给各位小伙伴答疑解惑。法线变换矩阵`gl_NormalMatrix`存在于许多顶点着色器中，本文主讲该矩阵是什么，以及它是怎么来的。">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Burnian's Blog</title>
+  <link type="application/atom+xml" rel="alternate" href="https://burnian.github.io/feed.xml" title="Burnian's Blog" />
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>法线变换矩阵 | Burnian’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="法线变换矩阵" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="模型光照的计算必然是要用到法线的，一定会有小伙伴和我一样对下面的问题感到疑惑，为什么需要区分模型变换矩阵和法线变换矩阵？二者不可以相同吗？今天我就来给各位小伙伴答疑解惑。法线变换矩阵gl_NormalMatrix存在于许多顶点着色器中，本文主讲该矩阵是什么，以及它是怎么来的。" />
+<meta property="og:description" content="模型光照的计算必然是要用到法线的，一定会有小伙伴和我一样对下面的问题感到疑惑，为什么需要区分模型变换矩阵和法线变换矩阵？二者不可以相同吗？今天我就来给各位小伙伴答疑解惑。法线变换矩阵gl_NormalMatrix存在于许多顶点着色器中，本文主讲该矩阵是什么，以及它是怎么来的。" />
+<link rel="canonical" href="https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html" />
+<meta property="og:url" content="https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html" />
+<meta property="og:site_name" content="Burnian’s Blog" />
+<meta property="og:image" content="https://i.loli.net/2020/01/31/TWm2EitHznvh3XP.gif" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-31T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html","headline":"法线变换矩阵","dateModified":"2020-01-31T00:00:00+08:00","datePublished":"2020-01-31T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html"},"image":"https://i.loli.net/2020/01/31/TWm2EitHznvh3XP.gif","description":"模型光照的计算必然是要用到法线的，一定会有小伙伴和我一样对下面的问题感到疑惑，为什么需要区分模型变换矩阵和法线变换矩阵？二者不可以相同吗？今天我就来给各位小伙伴答疑解惑。法线变换矩阵gl_NormalMatrix存在于许多顶点着色器中，本文主讲该矩阵是什么，以及它是怎么来的。","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!-- baidu 流量统计 -->
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c57108b7c22e5eaa9ffdb21d134955b7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+</head>
+
+<!-- 复制到剪贴板 -->
+<script src="//cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap依赖的弹出框工具类 -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- github上找的缓动页面滚动效果 -->
+<script src="//cdn.jsdelivr.net/npm/sweet-scroll@4.0.0/sweet-scroll.min.js"></script>
+<!-- 粒子效果 -->
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<!-- 我的js -->
+<script src="/assets/js/main.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="shortcut icon" type="image/png" href="/assets/img/burnian_logo.png">
+<!-- 我的样式 -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<body>
+  <div id="particles-js" url="/technology/2020/01/31/the-normal-matrix.html">
+  <div class="header">
+    <h1>
+      <span class="site-title">Burnian Zhou</span>
+      <span class="site-description">Indie Game Developer</span>
+      <span class="site-subdesc">I'm a nomad Indie Game Developer, always searching for the next challenge and beauty of idea.</span>
+    </h1>
+
+    <div class="header-icons">
+      <span id="email" aria-label="Email" data-toggle="modal" data-target="#ModalCenter"><i
+          class="icon fa fa-envelope" aria-hidden="true"></i></span>
+      <span id="qq" aria-label="QQ" data-toggle="modal" data-target="#ModalCenter"><i class="icon fa fa-qq"
+          aria-hidden="true"></i></span>
+      <span id="wechat" aria-label="Wechat" data-toggle="modal" data-target="#ModalCenter"><i
+          class="icon fa fa-wechat" aria-hidden="true"></i></span>
+      <a id="linkedin" aria-label="LinkedIn" target="_blank" href="https://www.linkedin.com/feed/"><i class="icon fa fa-linkedin"
+          aria-hidden="true"></i></a>
+      <a id="github" aria-label="Github" target="_blank" href="https://github.com/burnian"><i class="icon fa fa-github-alt"
+          aria-hidden="true"></i></a>
+    </div>
+
+  </div>
+  <a class="down" href="#bnavbar" name="hidedown" data-scroll><i class="icon fa fa-chevron-down"
+      aria-hidden="true"></i></a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title" id="ModalCenterTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="font-size: 1.5rem;">
+        <input id="ModalCenterContent" style="width:100%; height:100%;">
+      </div>
+      <div class="modal-footer">
+        <button id="btn-copy" type="button" class="btn btn-primary"
+          data-clipboard-target="#ModalCenterContent">保存到剪贴板</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#ModalCenter').on('show.bs.modal', function (e) {
+    console.log(e.relatedTarget.title)
+    var title = ""
+    var content = ""
+    if (e.relatedTarget.id == "email") {
+      title = "电子邮件"
+      content = "burnian@qq.com"
+    }
+    else if (e.relatedTarget.id == "qq") {
+      title = "QQ"
+      content = "791829698"
+    }
+    else if (e.relatedTarget.id == "wechat") {
+      title = "微信"
+      content = "burnian"
+    }
+    $("#ModalCenterTitle").text("Burnian的" + title)
+    $("#ModalCenterContent").val(content)
+  })
+
+  var clipboard = new ClipboardJS('#btn-copy');
+  clipboard.on('success', function (e) {
+    // console.info('Action:', e.action);
+    // console.info('Text:', e.text);
+    // console.info('Trigger:', e.trigger);
+    e.clearSelection();
+  });
+</script>
+  <nav id="bnavbar" class="navbar navbar-expand-md navbar-dark">
+  <img class="brand-image" src="/assets/img/burnian_logo.png"></img>
+  <div class="navbar-brand">Burnian Zhou</div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+
+      
+      
+      <li id="navbar-blog" class="nav-item">
+        <a class="nav-link bnav-font" href="https://burnian.github.io/#bnavbar">
+          
+          博客
+          
+        </a>
+      </li>
+      
+      
+      
+      <li id="navbar-gallery" class="nav-item">
+        <a class="nav-link bnav-font" href="https://burnian.github.io/pages/gallery/#bnavbar">
+          
+          画廊
+          
+        </a>
+      </li>
+      
+      
+
+      <li id="navbar-categories" class="nav-item dropdown" style="font-size: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          
+          文章类目
+          
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          
+          
+          
+          <a class="dropdown-item" href="/pages/life/">
+            
+            生活
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">6</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/comment/">
+            
+            
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">1</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/tutorial/">
+            
+            教程
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">4</i></a>
+          
+          
+          
+          
+          <a class="dropdown-item" href="/pages/technology/">
+            
+            技术
+            
+            <i class="badge badge-pill badge-secondary"
+              style="float: right;margin-top: 3px;">2</i></a>
+          
+          
+          <!-- <div class="dropdown-divider"></div> -->
+        </div>
+      </li>
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form> -->
+  </div>
+</nav>
+  <section id="bcontent" class="container-fluid">
+    <div class="row justify-content-center">
+  <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-6 col-xxxl-5 intimate">
+    <!-- 正文 -->
+    <div class="sheet post">
+      <header>
+        <h2>法线变换矩阵</h2>
+        <p class="post-meta">
+          <i class="fa fa-user"></i>
+          Burnian Zhou&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-calendar"></i> 2020年01月31日&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
+        </p>
+        <p class="post-tag">
+          
+          <span class="fa fa-tag"></span>&nbsp;Computer Graphics&nbsp;&nbsp;&nbsp;
+          
+        </p>
+      </header>
+      <hr class="boundary">
+      <article>
+        <p>模型光照的计算必然是要用到法线的，一定会有小伙伴和我一样对下面的问题感到疑惑，为什么需要区分模型变换矩阵和法线变换矩阵？二者不可以相同吗？今天我就来给各位小伙伴答疑解惑。</p>
+
+<p>法线变换矩阵<code class="highlighter-rouge">gl_NormalMatrix</code>存在于许多顶点着色器中，本文主讲该矩阵是什么，以及它是怎么来的。文章译自<a href="http://www.lighthouse3d.com/tutorials/glsl-12-tutorial/the-normal-matrix/">原文</a>，多有自我理解夹杂其间。</p>
+
+<p>许多计算都是在观察空间<code class="highlighter-rouge">eye space</code>或者说相机空间<code class="highlighter-rouge">camera space</code>中完成的。这与照明<code class="highlighter-rouge">lighting</code>通常是在这个空间进行的事实有关，否则就会受到眼睛位置的影响，例如镜面反射光<code class="highlighter-rouge">specular light</code>，如果不在观察空间中计算就较难实现。</p>
+
+<p>因此我们需要一种把法线变换到观察空间的方式。为了把一个顶点变换到观察空间，我们是这么写的：</p>
+
+<figure class="highlight"><pre><code class="language-factor" data-lang="factor"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="n">vertexEyeSpace</span> <span class="o">=</span> <span class="n">gl_ModelViewMatrix</span> <span class="o">*</span> <span class="n">gl_Vertex;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>那我们为什么不对法向量也这么干呢？第一，因为法向量是一个带有3个浮点数的向量，而模型观察矩阵<code class="highlighter-rouge">modelview matrix</code>是4x4阶的。第二，因为法向量是个向量，它的位置和模我们其实并不关心，我们只想变换它的方向。模型观察矩阵的方向变换部分在于左上角的3x3子矩阵。所以为什么不用这个子矩阵直接和法向量做矩阵乘法呢？</p>
+
+<p>这很容易就能通过下面的代码实现：</p>
+
+<figure class="highlight"><pre><code class="language-factor" data-lang="factor"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="n">normalEyeSpace</span> <span class="o">=</span> <span class="n">vec3(gl_ModelViewMatrix</span> <span class="o">*</span> <span class="n">vec4(gl_Normal,</span> <span class="n">0.0));</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>所以，<code class="highlighter-rouge">gl_NormalMatrix</code>只是一种用来简化代码书写或者优化性能的快捷方式吗？并非如此。上面这行代码只在某些情况下能得到正确的变换法线，而非所有情况。</p>
+
+<p>让我们看一看一个潜在的问题：</p>
+
+<p><img src="https://i.loli.net/2020/01/31/lJmN7kPHZ8np4uf.gif" alt="origin" /></p>
+
+<p>上图中的三角形在其斜边上有一条切向量和一条法向量。下图则展示了当模型观察矩阵对图中所有顶点做了不均匀缩放后的结果。</p>
+
+<p><img src="https://i.loli.net/2020/01/31/TWm2EitHznvh3XP.gif" alt="transformation" /></p>
+
+<p>注意：如果缩放是均匀的，那么法线方向会保留下来，模虽然会受影响但很容易通过标准化方式来修正。</p>
+
+<p>上图中的模型观察矩阵不仅用来对所有模型顶点做了变换，还对法线也做了变换，结果显然错了：变换后的法线不再和斜边垂直。</p>
+
+<p>我们知道俩顶点之差代表一条向量。来看斜边切向量，它能由三角形斜边上的两点得出。如果<script type="math/tex">P_1</script>和<script type="math/tex">P_2</script>是斜边上的两点，我们可以得到：</p>
+
+<script type="math/tex; mode=display">T = P_2 - P_1</script>
+
+<p>现在我们把三维向量<script type="math/tex">T</script>和三维顶点<script type="math/tex">P_1</script>，<script type="math/tex">P_2</script>转换成一个末尾元素为0的四元数，上述等式依然成立，然后两边同时左乘模型观察矩阵：</p>
+
+<script type="math/tex; mode=display">Modelview \times T = Modelview \times (P_2 - P_1)</script>
+
+<p>展开：</p>
+
+<script type="math/tex; mode=display">Modelview \times T = Modelview \times P_2 - Modelview \times P_1</script>
+
+<script type="math/tex; mode=display">T' = P_2' - P_1'</script>
+
+<p>因为<script type="math/tex">P_1'</script>和<script type="math/tex">P_2'</script>是变换后的三角形顶点，所以<script type="math/tex">T'</script>依然是三角形斜边的切向量。但经过模型观察矩阵的变换，斜边的法向量却不再是其法向量了。</p>
+
+<p>我们把考虑向量<script type="math/tex">T</script>的方法同样地用到<script type="math/tex">N</script>上面就可以得到两个点<script type="math/tex">Q_1</script>和<script type="math/tex">Q_2</script>：</p>
+
+<script type="math/tex; mode=display">N = Q_2 - Q_1</script>
+
+<p>现在的主要问题是，变换后的点构成的向量<script type="math/tex">N' = Q_2' - Q_1'</script>不再和斜边垂直，如上图所示。法向量不再跟斜边切向量一样，由变换后的两点差构成，而是被定义为和斜边垂直的向量。</p>
+
+<p>所以现在我们明白了不能把模型观察矩阵应用到所有法线变换的情况中去。那么问题来了，我们应该应用什么样的矩阵？</p>
+
+<p>考虑一个3x3阶的矩阵<script type="math/tex">G</script>，假定它就是我们要找的法线变换矩阵的左上角子矩阵，让我们来看看该矩阵是如何把法向量变换成合适的模样的。</p>
+
+<p>因为向量<script type="math/tex">T</script>和<script type="math/tex">N</script>垂直，<script type="math/tex">T'</script>和<script type="math/tex">N'</script>也垂直，所以它们各自点积为0：</p>
+
+<script type="math/tex; mode=display">T \cdot N = 0</script>
+
+<script type="math/tex; mode=display">T' \cdot N' = 0</script>
+
+<p>我们设模型观察矩阵左上角的3x3子矩阵为<script type="math/tex">M</script>，因为<script type="math/tex">M</script>和<script type="math/tex">G</script>包含的是对向量<script type="math/tex">T</script>和<script type="math/tex">N</script>的方向变换，虽然没有把平移变换也纳入进来，但这并不影响下式成立，可得：</p>
+
+<script type="math/tex; mode=display">T' \cdot N' = (MT) \cdot (GN) = 0</script>
+
+<p>我们通常将向量视为列向量，则向量点积<script type="math/tex">a \cdot b</script>可以转化为矩阵乘法<script type="math/tex">a^T \times b</script>，所以上式可以做如下转化:</p>
+
+<script type="math/tex; mode=display">(MT) \cdot (GN) = (MT)^T \times (GN) = T^T M^T G N = 0</script>
+
+<p>我们已经知道<script type="math/tex">T^T \times N = 0</script>了，所以要想上式成立只需：</p>
+
+<script type="math/tex; mode=display">M^T G = E</script>
+
+<p>其中<script type="math/tex">E</script>为单位矩阵，所以：</p>
+
+<script type="math/tex; mode=display">G = (M^T)^{-1}</script>
+
+<p>综上可知，正确的法线变换矩阵其实是<script type="math/tex">M</script>的转置的逆再扩展成一个4x4阶矩阵。OpenGL已经为我们计算好并存放在<code class="highlighter-rouge">gl_NormalMatrix</code>中了。</p>
+
+<p>在文章开头我们就说过，使用模型观察矩阵变换法向量在某些情况下可行，这里的“某些情况”是指那些模型观察矩阵的<script type="math/tex">M</script>为正交矩阵（orthogonal matrix）<sup id="fnref:orthogonal"><a href="#fn:orthogonal" class="footnote">1</a></sup>的情况：</p>
+
+<script type="math/tex; mode=display">M^{-1} = M^T \Rightarrow G = M</script>
+
+<p>当两个向量经过左上角为正交矩阵的变换矩阵变换后，它俩的夹角不变。简而言之，该变换矩阵保护向量间的夹角关系。另外，该变换矩阵还保护向量的模。</p>
+
+<p>最后，我们怎么判断模型观察矩阵的<script type="math/tex">M</script>是不是正交的？其实，当我们的几何操作都限制在旋转和平移中时，例如，在OpenGL中就是只调用<code class="highlighter-rouge">glRotate</code>和<code class="highlighter-rouge">glTranslate</code>而不调用<code class="highlighter-rouge">glScale</code>来处理我们的模型观察矩阵，我们就能确定得到的模型观察矩阵其<script type="math/tex">M</script>是正交的，是可以做法线变换的。</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:orthogonal">
+      <p>正交矩阵就是指那些其逆等于其转置的矩阵，正交矩阵的所有列/行向量都是相互正交的单位向量。 <a href="#fnref:orthogonal" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+      </article>
+      <hr class="boundary">
+    </div>
+    <!-- 上下篇按钮 -->
+    <div class="row switch-card">
+      <div class="col" style="padding-left: 0;">
+        
+        <a class="card" href="https://burnian.github.io/life/2019/11/12/like-a-stupid.html">
+          <h4 class="text-muted">上一篇</h4>
+          <h4>关于孤独</h4>
+        </a>
+        
+      </div>
+
+      <div class="col" style="padding-right: 0;">
+        
+        <span tabindex="1" class="card" data-toggle="popover" data-content="没有下一篇了" data-placement="bottom"
+          data-trigger="focus">
+          <h4 class="text-muted text-center">下一篇</h4>
+        </span>
+        
+      </div>
+    </div>
+    <!-- 评论 -->
+    
+    <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+  var id = location.pathname.substr(0, 50);
+  console.log("gitalk.id=", id)
+
+  const gitalk = new Gitalk({
+    clientID: 'afe4f8097c6fe10c9d56',
+    clientSecret: '40c07771aea5a0e884004decb8a639797fbd86b1',
+    repo: 'burnian.github.io',
+    owner: 'burnian',
+    admin: ['burnian'],
+    id: id,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+  console.log('gitalk over')
+</script>
+    
+    <!-- 点赞 -->
+    <!-- 统计 -->
+  </div>
+</div>
+  </section>
+  <footer class="footer">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p>
+    Build with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> and <span class="love">❤</span>. Hosted at
+    Github.
+  </p>
+
+  <p>
+    <a href="https://github.com/burnian" target="_blank">&copy; Burnian Zhou</a>
+    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px"
+      src="https://ghbtns.com/github-btn.html?user=burnian&repo=burnian.github.io&type=star&count=true">
+    </iframe>
+  </p>
+
+  <div class="text-muted">
+    <span class="site-uv">
+      总人数：<i class="fa fa-user" aria-hidden="true"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    &nbsp;|&nbsp;
+    <span class="site-pv">
+      总点击：<i class="fa fa-eye" aria-hidden="true"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+
+</footer>
+
+  <!-- live2d -->
+  <script src="/assets/js/autoload.js"></script>
+</body>
+
+</html>
