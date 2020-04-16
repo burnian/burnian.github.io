@@ -2282,7 +2282,7 @@ figure .code pre { margin-bottom: 0px; font-size: 1rem; color: white; }
 
 body { font-family: "Microsoft Yahei"; background-color: #D6DDE1; }
 
-bcard { margin: 20px 0px; padding: 5px; height: 200px; cursor: pointer; transition: all .5s; }
+bcard { margin: 20px 0px; padding: 0px; height: 200px; cursor: pointer; transition: all .5s; }
 
 bcard:hover { color: #0062cc; }
 
