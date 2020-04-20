@@ -72,13 +72,40 @@
 	<title>Hank Quinlan's Blog</title>
 	<link href="http://hankquinlan.github.io/blog/atom.xml" rel="self"/>
 	<link href="http://hankquinlan.github.io/blog"/>
-	<updated>2020-04-16T09:25:20+08:00</updated>
+	<updated>2020-04-20T23:02:57+08:00</updated>
 	<id>http://hankquinlan.github.io/blog</id>
 	<author>
 		<name>Hank Quinlan</name>
 		<email>hankquinlanhub@gmail.com</email>
 	</author>
 
+	
+		<entry>
+			<title>CS231n环境搭建踩坑记录</title>
+			<link href="http://hankquinlan.github.io/technology/2020/04/20/CS231n-setup-pits.html"/>
+			<updated>2020-04-20T00:00:00+08:00</updated>
+			<id>http://hankquinlan.github.io/technology/2020/04/20/CS231n-setup-pits</id>
+			<content type="html">&lt;p&gt;&lt;strong&gt;1. 跳转到assignment1文件夹&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在working locally的Installing packages这一栏，教程指引我们要先在命令行窗口中激活刚创建的cs231n环境，然后执行&lt;code class=&quot;highlighter-rouge&quot;&gt;cd assignment1&lt;/code&gt;。这里的&lt;em&gt;assignment1&lt;/em&gt; 文件夹其实包含在&lt;em&gt;assignment1_jupyter.zip&lt;/em&gt; （或&lt;em&gt;assignment1_colab.zip&lt;/em&gt; ）文件中，解压后把&lt;em&gt;assignment1&lt;/em&gt; 文件夹放在自己喜欢的路径下即可，&lt;em&gt;requirements.txt&lt;/em&gt; 文件也在里面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. 下载CIFAR-10图片库&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;教程中的&lt;code class=&quot;highlighter-rouge&quot;&gt;./get_datasets.sh&lt;/code&gt;指令在linux系统下执行没问题，但在windows系统下执行需要安装&lt;em&gt;git&lt;/em&gt; 。很多同学在趟过第一个坑后会发现执行完&lt;code class=&quot;highlighter-rouge&quot;&gt;get_datasets.sh&lt;/code&gt;指令，一个小黑窗一闪而过就没了，图片库根本没有下载下来，这里并非网络问题，在&lt;em&gt;git bash&lt;/em&gt; 命令行窗口中执行&lt;code class=&quot;highlighter-rouge&quot;&gt;sh get_datasets.sh&lt;/code&gt;指令后就会发现，原来是&lt;code class=&quot;highlighter-rouge&quot;&gt;wget&lt;/code&gt;&lt;sup id=&quot;fnref:wget&quot;&gt;&lt;a href=&quot;#fn:wget&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;命令不存在。那么我们要做的就是在windows系统下安装该命令。&lt;/p&gt;
+
+&lt;p&gt;首先去&lt;a href=&quot;https://jaist.dl.sourceforge.net/project/gnuwin32/wget/1.11.4-1/wget-1.11.4-1-setup.exe&quot;&gt;这里下载&lt;/a&gt;安装包，然后添加环境变量&lt;code class=&quot;highlighter-rouge&quot;&gt;GNU_HOME=C:\Program Files (x86)\GnuWin32&lt;/code&gt;这里的路径是默认安装路径，你也可以改为自定义安装路径。最后在&lt;em&gt;path&lt;/em&gt; 中添加&lt;code class=&quot;highlighter-rouge&quot;&gt;%GNU_HOME%\bin&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;搞定后就可以成功下载图片库了，发布该博文时，图片库的大小为177MB。&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:wget&quot;&gt;
+      &lt;p&gt;linux操作系统命令 &lt;a href=&quot;#fnref:wget&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+		</entry>
 	
 		<entry>
 			<title>法线变换矩阵</title>
@@ -269,7 +296,6 @@
 			<updated>2019-11-02T00:00:00+08:00</updated>
 			<id>http://hankquinlan.github.io/tutorial/2019/11/02/build-personal-website-4</id>
 			<content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#楔子&quot; id=&quot;markdown-toc-楔子&quot;&gt;楔子&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#jekyll-网站项目的基本文件夹结构&quot; id=&quot;markdown-toc-jekyll-网站项目的基本文件夹结构&quot;&gt;Jekyll 网站项目的基本文件夹结构&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#各文件夹详解&quot; id=&quot;markdown-toc-各文件夹详解&quot;&gt;各文件夹详解&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#1_includes-文件传参举例&quot; id=&quot;markdown-toc-1_includes-文件传参举例&quot;&gt;1._includes 文件传参举例&lt;/a&gt;&lt;/li&gt;
@@ -279,8 +305,6 @@
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&quot;楔子&quot;&gt;楔子&lt;/h2&gt;
 
 &lt;p&gt;这一章主要把整个项目的文件夹结构剖析出来。&lt;/p&gt;
 
@@ -490,7 +514,6 @@
 			<updated>2019-11-01T00:00:00+08:00</updated>
 			<id>http://hankquinlan.github.io/tutorial/2019/11/01/build-personal-website-3</id>
 			<content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#楔子&quot; id=&quot;markdown-toc-楔子&quot;&gt;楔子&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#ruby-是什么&quot; id=&quot;markdown-toc-ruby-是什么&quot;&gt;Ruby 是什么&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#gem-是什么&quot; id=&quot;markdown-toc-gem-是什么&quot;&gt;gem 是什么&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#rubygems-是什么&quot; id=&quot;markdown-toc-rubygems-是什么&quot;&gt;RubyGems 是什么&lt;/a&gt;&lt;/li&gt;
@@ -500,8 +523,6 @@
   &lt;li&gt;&lt;a href=&quot;#jekyll-的全局变量&quot; id=&quot;markdown-toc-jekyll-的全局变量&quot;&gt;Jekyll 的全局变量&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#后记&quot; id=&quot;markdown-toc-后记&quot;&gt;后记&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&quot;楔子&quot;&gt;楔子&lt;/h2&gt;
 
 &lt;p&gt;这一章我们将展开学习利用 Jekyll + GitHub Pages 搭建个人网站时会频繁用到的相关知识。&lt;/p&gt;
 

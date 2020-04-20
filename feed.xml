@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://burnian.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://burnian.github.io/" rel="alternate" type="text/html" /><updated>2020-04-16T09:25:20+08:00</updated><id>https://burnian.github.io/feed.xml</id><title type="html">Burnian’s Blog</title><subtitle>Burnian Zhou's Personal Blog Site</subtitle><entry><title type="html">法线变换矩阵</title><link href="https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html" rel="alternate" type="text/html" title="法线变换矩阵" /><published>2020-01-31T00:00:00+08:00</published><updated>2020-01-31T00:00:00+08:00</updated><id>https://burnian.github.io/technology/2020/01/31/the-normal-matrix</id><content type="html" xml:base="https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html">&lt;p&gt;模型光照的计算必然是要用到法线的，一定会有小伙伴和我一样对下面的问题感到疑惑，为什么需要区分模型变换矩阵和法线变换矩阵？二者不可以相同吗？今天我就来给各位小伙伴答疑解惑。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://burnian.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://burnian.github.io/" rel="alternate" type="text/html" /><updated>2020-04-20T23:02:57+08:00</updated><id>https://burnian.github.io/feed.xml</id><title type="html">Burnian’s Blog</title><subtitle>Burnian Zhou's Personal Blog Site</subtitle><entry><title type="html">CS231n环境搭建踩坑记录</title><link href="https://burnian.github.io/technology/2020/04/20/CS231n-setup-pits.html" rel="alternate" type="text/html" title="CS231n环境搭建踩坑记录" /><published>2020-04-20T00:00:00+08:00</published><updated>2020-04-20T00:00:00+08:00</updated><id>https://burnian.github.io/technology/2020/04/20/CS231n-setup-pits</id><content type="html" xml:base="https://burnian.github.io/technology/2020/04/20/CS231n-setup-pits.html">&lt;p&gt;&lt;strong&gt;1. 跳转到assignment1文件夹&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在working locally的Installing packages这一栏，教程指引我们要先在命令行窗口中激活刚创建的cs231n环境，然后执行&lt;code class=&quot;highlighter-rouge&quot;&gt;cd assignment1&lt;/code&gt;。这里的&lt;em&gt;assignment1&lt;/em&gt; 文件夹其实包含在&lt;em&gt;assignment1_jupyter.zip&lt;/em&gt; （或&lt;em&gt;assignment1_colab.zip&lt;/em&gt; ）文件中，解压后把&lt;em&gt;assignment1&lt;/em&gt; 文件夹放在自己喜欢的路径下即可，&lt;em&gt;requirements.txt&lt;/em&gt; 文件也在里面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. 下载CIFAR-10图片库&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;教程中的&lt;code class=&quot;highlighter-rouge&quot;&gt;./get_datasets.sh&lt;/code&gt;指令在linux系统下执行没问题，但在windows系统下执行需要安装&lt;em&gt;git&lt;/em&gt; 。很多同学在趟过第一个坑后会发现执行完&lt;code class=&quot;highlighter-rouge&quot;&gt;get_datasets.sh&lt;/code&gt;指令，一个小黑窗一闪而过就没了，图片库根本没有下载下来，这里并非网络问题，在&lt;em&gt;git bash&lt;/em&gt; 命令行窗口中执行&lt;code class=&quot;highlighter-rouge&quot;&gt;sh get_datasets.sh&lt;/code&gt;指令后就会发现，原来是&lt;code class=&quot;highlighter-rouge&quot;&gt;wget&lt;/code&gt;&lt;sup id=&quot;fnref:wget&quot;&gt;&lt;a href=&quot;#fn:wget&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;命令不存在。那么我们要做的就是在windows系统下安装该命令。&lt;/p&gt;
+
+&lt;p&gt;首先去&lt;a href=&quot;https://jaist.dl.sourceforge.net/project/gnuwin32/wget/1.11.4-1/wget-1.11.4-1-setup.exe&quot;&gt;这里下载&lt;/a&gt;安装包，然后添加环境变量&lt;code class=&quot;highlighter-rouge&quot;&gt;GNU_HOME=C:\Program Files (x86)\GnuWin32&lt;/code&gt;这里的路径是默认安装路径，你也可以改为自定义安装路径。最后在&lt;em&gt;path&lt;/em&gt; 中添加&lt;code class=&quot;highlighter-rouge&quot;&gt;%GNU_HOME%\bin&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;搞定后就可以成功下载图片库了，发布该博文时，图片库的大小为177MB。&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:wget&quot;&gt;
+      &lt;p&gt;linux操作系统命令 &lt;a href=&quot;#fnref:wget&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="计算机视觉" /><summary type="html">1. 跳转到assignment1文件夹</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://i.loli.net/2020/04/20/oD6A2ZWvNkbdV8a.png" /></entry><entry><title type="html">法线变换矩阵</title><link href="https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html" rel="alternate" type="text/html" title="法线变换矩阵" /><published>2020-01-31T00:00:00+08:00</published><updated>2020-01-31T00:00:00+08:00</updated><id>https://burnian.github.io/technology/2020/01/31/the-normal-matrix</id><content type="html" xml:base="https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html">&lt;p&gt;模型光照的计算必然是要用到法线的，一定会有小伙伴和我一样对下面的问题感到疑惑，为什么需要区分模型变换矩阵和法线变换矩阵？二者不可以相同吗？今天我就来给各位小伙伴答疑解惑。&lt;/p&gt;
 
 &lt;p&gt;法线变换矩阵&lt;code class=&quot;highlighter-rouge&quot;&gt;gl_NormalMatrix&lt;/code&gt;存在于许多顶点着色器中，本文主讲该矩阵是什么，以及它是怎么来的。文章译自&lt;a href=&quot;http://www.lighthouse3d.com/tutorials/glsl-12-tutorial/the-normal-matrix/&quot;&gt;原文&lt;/a&gt;，多有自我理解夹杂其间。&lt;/p&gt;
 
@@ -154,7 +172,6 @@
 &lt;p&gt;如果 java 按照默认路径安装在&lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Program Files&lt;/code&gt;，则会因为 Program 后面的空格导致 JAVA_HOME 配置出错。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; 运行&lt;code class=&quot;highlighter-rouge&quot;&gt;spark-shell&lt;/code&gt;报错 hadoop 缺了&lt;code class=&quot;highlighter-rouge&quot;&gt;winutils.exe&lt;/code&gt;文件，则需要去下载对应 hadoop 版本的&lt;code class=&quot;highlighter-rouge&quot;&gt;winutils.exe&lt;/code&gt;文件，可以去&lt;a href=&quot;https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe&quot;&gt;这里&lt;/a&gt;下载然后放入 hadoop 的 bin 目录下。&lt;/p&gt;</content><author><name></name></author><category term="spark" /><summary type="html">1. hadoop 有其匹配的 JDK 版本，比如：hadoop 版本 &amp;gt;= 2.7 时，要求Java 7或java 8(openjdk/oracle)，java 13运行 hadoop 会出错。hadoop 版本 &amp;lt; 2.7 只能基于java 6运行。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://spark.apache.org/images/spark-logo-trademark.png" /></entry><entry><title type="html">（四）从零开始搭建个人静态博客网站</title><link href="https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4.html" rel="alternate" type="text/html" title="（四）从零开始搭建个人静态博客网站" /><published>2019-11-02T00:00:00+08:00</published><updated>2019-11-02T00:00:00+08:00</updated><id>https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4</id><content type="html" xml:base="https://burnian.github.io/tutorial/2019/11/02/build-personal-website-4.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#楔子&quot; id=&quot;markdown-toc-楔子&quot;&gt;楔子&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#jekyll-网站项目的基本文件夹结构&quot; id=&quot;markdown-toc-jekyll-网站项目的基本文件夹结构&quot;&gt;Jekyll 网站项目的基本文件夹结构&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#各文件夹详解&quot; id=&quot;markdown-toc-各文件夹详解&quot;&gt;各文件夹详解&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#1_includes-文件传参举例&quot; id=&quot;markdown-toc-1_includes-文件传参举例&quot;&gt;1._includes 文件传参举例&lt;/a&gt;&lt;/li&gt;
@@ -164,8 +181,6 @@
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&quot;楔子&quot;&gt;楔子&lt;/h2&gt;
 
 &lt;p&gt;这一章主要把整个项目的文件夹结构剖析出来。&lt;/p&gt;
 
@@ -366,7 +381,6 @@
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;</content><author><name></name></author><category term="个人网站" /><category term="Jekyll" /><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://i.loli.net/2019/11/04/Vk6w24jRNMKpiOf.jpg" /></entry><entry><title type="html">（三）从零开始搭建个人静态博客网站</title><link href="https://burnian.github.io/tutorial/2019/11/01/build-personal-website-3.html" rel="alternate" type="text/html" title="（三）从零开始搭建个人静态博客网站" /><published>2019-11-01T00:00:00+08:00</published><updated>2019-11-01T00:00:00+08:00</updated><id>https://burnian.github.io/tutorial/2019/11/01/build-personal-website-3</id><content type="html" xml:base="https://burnian.github.io/tutorial/2019/11/01/build-personal-website-3.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#楔子&quot; id=&quot;markdown-toc-楔子&quot;&gt;楔子&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#ruby-是什么&quot; id=&quot;markdown-toc-ruby-是什么&quot;&gt;Ruby 是什么&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#gem-是什么&quot; id=&quot;markdown-toc-gem-是什么&quot;&gt;gem 是什么&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#rubygems-是什么&quot; id=&quot;markdown-toc-rubygems-是什么&quot;&gt;RubyGems 是什么&lt;/a&gt;&lt;/li&gt;
@@ -376,8 +390,6 @@
   &lt;li&gt;&lt;a href=&quot;#jekyll-的全局变量&quot; id=&quot;markdown-toc-jekyll-的全局变量&quot;&gt;Jekyll 的全局变量&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#后记&quot; id=&quot;markdown-toc-后记&quot;&gt;后记&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&quot;楔子&quot;&gt;楔子&lt;/h2&gt;
 
 &lt;p&gt;这一章我们将展开学习利用 Jekyll + GitHub Pages 搭建个人网站时会频繁用到的相关知识。&lt;/p&gt;
 
@@ -879,11 +891,4 @@
 
 &lt;p&gt;Give the world the best you have, and you’ll get kicked in the teeth.&lt;br /&gt;Give the world the best you have anyway.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=07a58f505782b2b7b392319650c4a08a/d31b0ef41bd5ad6e7b2573be8fcb39dbb7fd3c81.jpg&quot; alt=&quot;Teresa-profile&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="特蕾莎" /><category term="加尔各答" /><summary type="html">世界上只有一种英雄主义：看清了世界的真相还依然热爱它。 —— 罗曼·罗兰 There is only one heroism in the world：to see the world as it is and to love it. —— Romain Rolland</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=3db62980352ac65c73086e219a9bd974/bba1cd11728b4710be23082cc3cec3fdfd0323c5.jpg" /></entry><entry><title type="html">从前有一只猫</title><link href="https://burnian.github.io/life/2019/10/05/once-here-comes-a-cat.html" rel="alternate" type="text/html" title="从前有一只猫" /><published>2019-10-05T00:00:00+08:00</published><updated>2019-10-05T00:00:00+08:00</updated><id>https://burnian.github.io/life/2019/10/05/once-here-comes-a-cat</id><content type="html" xml:base="https://burnian.github.io/life/2019/10/05/once-here-comes-a-cat.html">&lt;h1 id=&quot;楔子猫&quot;&gt;楔子：猫&lt;br /&gt;&lt;/h1&gt;
-
-&lt;p&gt;从前有一只猫，它又可爱又可爱哭了。&lt;/p&gt;
-
-&lt;p&gt;与它初识是在一个阳光明媚的午后，它毛色如墨，冷冷地盯着我，就好像我偷了它的小鱼干似的，但它毕竟是一只小猫，我难道还不甘示弱地瞪回去？这个想法不错。
-于是我瞬间掐灭了这个好想法，笑嘻嘻地拿起自己的热脸贴上猫家的冷屁股，您别说，还挺带感。&lt;/p&gt;
-
-&lt;p&gt;很多年以后，当小年再次回想起那个遥远的下午，竟恍然不觉这简简单单的邂逅会碰撞出那么多故事……&lt;/p&gt;</content><author><name></name></author><category term="猫" /><category term="情感" /><summary type="html">楔子：猫</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=07a58f505782b2b7b392319650c4a08a/d31b0ef41bd5ad6e7b2573be8fcb39dbb7fd3c81.jpg&quot; alt=&quot;Teresa-profile&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="特蕾莎" /><category term="加尔各答" /><summary type="html">世界上只有一种英雄主义：看清了世界的真相还依然热爱它。 —— 罗曼·罗兰 There is only one heroism in the world：to see the world as it is and to love it. —— Romain Rolland</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=3db62980352ac65c73086e219a9bd974/bba1cd11728b4710be23082cc3cec3fdfd0323c5.jpg" /></entry></feed>

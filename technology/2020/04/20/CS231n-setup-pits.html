@@ -6,22 +6,25 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Burnian Zhou's Personal Blog Site">
+    content="CS231n 环境搭建的踩坑记录">
   <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
   <title>Burnian's Blog</title>
   <link type="application/atom+xml" rel="alternate" href="https://burnian.github.io/feed.xml" title="Burnian's Blog" />
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Gallery | Burnian’s Blog</title>
+<title>CS231n环境搭建踩坑记录 | Burnian’s Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Gallery" />
+<meta property="og:title" content="CS231n环境搭建踩坑记录" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Burnian Zhou’s Personal Blog Site" />
-<meta property="og:description" content="Burnian Zhou’s Personal Blog Site" />
-<link rel="canonical" href="https://burnian.github.io/pages/gallery/" />
-<meta property="og:url" content="https://burnian.github.io/pages/gallery/" />
+<meta name="description" content="CS231n 环境搭建的踩坑记录" />
+<meta property="og:description" content="CS231n 环境搭建的踩坑记录" />
+<link rel="canonical" href="https://burnian.github.io/technology/2020/04/20/CS231n-setup-pits.html" />
+<meta property="og:url" content="https://burnian.github.io/technology/2020/04/20/CS231n-setup-pits.html" />
 <meta property="og:site_name" content="Burnian’s Blog" />
+<meta property="og:image" content="https://i.loli.net/2020/04/20/oD6A2ZWvNkbdV8a.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-20T00:00:00+08:00" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"https://burnian.github.io/pages/gallery/","headline":"Gallery","description":"Burnian Zhou’s Personal Blog Site","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"https://burnian.github.io/technology/2020/04/20/CS231n-setup-pits.html","headline":"CS231n环境搭建踩坑记录","dateModified":"2020-04-20T00:00:00+08:00","datePublished":"2020-04-20T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://burnian.github.io/technology/2020/04/20/CS231n-setup-pits.html"},"image":"https://i.loli.net/2020/04/20/oD6A2ZWvNkbdV8a.png","description":"CS231n 环境搭建的踩坑记录","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <!-- baidu 流量统计 -->
@@ -64,7 +67,7 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 
 <body>
-  <div id="particles-js" url="/pages/gallery/">
+  <div id="particles-js" url="/technology/2020/04/20/CS231n-setup-pits.html">
   <div class="header">
     <h1>
       <span class="site-title">Burnian Zhou</span>
@@ -166,12 +169,12 @@
       
       
       
-      <li id="navbar-gallery" class="nav-item active">
-        <span class="nav-link bnav-font">
+      <li id="navbar-gallery" class="nav-item">
+        <a class="nav-link bnav-font" href="https://burnian.github.io/pages/gallery/#bnavbar">
           
           画廊
           
-        </span>
+        </a>
       </li>
       
       
@@ -235,46 +238,97 @@
   </div>
 </nav>
   <section id="bcontent" class="container-fluid">
+    <div class="row justify-content-center">
+  <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-6 col-xxxl-5 intimate">
+    <!-- 正文 -->
+    <div class="sheet post">
+      <header>
+        <h2>CS231n环境搭建踩坑记录</h2>
+        <p class="post-meta">
+          <i class="fa fa-user"></i>
+          Burnian Zhou&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-calendar"></i> 2020年04月20日&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
+        </p>
+        <p class="post-tag">
+          
+          <span class="fa fa-tag"></span>&nbsp;计算机视觉&nbsp;&nbsp;&nbsp;
+          
+        </p>
+      </header>
+      <hr class="boundary">
+      <article>
+        <p><strong>1. 跳转到assignment1文件夹</strong></p>
+
+<p>在working locally的Installing packages这一栏，教程指引我们要先在命令行窗口中激活刚创建的cs231n环境，然后执行<code class="highlighter-rouge">cd assignment1</code>。这里的<em>assignment1</em> 文件夹其实包含在<em>assignment1_jupyter.zip</em> （或<em>assignment1_colab.zip</em> ）文件中，解压后把<em>assignment1</em> 文件夹放在自己喜欢的路径下即可，<em>requirements.txt</em> 文件也在里面。</p>
+
+<p><strong>2. 下载CIFAR-10图片库</strong></p>
+
+<p>教程中的<code class="highlighter-rouge">./get_datasets.sh</code>指令在linux系统下执行没问题，但在windows系统下执行需要安装<em>git</em> 。很多同学在趟过第一个坑后会发现执行完<code class="highlighter-rouge">get_datasets.sh</code>指令，一个小黑窗一闪而过就没了，图片库根本没有下载下来，这里并非网络问题，在<em>git bash</em> 命令行窗口中执行<code class="highlighter-rouge">sh get_datasets.sh</code>指令后就会发现，原来是<code class="highlighter-rouge">wget</code><sup id="fnref:wget"><a href="#fn:wget" class="footnote">1</a></sup>命令不存在。那么我们要做的就是在windows系统下安装该命令。</p>
+
+<p>首先去<a href="https://jaist.dl.sourceforge.net/project/gnuwin32/wget/1.11.4-1/wget-1.11.4-1-setup.exe">这里下载</a>安装包，然后添加环境变量<code class="highlighter-rouge">GNU_HOME=C:\Program Files (x86)\GnuWin32</code>这里的路径是默认安装路径，你也可以改为自定义安装路径。最后在<em>path</em> 中添加<code class="highlighter-rouge">%GNU_HOME%\bin</code>。</p>
+
+<p>搞定后就可以成功下载图片库了，发布该博文时，图片库的大小为177MB。</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:wget">
+      <p>linux操作系统命令 <a href="#fnref:wget" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+      </article>
+      <hr class="boundary">
+    </div>
+    <!-- 上下篇按钮 -->
+    <div class="row switch-card">
+      <div class="col" style="padding-left: 0;">
+        
+        <a class="card" href="https://burnian.github.io/technology/2020/01/31/the-normal-matrix.html">
+          <h4 class="text-muted">上一篇</h4>
+          <h4>法线变换矩阵</h4>
+        </a>
+        
+      </div>
+
+      <div class="col" style="padding-right: 0;">
+        
+        <span tabindex="1" class="card" data-toggle="popover" data-content="没有下一篇了" data-placement="bottom"
+          data-trigger="focus">
+          <h4 class="text-muted text-center">下一篇</h4>
+        </span>
+        
+      </div>
+    </div>
+    <!-- 评论 -->
     
-<div class="row justify-content-center">
+    <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+  var id = location.pathname.substr(0, 50);
+  console.log("gitalk.id=", id)
 
-  <div class="col-10">
-    <div class="card" style="max-width: 100%;">
-      <img class="card-img-top" src="/assets/img/respiting.png">
-      <div class="card-body">
-        <p class="card-text text-muted">Respiting.</p>
-      </div>
-    </div>
+  const gitalk = new Gitalk({
+    clientID: 'afe4f8097c6fe10c9d56',
+    clientSecret: '40c07771aea5a0e884004decb8a639797fbd86b1',
+    repo: 'burnian.github.io',
+    owner: 'burnian',
+    admin: ['burnian'],
+    id: id,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+  console.log('gitalk over')
+</script>
+    
+    <!-- 点赞 -->
+    <!-- 统计 -->
   </div>
-
 </div>
-
-<div class="row justify-content-center">
-
-  <div class="col-10">
-    <div class="card" style="max-width: 100%;">
-      <img class="card-img-top" src="/assets/img/missing.png">
-      <div class="card-body">
-        <p class="card-text text-muted">Missing.</p>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="row justify-content-center">
-
-  <div class="col-10">
-    <div class="card" style="max-width: 100%;">
-      <img class="card-img-top" src="/assets/img/world.png">
-      <div class="card-body">
-        <p class="card-text text-muted">Struggling.</p>
-      </div>
-    </div>
-  </div>
-
-</div>
-
   </section>
   <footer class="footer">
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
